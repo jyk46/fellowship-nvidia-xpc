@@ -1,0 +1,5140 @@
+%=========================================================================
+% Bibliography
+%=========================================================================
+% Note that I don't actually use inproceedings. I have never liked it
+% and so if I get to make up my own bibliographical style then I don't
+% want to use it. Conference papers are just articles without detailed
+% journal volume, number, page info.
+
+%-------------------------------------------------------------------------
+% Month Abbreviations
+%-------------------------------------------------------------------------
+% For some styles we may need to spell these out.
+
+@string{JAN = {Jan}}
+@string{FEB = {Feb}}
+@string{MAR = {Mar}}
+@string{APR = {Apr}}
+@string{MAY = {May}}
+@string{JUN = {Jun}}
+@string{JUL = {Jul}}
+@string{AUG = {Aug}}
+@string{SEP = {Sep}}
+@string{OCT = {Oct}}
+@string{NOV = {Nov}}
+@string{DEC = {Dec}}
+
+@string{JAN/FEB = {Jan/Feb}}
+@string{FEB/MAR = {Feb/Mar}}
+@string{MAR/APR = {Mar/Apr}}
+@string{APR/MAY = {Apr/May}}
+@string{MAY/JUN = {May/Jun}}
+@string{JUN/JUL = {Jun/Jul}}
+@string{JUL/AUG = {Jul/Aug}}
+@string{AUG/SEP = {Aug/Sep}}
+@string{SEP/OCT = {Sep/Oct}}
+@string{OCT/NOV = {Oct/Nov}}
+@string{NOV/DEC = {Nov/Dec}}
+@string{DEC/JAN = {Dec/Jan}}
+
+%-------------------------------------------------------------------------
+% Conference/Journal Abbreviations
+%-------------------------------------------------------------------------
+
+% Software Systems
+
+@string{OSDI     = {Symp. on Operating System Design and Implementation
+                     (OSDI)}},
+@string{CLOUDCOM = {Int'l Conf. on Cloud Computing Technology and Science
+                     (CLOUDCOM)}}
+@string{PPOPP    = {Symp. on Principles and practice of Parallel
+                     Programming (PPoPP)}},
+
+@string{CASES    = {Int'l Conf. on Compilers, Architecture, and Synthesis
+                     for Embedded Systems (CASES)}}
+
+% Compilers
+
+@string{TACO     = {ACM Trans. on Architecture and Code
+                     Optimization (TACO)}}
+
+@string{CGO      = {Int'l Symp. on Code Generation and Optimization
+                     (CGO)}}
+@string{CODESISSS = {Intl'l Conf. on Hardware/Software Codesign and System
+                     Synthesis (CODES/ISSS)}}
+@string{PLDI     = {Conf. on Programming Language Design and
+                     Implementation (PLDI)}}
+
+@string{STMCS    = {Workshop on Software Tools for MultiCore Systems
+                     (STMCS)}}
+
+% Architecture
+
+@string{CAN      = {ACM SIGARCH Computer Architecture News (CAN)}}
+@string{CAL      = {Computer Architecture Letters (CAL)}}
+@string{IEEEMICRO = {IEEE Micro}}
+@string{COMPUTER = {IEEE Computer}}
+@string{IJRD     = {IBM Journal of Research and Development}}
+@string{JETC     = {ACM Journal on Emerging Technologies in Computing
+                     Systems (JETC)}}
+@string{JPDC     = {Journal of Parallel and Distributed Computing}}
+
+@string{ISCA     = {Int'l Symp. on Computer Architecture (ISCA)}}
+@string{MICRO    = {Int'l Symp. on Microarchitecture (MICRO)}}
+@string{HPCA     = {Int'l Symp. on High-Performance Computer
+                     Architecture (HPCA)}}
+@string{ASPLOS   = {Int'l Conf. on Architectural Support for Programming
+                     Languages and Operating Systems (ASPLOS)}}
+@string{SC       = {Int'l Conf. on High Performance Networking
+                     and Computing (Supercomputing)}}
+@string{ICS      = {Int'l Symp. on Supercomputing (ICS)}}
+@string{PACT     = {Int'l Conf. on Parallel Architectures and
+                     Compilation Techniques (PACT)}}
+@string{HOTI     = {Symp. on High-Performance Interconnects
+                     (Hot Interconnects}}
+@string{NOCS     = {Int'l Symp. on Networks-on-Chip (NOCS)}}
+@string{ANCS     = {Symp. on Architectures for Networking
+                     and Communications Systems (ANCS)}}
+@string{ICPP     = {Int'l Conf. on Parallel Processing (ICPP)}}
+@string{IPDPS    = {Int'l Parallel and Distributed Processing
+                     Symp. (IPDPS)}}
+@string{ISPASS   = {Int'l Symp. on Performance Analysis of Systems and
+                     Software (ISPASS)}}
+@string{SPAA     = {Symp. on Parallel Algorithms and Architectures
+                     (SPAA)}}
+@string{HIPC     = {Int'l Conf. on High-Performance Computing (HIPC)}}
+@string{IISWC    = {Int'l Symp. on Workload Characterization (IISWC)}}
+@string{PAAP     = {Int'l Symp. on Parallel Architectures, Algorithms,
+                     and Programming (PAAP)}}
+
+@string{HPEC     = {Workshop on High-Performance Embedded Computing}}
+@string{PICA     = {Workshop on Photonic Interconnects and
+                     Computer Architecture}}
+@string{PACS     = {Workshop on Power-Aware Computer Systems (PACS)}}
+@string{HPPC     = {Workshop on Highly Parallel Processing on a Chip
+                     (HPPC)}}
+@string{MOBS     = {Workshop on Modeling, Benchmarking and Simulation
+                     (MOBS)}}
+
+@string{CLUSTER  = {Int'l Conf. on Cluster Computing}}
+@string{WJCC     = {Western Joint Computer Conf.}}
+@string{OGPUW    = {OpenGPU Workshop}}
+
+@string{MPR      = {Microprocessor Report}},
+
+% CAD
+
+@string{DT       = {IEEE Design and Test of Computers}}
+@string{TODAES   = {ACM Trans. on Design Automation
+                     of Electronic Systems (TODAES)}}
+
+@string{MEMOCODE = {Int'l Conf. on Formal Methods and Models for
+                     Co-Design (MEMOCODE)}}
+
+@string{DAC      = {Design Automation Conf. (DAC)}}
+@string{DATE     = {Design, Automation, and Test in Europe (DATE)}}
+@string{ICCD     = {Int'l Conf. on Computer Design (ICCD)}}
+@string{ASPDAC   = {Asia and South Pacific Design Automation
+                     Conference (ASP-DAC)}}
+
+% Circuits
+
+@string{JSSC     = {IEEE Journal of Solid-State Circuits (JSSC)}}
+@string{TVLSI    = {IEEE Trans. on Very Large-Scale Integration
+                     Systems (TVLSI)}}
+@string{JETCAS   = {IEEE Journal on Emerging and Selected Topics in
+                     Circuits and Systems (JETCAS)}}
+
+@string{VLSI     = {Symp. on Very Large-Scale Integration Circuits
+                      (VLSI)}}
+@string{VLSID    = {Int'l Conf. on VLSI Design}}
+@string{ISSCC    = {Int'l Solid-State Circuits Conf. (ISSCC)}}
+@string{HOTCHIPS = {Symp. on High Performance Chips (Hot Chips)}}
+@string{ISVLSI   = {Computer System Symposium on VLSI}}
+@string{ISLPED   = {Int'l Symp. on Low-Power Electronics and
+                     Design (ISLPED)}}
+@string{ICSD     = {Symp. on Integrated Circuits and Systems
+                     Design (ICSD)}}
+@string{ISCAS    = {Int'l Conf. on Circuits and Systems (ISCAS)}}
+@string{ESSCIRC  = {European Solid-State Circuits Conf.}}
+@string{CICC     = {Custom Integrated Circuits Conf. (CICC)}}
+@string{ICM      = {Int'l Conf. on Microelectronics (ICM)}}
+@string{ICECS    = {Int'l Conf. on Electronics, Circuits, and
+                     Systems (ICECS)}}
+@string{ASSCC    = {Asian Solid-State Circuits Conf. (ASSCC)}}
+
+% Optics
+
+@string{JON      = {Journal of Optical Networking (JON)}}
+@string{SPIE     = {Silicon Photonics}}
+@string{OPTEXP   = {Optics Express}}
+@string{OPTLET   = {Optics Letters}}
+@string{PTLET    = {Photonics Technology Letters}}
+
+@string{CLEO     = {Conf. on Lasers and Electro-Optics (CLEO)}}
+@string{PS       = {Int'l Conf. on Photonics in Switching}}
+@string{OFC      = {Optical Fiber Communication Conf.}}
+@string{MPPOI    = {Massively Parallel Processing Using Optical
+                     Interconnects (MPPOI)}}
+
+% Materials & Devices
+
+@string{TED      = {IEEE Trans. on Electron Devices}}
+@string{JSTQE    = {Journal of Selected Topics in Quantum Electronics}}
+
+@string{ISTDM    = {Int'l {SiGe} Technology and Device Mtg.}}
+@string{APPPHYS  = {Applied Physics A: Materials Science \& Processing}}
+@string{ECTC     = {Electronic Components and Technology Conf.}}
+
+% Other
+
+@string{TOCS     = {ACM Trans. on Computer Systems (TOCS)}}
+@string{TC       = {IEEE Trans. on Computers (TC)}}
+@string{TOC      = {IEEE Trans. on Computers (TOC)}}
+@string{TOG      = {ACM Trans. on Graphics (TOG)}}
+@string{CACM     = {Communications of the ACM}}
+@string{PROCIEEE = {Proc. of the IEEE}}
+@string{ELET     = {Electronics Letters}}
+@string{CISE     = {Computing in Science Engineering}}
+@string{NAR      = {Nucleic Acids Research (NAR)}}
+@string{CISE     = {Computing in Science Engineering}}
+@string{SCP      = {Science of Computer Programming}}
+
+% Education
+
+@string{JEE      = {Journal of Engineering Education}}
+@string{SIGCSE   = {SIGCSE Technical Symp.}}
+@string{ASEE     = {American Society for Engineering Education
+                     Annual Conf.}}
+
+%-------------------------------------------------------------------------
+% SEC: Multicore/Manycore Transition, Projections
+%-------------------------------------------------------------------------
+
+@article{olukotun-future-uproc-queue2005,
+  title     = {The Future of Microprocessors},
+  author    = {Kunle Olukotun and Lance Hammond},
+  journal   = {ACM Queue},
+  month     = SEP,
+  year      = {2005},
+  volume    = {3},
+  number    = {7},
+  pages     = {26--29},
+}
+
+@misc{held-intel-terascale-wpaper2006,
+  title     = {From a Few Cores to Many: A Tera-scale Computing Research
+                Overview},
+  author    = {Jim Held and Jerry Bautista and Sean Koehl},
+  howpublished = {Intel White Paper},
+  note      = {\\\url{http://download.intel.com/research/platform/terascale/terascale_overview_paper.pdf}},
+  year      = {2006},
+}
+
+@misc{idc-semiconductor-forecast-pressrelease2012,
+  title     = {IDC Forecasts Worldwide Semiconductor Revenues Will Grow
+                4.9\% and Reach \$319 Billion in 2013},
+  key       = {idc},
+  howpublished = {IDC Press Release},
+  month     = DEC,
+  year      = {2012},
+}
+
+@misc{comparch-ccc2012,
+  title     = {21st Century Computer Architecture},
+  key       = {ccc},
+  howpublished = {Computing Community Consortium Whitepaper},
+  month     = MAY,
+  year      = {2012},
+}
+
+@book{fuller-game-over-nap2011,
+  title     = {The Future of Computing Performance: Game Over or Next
+                Level?},
+  editor    = {Samuel H. Fuller and Lynette I. Millett},
+  authorx   = {Committee on Sustaining Growth in Computing Performance,
+                National Research Council},
+  year      = {2011},
+  publisher = {The National Academies Press},
+}
+
+@article{dubash-end-moores-law-techworld2005,
+  title     = {Moore's Law is Dead, Says Gordon Moore},
+  author    = {Manek Dubash},
+  journal   = {Techwold},
+  month     = APR,
+  year      = {2005},
+}
+
+@misc{otellini-intel-investor-mtg2012,
+  title     = {Intel Investor Meeting 2012},
+  author    = {Paul S. Otellini},
+  howpublished = {Presentation Slides},
+  note      = {\\\url{http://www.cnx-software.com/pdf/Intel_2012/2012_Intel_Investor_Meeting_Otellini.pdf}},
+  year      = {2012},
+}
+
+%-------------------------------------------------------------------------
+% SEC: IBM Processors
+%-------------------------------------------------------------------------
+
+@article{kalla-ibm-power7-ieeemicro2010,
+  title     = {Power7: {IBM's} Next-Generation Server Processor},
+  journal   = IEEEMICRO,
+  volume    = {30},
+  number    = {2},
+  pages     = {7--15},
+  month     = MAR/APR,
+  year      = {2010},
+}
+
+@article{rajamony-ibm-power7-ih-ijrd2011,
+  title     = {PERCS: The IBM POWERy-IH High-Performance Computing
+                System},
+  author    = {R. Rajamony and L.~B. Arimilli and K. Gildea},
+  journal   = IJRD,
+  volume    = {55},
+  number    = {3},
+  pages     = {3:1--3:12},
+  month     = MAY/JUN,
+  year      = {2011},
+}
+
+@article{kalla-ibm-power5-ieeemicro2004,
+  title     = {IBM Power5 Chip: A Dual-Core Multithreaded Processor},
+  author    = {Ron Kalla and Balaram Sinharoy and Joel Tendler},
+  journal   = IEEEMICRO,
+  month     = MAR/APR,
+  year      = {2004},
+  volume    = {24},
+  number    = {2},
+  pages     = {40--47},
+}
+
+@article{kalla-ibm-power7-hotchips2009,
+  title     = {POWER7: IBM's Next Generation POWER Microprocessor},
+  author    = {Ron Kalla},
+  journal   = HOTCHIPS,
+  month     = AUG,
+  year      = {2009},
+}
+
+@article{gschwind-ibm-cell-ieeemicro2006,
+  title     = {Synergistic Processing in Cell's Multicore Architecture},
+  author    = {Michael Gschwind and H. Peter Hofstee and Brian Flachs and
+                Martin Hopkins and Yukio Watanabe and Takeshi Yamazaki},
+  journal   = IEEEMICRO,
+  month     = MAR,
+  year      = {2006},
+  volume    = {26},
+  number    = {2},
+  pages     = {10--24},
+}
+
+@article{ainsworth-ibm-cell-ocn-ieeemicro2007,
+  title     = {Characterizing the CELL EIB On-Chip Network},
+  author    = {T.W. Ainsworth and T.M. Pinkston},
+  journal   = IEEEMICRO,
+  month     = SEP/OCT,
+  year      = {2007},
+  volume    = {27},
+  number    = {5},
+  pages     = {6--14},
+}
+
+%-------------------------------------------------------------------------
+% SEC: MIPS Processors
+%-------------------------------------------------------------------------
+
+@book{kane-mips-r2k-book1987,
+  title     = {MIPS R2000 RISC Architecture},
+  author    = {Gerry Kane},
+  publisher = {Prentice Hall},
+  year      = {1987},
+}
+
+@misc{mips32-manual2009,
+  title     = {MIPS32 Architecture for Programmers, Volume II: The
+                MIPS32 Instruction Set},
+  key       = {mips},
+  howpublished = {MIPS Technical Reference Manual},
+  note      = {\\\url{http://www.mips.com/products/architectures/mips32}},
+  year      = {2009},
+}
+
+@book{sweetman-mips-book2007,
+  title     = {See MIPS Run Linux},
+  author    = {Dominic Sweetman},
+  publisher = {Morgan Kaufmann},
+  year      = {2007},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Misc Processors
+%-------------------------------------------------------------------------
+
+@article{krewell-rmi-xlr-mpr2005,
+  title     = {A New MIPS Powerhouse Arrives},
+  author    = {Kevin Krewell},
+  journal   = {Microprocessor Report},
+  month     = {May},
+  year      = {2005},
+}
+
+@article{duller-picochip-cpa2003,
+  title     = {Parallel Processing - The PicoChip Way!},
+  author    = {Andrew Duller and Gajinder Panesar and Daniel Towner},
+  journal   = {Communicating Process Architectures},
+  month     = SEP,
+  year      = {2003},
+  pages     = {125--138},
+}
+
+@article{eatherton-keynote-ancs2005,
+  title     = {Keynote Address: The Push of Network Processing to the
+                Top of the Pyramid},
+  author    = {Will Eatherton},
+  journal   = ANCS,
+  month     = OCT,
+  year      = {2005},
+}
+
+@article{yalala-cavium-octeon-isscc2006,
+  title     = {A 16-Core RISC Microprocessor with Network Extensions},
+  author    = {Vishnu Yalala and Derek Brasili and David Carlson and
+                Adam Hughes and Anil Jain and Tim Kiszely and Kolar
+                Kodandapani and Anand Varadharajan and Thucydides
+                Xanthopoulos},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2006},
+}
+
+@misc{arm-cortexa9-wpaper2009,
+  title     = {The ARM Cortex-A9 Processors},
+  key       = {arm},
+  howpublished = {ARM White Paper},
+  note      = {\\\url{http://www.arm.com/pdfs/armcortexa-9processors.pdf}},
+  year      = {2009},
+}
+
+@misc{clearspeed-csx600-wpaper2006,
+  title     = {CSX Processor Architecture},
+  key       = {clearspeed},
+  howpublished = {ClearSpeed White Paper},
+  note      = {\\\url{http://www.clearspeed.com/docs/resources/ClearSpeed_CSX_White_Paper.pdf}},
+  year      = {2006},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Alpha Processors
+%-------------------------------------------------------------------------
+
+@article{edmondson-dec-21164-ieeemicro1995,
+  title     = {Superscalar Instruction Execution in the 21164 Alpha
+                Microprocessor},
+  author    = {J. Edmondson and P. Rubinfeld and R. Preston and V.
+                Rajagopalan},
+  journal   = IEEEMICRO,
+  month     = APR,
+  year      = {1995},
+  volume    = {15},
+  issue     = {2},
+  pages     = {33--43},
+}
+
+@article{espasa-tarantula-isca2002,
+  title     = {Tarantula: A Vector Extension to the Alpha Architecture},
+  author    = {Roger Espasa and Federico Ardanaz and Joel Emer and
+                Stephen Felix and Julio Gago and Roger Gramunt and Isaac
+                Hernandez and Toni Juan and Geoff Lowney and Matthew
+                Mattina and Andr\'{e} Seznec},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2002},
+}
+
+%-------------------------------------------------------------------------
+% SEC: AMD Processors
+%-------------------------------------------------------------------------
+
+@article{butler-amd-bulldozer-ieeemicro2011,
+  title     = {Bulldozer: An Approach to Multithreaded Compute
+                Performance},
+  author    = {Michael Butler and Leslie Barnes and Debjit Das Sarma and
+                Bob Gelinas},
+  journal   = IEEEMICRO,
+  month     = MAR/APR,
+  year      = {2011},
+  volume    = {31},
+  number    = {2},
+  pages     = {6--15},
+}
+
+@article{burgess-bobcat-ieeemicro2011,
+  title     = {Bobcat: AMD's Low-Power x86 Processor},
+  author    = {Brad Burgess and Brad Cohen and Marvin Denman and Jim
+                Dundas and David Kaplan and Jeff Rupley},
+  journal   = IEEEMICRO,
+  month     = MAR/APR,
+  year      = {2011},
+  volume    = {31},
+  number    = {2},
+  pages     = {16--25},
+}
+
+@misc{amd-phenom-web,
+  title     = {AMD Phenom Processors},
+  key       = {amd},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.amd.com/us/products/desktop/processors/phenom}},
+  year      = {2009 (accessed Dec 4, 2009)},
+}
+
+@article{dorsey-amd-4core-isscc2007,
+  title     = {An Integrated Quad-Core Opteron Processor},
+  author    = {J. Dorsey and S. Searles and M. Ciraula and S. Johnson
+                and N. Bujanos and D. Wu and M. Braganza and S. Meyers
+                and E. Fang and R. Kumar},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2007},
+}
+
+@misc{smith-amd-radeon-7970-anandtech2011,
+  title     = {{AMD Radeon HD} 7970 Review},
+  author    = {Ryan Smith},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.anandtech.com/show/5261}},
+  year      = {2011 (accessed Apr 1, 2012)},
+}
+
+@misc{amd-radeon-7970-web,
+  title     = {{AMD Radeon HD 7970} Graphics},
+  key       = {amd},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.amd.com/us/products/desktop/graphics/7000/7970}},
+  year      = {2011 (accessed Apr 1, 2012)},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Intel Processors
+%-------------------------------------------------------------------------
+
+@misc{intel-mic-web,
+  title    = {Introducing Intel Many Integrated Core Architecture},
+  key      = {intel},
+  howpublished = {Intel Press Release},
+  note     = {\\\url{http://www.intel.com/technology/architecture-silicon/mic}},
+  year     = {2011},
+}
+
+@misc{intel-gpu-reference-manual2011,
+  title     = {Intel {OpenSource} {HD} Graphics Programmer's Reference
+                Manual, Vol 4, Part 2, Rev 1.0},
+  key       = {intel},
+  howpublished = {Intel Reference Manual},
+  month     = MAY,
+  year      = {2011},
+}
+
+@article{kumar-nehalem-isscc2009,
+  title     = {A Family of \wu{45}{nm} {IA} Processors},
+  author    = {R. Kumar},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2009},
+}
+
+@article{damaraju-intel-ivy-bridge-isscc2012,
+  title     = {A \wu{22}{nm} {IA} Multi-{CPU} and {GPU} System-on-Chip},
+  author    = {S. Damaraju and V. George and S. Jahagirdar and T.
+                Khondker and R. Milstrey and S. Sarkar and S. Siers and
+                I. Stolero and A. Subbiah},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2012},
+}
+
+@article{lee-cpu-gpu-myth-isca2010,
+  title     = {Debunking the 100X GPU vs. CPU Myth: An Evaluation of
+                Throughput Computing on CPU and GPU},
+  author    = {Victor W Lee and Changkyu Kim and Jatin Chhugani and
+                Michael Deisher and Daehyun Kim and Anthony D. Nguyen and
+                Nadathur Satish and Mikhail Smelyanskiy and Srinivas
+                Chennupaty and Per Hammarlund and Ronak Singhal and
+                Pradeep Dubey},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2010},
+}
+
+@article{sawant-intel-xeon-westmere-isscc2011,
+  title     = {A \wu{32}{nm} Westmere-EX Xeon Enterprise Processor},
+  author    = {S. Sawant and U. Desai and G. Shamanna and L. Sharma and
+                M. Ranade and A. Agarwal and S. Dakshinamurthy and R.
+                Narayanan},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2011},
+}
+
+@article{yuffe-intel-sandybridge-isscc2011,
+  title     = {A Fully Integrated Multi-CPU, GPU, and Memory Controller
+                \wu{32}{nm} Processor},
+  author    = {M. Yuffe and E. Knoll and M. Mehalel and J. Shor and T.
+                Kurts},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2011},
+}
+
+@article{papworth-intel-ppro-ieeemicro1996,
+  title     = {Tuning the Pentium Pro Microarchitecture},
+  author    = {David Papworth},
+  journal   = IEEEMICRO,
+  month     = APR,
+  year      = {1996},
+  volume    = {16},
+  number    = {2},
+}
+
+@article{hinton-intel-p4-itj2001,
+  title     = {The Microarchitecture of the Pentium 4 Processor},
+  author    = {Glenn Hinton and Dave Sager and Mike Upton and Darrell
+                Boggs and Doug Carmean and Alan Kyker and Patrice
+                Roussel},
+  journal   = {Intel Technology Journal},
+  month     = FEB,
+  year      = {2001},
+  volume    = {5},
+  number    = {1},
+}
+
+@article{vangal-intel-polaris-isscc2007,
+  title     = {80-Tile \wu{1.28}{TFlops} Network-on-Chip in
+              \wu{65}{nm} CMOS},
+  author    = {Sriram Vangali and Jason Howard and Gregory Ruhi and
+                Saurabh Dighe and Howard Wilson and James Tschanz and
+                David Finan and Priya Iyerl and Arvind Singh and Tiju
+                Jacob and Shailendra Jain and Sriram Venkataraman and
+                Yatin Hoskotel and Nitin Borkarl},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2007},
+}
+
+@misc{intel-sccc-web,
+  title     = {Intel Single-chip Cloud Computer},
+  key       = {intel},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://techresearch.intel.com/articles/tera-scale/1826.htm}},
+  year      = {2009 (accessed Dec 4, 2009)},
+}
+
+@article{sakran-intel-core2duo-isscc2007,
+  title     = {The Implementation of the \wu{65}{nm} Dual-Core
+                \wu{64}{b} Merom Processor},
+  author    = {Nabeel Sakran and Marcelo Yuffe and Moty Mehalel and Jack
+                Doweck and Ernest Knoll and Avi Kovacs},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2007},
+}
+
+@article{rusu-intel-8corexeon-isscc2009,
+  title     = {A \wu{45}{nm} 8-Core Enterprise Xeon Processor},
+  author    = {Stefan Rusu and Simon Tam and Harry Muljono and Jason
+                Stinson and David Ayers and Jonathan Chang and Raj
+                Varada and Matt Ratta and Sailesh Kottapalli},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2009},
+}
+
+@article{seiler-intel-larrabee-ieeemicro2009,
+  title     = {Larrabee: A Many-Core x86 Architecture for Visual
+                Computing},
+  author    = {Larry Seiler and Doug Carmean and Eric Sprangle and Tom
+                Forsyth and Pradeep Dubey and Stephen Junkins and Adam
+                Lake and Robert Cavin and Roger Espasa and Ed Grochowski
+                and Toni Juan and Michael Abrash and Jeremy Sugerman and
+                Pat Hanrahan},
+  journal    = IEEEMICRO,
+  month      = JAN/FEB,
+  year       = {2009},
+  volume     = {29},
+  number     = {1},
+  pages      = {10--21},
+}
+
+@misc{intel-ixp2800-flyer2004,
+  title      = {Intel IXP2800 Network Processor},
+  key        = {intel},
+  howpublished = {Intel Product Brief},
+  url        = {http://download.intel.com/design/network/prodbrf/27905403.pdf},
+  year       = {2004},
+}
+
+@misc{intel-sse4-manual2007,
+  title      = {Intel SSE4 Programming Reference},
+  key        = {intel},
+  howpublished = {Intel Reference Manual},
+  note       = {\\\url{http://software.intel.com/file/18187}},
+  year       = {2007},
+}
+
+@misc{intel-avx-web,
+  title      = {Intel AVX},
+  key        = {intel},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://software.intel.com/en-us/avx}},
+  year      = {2012 (accessed March, 2012)},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Sun Processors
+%-------------------------------------------------------------------------
+
+@article{shin-sun-niagara3-isscc2010,
+  title     = {A \wu{40}{nm} 16-core 128-Thread CMT SPARC SoC Processor},
+  author    = {J. Shin and K. Tam and D. Huang and B. Petrick and H. Pham
+                and C. Hwang and H. Li and A. Smith and T. Johnson and F.
+                Schumacher and D. Greenhill and A. Leon and A. Strong},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2010},
+}
+
+@article{nawathe-sun-niagara2-isscc2007,
+  title     = {An 8-Core 64-Thread \wu{64}{b} Power-Efficient
+                SPARC SoC},
+  author    = {Umesh Gajanan Nawathe and Mahmudul Hassan and Lynn
+                Warriner and King Yen and Bharat Upputuri and David
+                Greenhill and Ashok Kumar},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2007},
+}
+
+@article{kongetira-sun-niagara-ieeemicro2005,
+  title     = {Niagara: A 32-Way Multithreaded Sparc Processor},
+  author    = {Poonacha Kongetira and Kathirgamar Aingaran and Kunle
+                Olukotun},
+  journal   = IEEEMICRO,
+  month     = MAR/APR,
+  year      = {2005},
+  volume    = {25},
+  issue     = {2},
+  pages     = {21--29},
+}
+
+@article{tremblay-sun-rock-isscc2008,
+  title     = {A Third-Generation \wu{65}{nm} 16-Core 32-Thread Plus
+                32-Scout-Thread CMT SPARC Processor},
+  author    = {Marc Tremblay and Shailender Chaudhry},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2008},
+}
+
+@article{tremblay-sun-rock-ieeemicro2009,
+  title     = {Rock: A High-Performance Sparc CMT Processor},
+  author    = {Shailender Chaudhry and Robert Cypher and Magnus Ekman
+                and Martin Karlsson and Anders Landin and Sherman Yip
+                and H\o{a}kan Zeffer and Marc Tremblay},
+  journal   = IEEEMICRO,
+  month     = MAR/APR,
+  year      = {2009},
+  volume    = {29},
+  number    = {2},
+  pages     = {6--16},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Fujitsu Processors
+%-------------------------------------------------------------------------
+
+@article{maruyama-fujitsu-sparc64VIIIfx-hotchips2009,
+  title     = {SPARC64 VIIIfx: Fujitsu's New Generation Octo-Core
+                Processor for PETA Scale Computing},
+  author    = {Takumi Maruyama},
+  journal   = HOTCHIPS,
+  month     = AUG,
+  year      = {2009},
+}
+
+%-------------------------------------------------------------------------
+% SEC: MIT Raw
+%-------------------------------------------------------------------------
+
+@article{taylor-raw-isscc2003,
+  title     = {A 16-Issue Multiple-Program-Counter Microprocessor with
+                Point-to-Point Scalar Operand Network},
+  author    = {Michael Bedford Taylor and Jason Kim and Jason Miller and
+                David Wentzlaff and Fae Ghodrat and Ben Greenwald and
+                Henry Hoffmann and Paul Johnson and Walter Lee and
+                Arvind Saraf and Nathan Shnidman and Volker Strumpen and
+                Saman Amarasinghe and and Anant Agarwal},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2003},
+}
+
+@article{taylor-raw-isca2004,
+  title     = {Evaluation of the Raw Microprocessor: An
+                Exposed-Wire-Delay Architecture for ILP and Streams},
+  author    = {Michael Bedford Taylor and Walter Lee and Jason Miller
+                and David Wentzlaff and Ian Bratt and Ben Greenwald and
+                Henry Hoffmann and Paul Johnson and Jason Kim and James
+                Psota and Arvind Saraf and Nathan Shnidman and Volker
+                Strumpen and Matt Frank and Saman Amarasinghe and
+                Anant Agarwal},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2004},
+}
+
+@article{gordon-raw-streamit-asplos2006,
+  title     = {Exploiting Coarse-Grained Task, Data, and Pipeline
+                Parallelism in Stream Programs},
+  author    = {Michael I. Gordon and William Thies and Saman
+                Amarasinghe},
+  journal   = ASPLOS,
+  month     = OCT,
+  year      = {2006},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Tilera Processors
+%-------------------------------------------------------------------------
+
+@article{wentzlaff-tilera-ocn-ieeemicro2007,
+  title     = {On-Chip Interconnection Architecture of the Tile
+                Processor},
+  author    = {David Wentzlaff and Patrick Griffin and Henry Hoffman and
+                Liewei Bao and Bruce Edwards and Carl Ramey and Matthew
+                Mattina and Chyi-Chang Miao and John F. Brown III and
+                Anant Agarwal},
+  journal   = IEEEMICRO,
+  month     = SEP/OCT,
+  year      = {2007},
+  volume    = {27},
+  issue     = {5},
+  pages     = {15--31},
+}
+
+@article{bell-tilera-tile64-isscc2008,
+  title     = {TILE64 Processor: A 64-Core SoC with Mesh Interconnect},
+  author    = {Shane Bell and Bruce Edwards and John Amann and Rich
+                Conlin and Kevin Joyce and Vince Leung and John MacKay
+                and Mike Reif and Liewei Bao and John Brown and Matthew
+                Mattina and Chyi-Chang Miao and Carl Ramey and Dave
+                Wentzlaff and Walker Anderson and Ethan Berger and Nat
+                Fairbanks and Durlov Khan and Froilan Montenegro and Jay
+                Stickney and John Zook},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2008},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Scale VT Processor
+%-------------------------------------------------------------------------
+
+@article{krashinsky-vt-isca2004,
+  title     = {The Vector-Thread Architecture},
+  author    = {Ronny Krashinsky and Christopher Batten and Mark Hampton
+                and Steve Gerding and Brian Pharris and Jared Casper and
+                Krste Asanovi\'{c}},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2004},
+}
+
+@article{krashinsky-vt-ieeemicro2004,
+  title     = {The Vector-Thread Architecture},
+  author    = {Ronny Krashinsky and Christopher Batten and Mark Hampton
+                and Steve Gerding and Brian Pharris and Jared Casper and
+                Krste Asanovi\'{c}},
+  journal   = IEEEMICRO,
+  month     = NOV/DEC,
+  year      = {2004},
+  volume    = {24},
+  number    = {6},
+  pages     = {84--90},
+}
+
+@article{krashinsky-scale-todaes2008,
+  title     = {Implementing the Scale Vector-Thread Processor},
+  author    = {Ronny Krashinsky and Christopher Batten and Krste
+                Asanovi\'{c}},
+  journal   = TODAES,
+  month     = JUL,
+  year      = {2008},
+  volume    = {13},
+  number    = {3},
+}
+
+@article{batten-vra-micro2004,
+  title     = {Cache Refill/Access Decoupling for Vector Machines},
+  author    = {Christopher Batten and Ronny Krashinsky and Steve Gerding
+                and Krste Asanovi\'{c}},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2004},
+}
+
+@phdthesis{krashinsky-scale-mitphd2007,
+  title     = {Vector-Thread Architecture and Implementation},
+  author    = {Ronny Krashinsky},
+  school    = {EECS Department, Massachusetts Institute of Technology},
+  year      = {2007},
+}
+
+@article{hampton-vtcompiler-cgo2008,
+  title     = {Compiling for Vector-Thread Architectures},
+  author    = {Mark Hampton and Krste Asanovi\'{c}},
+  journal   = CGO,
+  month     = APR,
+  year      = {2008},
+}
+
+@techreport{batten-csailtr2007,
+  title     = {Scale Control Processor Test-Chip},
+  author    = {Christopher Batten and Ronny Krashinsky and Krste
+                Asanovi\'{c}},
+  institution = {MIT Computer Science and Artificial Intelligence},
+  number    = {2007-003},
+  month     = JAN,
+  year      = {2007},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Maven VT Processor
+%-------------------------------------------------------------------------
+
+@article{batten-maven-wss2008,
+  title     = {The Case for Malleable Stream Architectures},
+  author    = {Christopher Batten and Hidetaka Aoki and Krste
+                Asanovi\'{c}},
+  journal   = {Workshop on Streaming Systems (WSS)},
+  month     = NOV,
+  year      = {2008},
+}
+
+@article{lee-maven-isca2011,
+  title     = {Exploring the Tradeoffs between Programmability and
+                Efficiency in Data-Parallel Accelerator Cores},
+  author    = {Yunsup Lee and Rimas Avizienis and Alex Bishara and
+                Richard Xia and Derek Lockhart and Christopher Batten and
+                Krste Asanovi\'{c}},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2011},
+}
+
+@article{lee-maven-tocs2012,
+  title     = {Exploring the Tradeoffs between Programmability and
+                Efficiency in Data-Parallel Accelerator Cores},
+  author    = {Yunsup Lee and Rimas Avizienis and Alex Bishara and
+                Richard Xia and Derek Lockhart and Christopher Batten and
+                Krste Asanovi\'{c}},
+  journal   = TOCS,
+  year      = {2012 (accepted with minor revision)},
+}
+
+@mastersthesis{lee-maven-ucbms2011,
+  title     = {{Efficient VLSI Implementations of Vector-Thread
+                Architectures}},
+  author    = {Yunsup Lee},
+  school    = {UC Berkeley},
+  year      = {2011},
+}
+
+@phdthesis{batten-maven-mitphd2010,
+  title     = {{Simplified Vector-Thread Architectures for Flexible and
+                Efficient Data-Parallel Accelerators}},
+  author    = {Christopher Batten},
+  school    = {MIT},
+  year      = {2010},
+}
+
+%-------------------------------------------------------------------------
+% SEC: FG-SIMT
+%-------------------------------------------------------------------------
+
+@article{kim-simt-vstruct-isca2013,
+  title     = {Microarchitectural Mechanisms to Exploit Value Structure
+                in Fine-Grain SIMT Architectures},
+  author    = {Ji Kim and Christopher Torng and Shreesha Srinath and
+                  Christopher Torng and Christopher Batten},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2013},
+}
+
+%-------------------------------------------------------------------------
+% SEC: NEC Processors
+%-------------------------------------------------------------------------
+
+@article{kitagawa-sx67-nec2003,
+  title     = {A Hardware Overview of SX-6 and SX-7 Supercomputer},
+  author    = {Kenji Kitagawa and Satoru Tagaya and Yasuhiko Hagihara
+                and Yasushi Kanoh},
+  journal   = {NEC Research \& Development Journal},
+  month     = JAN,
+  year      = {2003},
+  volume    = {44},
+  number    = {1},
+  pages     = {2--7},
+}
+
+@article{tagaya-sx8-springer2006,
+  title     = {The NEC SX-8 Vector Supercomputer System},
+  author    = {Satoru Tagaya and Masato Nishida and Takashi Hagiwara and
+                Takashi Yanagawa and Yuji Yokoya and Hiroshi Takahara
+                and J\:{o}rg Stadler and Martin Galle and Wolfgang Bez},
+  journal   = {High Performance Computing on Vector Systems},
+  month     = MAY,
+  year      = 2006,
+}
+
+%-------------------------------------------------------------------------
+% SEC: Cray Processors
+%-------------------------------------------------------------------------
+
+@article{russell-cray1-cacm1978,
+  title     = {The Cray-1 Computer System},
+  author    = {Richard M. Russel},
+  journal   = {Communications of the ACM},
+  month     = JAN,
+  year      = {1978},
+  volume    = {21},
+  number    = {1},
+  pages     = {63--72},
+}
+
+@article{dunigan-crayx1-ieeemicro2005,
+  title     = {Performance Evaluation of the Cray X1 Distributed
+                Shared-Memory Architecture},
+  author    = {Thomas Dunigan and Jeffery Vetter and James White and
+                Patrick Worley},
+  journal   = IEEEMICRO,
+  month     = JAN/FEB,
+  year      = {2005},
+  volume    = {25},
+  number    = {1},
+  pages     = {30--40},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Connection Machines
+%-------------------------------------------------------------------------
+
+@article{tucker-cm1-computer1988,
+  title     = {Architecture and Applications of the Connection Machine},
+  author    = {Lewis T. Tucker and Goerge G. Robertson},
+  journal   = {Computer},
+  month     = AUG,
+  year      = {1988},
+  volume    = {21},
+  number    = {8},
+  pages     = {26--38},
+}
+
+%-------------------------------------------------------------------------
+% SEC: NVIDIA
+%-------------------------------------------------------------------------
+
+@article{keckler-nvidia-echelon-ieeemicro2011,
+  title     = {{GPUs} and the Future of Parallel Computing},
+  author    = {Stephen W. Keckler and William J. Dally and Brucek Khailany
+                and Michael Garland and David Glasco},
+  journal   = IEEEMICRO,
+  month     = SEP/OCT,
+  year      = {2011},
+  volume    = {31},
+  number    = {5},
+  pages     = {7--17},
+}
+
+@article{lindholm-nvidia-tesla-ieeemicro2008,
+  title     = {NVIDIA Tesla: A Unified Graphics and Computer
+                Architecture},
+  author    = {Erik Lindholm and John Nickolls and Stuart Oberman and
+                John Montrym},
+  journal   = IEEEMICRO,
+  month     = MAR/APR,
+  year      = {2008},
+  volume    = {28},
+  number    = {2},
+  pages     = {39--55},
+}
+
+@misc{nvidia-fermi-wpaper2009,
+  title     = {NVIDIA's Next Gen CUDA Compute Architecture: Fermi},
+  key       = {nvidia},
+  howpublished = {NVIDIA White Paper},
+  note      = {\\\url{http://www.nvidia.com/content/pdf/fermi_white_papers/nvidia_fermi_compute_architecture_whitepaper.pdf}},
+  year      = {2009},
+}
+
+@misc{patterson-nvidia-fermi-wpaper2009,
+  author    = {David Patterson},
+  title     = {Top 10 Innovations in the New NVIDIA Fermi Architecture,
+                and the Top 3 Next Challenges},
+  howpublished = {NVIDIA White Paper},
+  note      = {\\\url{http://www.nvidia.com/content/PDF/fermi_white_papers/D.Patterson_Top10InnovationsInNVIDIAFermi.pdf}},
+  year      = {2009},
+}
+
+@article{wittenbrink-nvidia-fermi-ieeemicro2011,
+  title     = {Fermi GF100 GPU Architecture},
+  author    = {Craig M. Wittenbrink and Emmett Kilgariff and Arjun
+                Prabhu},
+  journal   = IEEEMICRO,
+  month     = MAR/APR,
+  year      = {2011},
+  volume    = {31},
+  number    = {2},
+  pages     = {50--59},
+}
+
+@misc{nvidia-tegra2-wpaper2011,
+  title     = {Bringing High-End Graphics to Handheld Devices},
+  key       = {nvidia},
+  howpublished = {NVIDIA White Paper},
+  note      = {\\\url{http://www.nvidia.com/content/PDF/tegra_white_papers/}
+               \\\url{Bringing_High-End_Graphics_to_Handheld_Devices.pdf}},
+  year      = {2011},
+}
+
+@misc{nvidia-tegra2-wpaper2010,
+  key       = {nvidia},
+  title     = {The Benefits of Multiple CPU Cores in Mobile Devices},
+  howpublished = {NVIDIA White Paper},
+  note      = {\\\url{http://www.nvidia.com/content/PDF/tegra_white_papers/Benefits-of-Multi-core-}
+              \url{CPUs-in-Mobile-Devices_Ver1.2.pdf}},
+  year      = {2010},
+}
+
+%-------------------------------------------------------------------------
+% SEC: AMD/ATI
+%-------------------------------------------------------------------------
+
+@article{branover-amd-llano-ieeemicro2012,
+  title     = {{AMD} Fusion {APU}: {Llano}},
+  author    = {Alexandar Branover and Denis Foley and Maurice Steinman},
+  journal   = IEEEMICRO,
+  month     = MAR/APR,
+  year      = {2012},
+  volume    = {32},
+  number    = {2},
+  pages     = {28--37},
+}
+
+@misc{ati-ctm-manual2006,
+  title     = {ATI CTM Guide},
+  key       = {ati},
+  howpublished = {AMD/ATI Techincal Reference Manual},
+  note      = {\\\url{http://ati.amd.com/companyinfo/researcher/documents/ATI_CTM_Guide.pdf}},
+  year      = {2006},
+}
+
+@misc{amd-fusion-wpaper2008,
+  title     = {Fusion: Industry-Changing Impact of Accelerated
+                Computing},
+  key       = {amd},
+  howpublished = {AMD White Paper},
+  note      = {\\\url{http://sites.amd.com/us/documents/amd_fusion_whitepaper.pdf}},
+  year      = {2008},
+}
+
+@misc{ati-r700-manual2009,
+  title     = {R700-Family Instruction Set Architecture},
+  key       = {ati},
+  howpublished = {AMD/ATI Techincal Reference Manual},
+  note      = {\\\url{http://developer.amd.com/gpu_assets/R700-family_instruction_set_architecture.pdf}},
+  year      = {2009},
+}
+
+@misc{amd-hd6900-manual2012,
+  title     = {{HD} 6900 Series Instruction Set Architecture, Rev 1.1},
+  key       = {amd},
+  howpublished = {AMD Reference Guide},
+  month     = NOV,
+  year      = {2011},
+}
+
+@article{howes-amd-gcn-ogpuw2012,
+  title     = {Making {GPGPU} Easier with OpenCL C++ and a Flexible
+                Architecture},
+  author    = {Lee Howes and Ben Gaster},
+  journal   = OGPUW,
+  month     = JAN,
+  year      = {2012},
+}
+
+@misc{amd-gcn-wpaper2012,
+  title     = {AMD Graphics Cores Next Architecture},
+  key       = {amd},
+  howpublished = {AMD White Paper},
+  note      = {\\\url{http://www.amd.com/us/Documents/GCN_Architecture_whitepaper.pdf}},
+  year      = {2012},
+}
+
+%-------------------------------------------------------------------------
+% SEC: T0 Vector Processor
+%-------------------------------------------------------------------------
+
+@article{wawrzynek-spert2-ieeecomputer1996,
+  title     = {Spert-II: A Vector Microprocessor System},
+  author    = {John Wawrzynek and Krste Asanovi\'{c} and Brian Kingsbury
+                and David Johnson and James Beck and Nelson Morgan},
+  journal   = COMPUTER,
+  month     = MAR,
+  year      = {1996},
+  volume    = {29},
+  number    = {3},
+  pages     = {79--86},
+}
+
+@phdthesis{asanovic-t0-ucbphd1998,
+  title     = {Vector Microprocessors},
+  author    = {Krste Asanovi\'{c}},
+  school    = {EECS Department, University of California, Berkeley},
+  year      = {1998},
+}
+
+
+@techreport{asanovic-torrent-ucbtr1996,
+  title     = {Torrent Architecture Manual},
+  author    = {Krste Asanovi\'{c}},
+  institution = {EECS Department, University of California, Berkeley},
+  month     = DEC,
+  year      = {1996},
+}
+
+%-------------------------------------------------------------------------
+% SEC: CDC
+%-------------------------------------------------------------------------
+
+@article{lincoln-cyber205-toc1982,
+  title     = {Technology and Design Tradeoffs in the Creation of a
+                Modern Supercomputer},
+  author    = {Neil Lincoln},
+  journal   = TOC,
+  month     = MAY,
+  year      = {1982},
+  volume    = {C-31},
+  number    = {5},
+  pages     = {349--362},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Stream Processors
+%-------------------------------------------------------------------------
+
+@article{rixner-imagine-micro1998,
+  title     = {A Bandwidth-Efficient Architecture for Media Processing},
+  author    = {Scott Rixner and William J. Dally and Ujval J. Kapasi and
+                Brucek Khailany and Abelardo L\'{o}pez-Lagunas and Peter
+                R. Mattson and John D. Owens},
+  journal   = MICRO,
+  month     = NOV,
+  year      = {1998},
+}
+
+@article{dally-merrimac-sc2003,
+  title     = {Merrimac: Supercomputing with Streams},
+  author    = {William J. Dally and Francois Labonte and Abhishek Das and
+                Patrick Hanrahan and Jung-Ho Ahn and Jayanth Gummaraju and
+                Mattan Erez and Nuwan Jayasena and Ian Buck and Timothy J.
+                Knight and Ujval J. Kapasi},
+  journal   = SC,
+  month     = NOV,
+  year      = {2003},
+}
+
+@article{khailany-storm1-jssc2008,
+  title     = {A Programmable \wu{512}{GOPS} Stream Processor for
+                Signal, Image, and Video Processing},
+  author    = {Brucek K. Khailany and Ted Williams and Jim Lin and Mark
+                Rygh and DeForest W. Tovey and William J. Dally},
+  journal   = JSSC,
+  month     = JAN,
+  year      = {2008},
+  volume    = {43},
+  number    = {1},
+  pages     = {202-213},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Elm
+%-------------------------------------------------------------------------
+
+@article{dally-elm-computer2008,
+  title     = {Efficient Embedded Computing},
+  author    = {William J. Dally and James Balfour and David Black-Shaffer
+                and James Chen and R. Curtis Harting and Vishal Parikh
+                and Jongsoo Park and David Sheffield},
+  journal   = COMPUTER,
+  month     = JUL,
+  year      = {2008},
+  volume    = {47},
+  number    = {7},
+  pages     = {27--32},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Rigel
+%-------------------------------------------------------------------------
+
+@article{kelm-rigel-isca2009,
+  title     = {Rigel: An Architecture and Scalable Programming Interface
+                for a 1000-core Accelerator},
+  author    = {John H. Kelm and Daniel R. Johnson and Matthew R. Johnson
+                and Neal C. Crago and William Tuohy and Aqeel Mahesri
+                and Steven S. Lumetta and Matthew I. Frank and Sanjay J.
+                Patel},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2009},
+}
+
+@article{kelm-rigel-prog-pact2009,
+  title     = {A Task-Centric Memory Model for Scalable Accelerator
+                Architectures},
+  author    = {John H. Kelm and Daniel R. Johnson and Steven S. Lumetta
+                and Matthew I. Frank and and Sanjay J. Patel},
+  journal   = PACT,
+  month     = SEP,
+  year      = {2009},
+}
+
+%-------------------------------------------------------------------------
+% SEC: VIRAM
+%-------------------------------------------------------------------------
+
+@article{kozyrakis-viram-ieeemicro2003,
+  title     = {Scalable Vector Processors for Embedded Systems},
+  author    = {Christoforos Kozyrakis and David Patterson},
+  journal   = IEEEMICRO,
+  month     = NOV,
+  year      = {2003},
+  volume    = {23},
+  number    = {6},
+  pages     = {36--45},
+}
+
+@phdthesis{kozyrakis-viram-ucbphd2002,
+  title     = {Overcoming the Limitations of Conventional Vector
+                Processors},
+  author    = {Christoforos Kozyrakis},
+  school    = {EECS Department, University of California, Berkeley},
+  year      = {2002},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Trips
+%-------------------------------------------------------------------------
+
+@article{burger-trips-computer2004,
+  title     = {Scaling to the End of Silicon with EDGE Architectures},
+  author    = {Doug Burger and Stephen W. Keckler and Kathryn S.
+                McKinley and Mike Dahlin and Lizy K. John and Calvin Lin
+                and Charles R> Moore and James Burrill and Robert G.
+                McDonald and William Yonder},
+  journal   = {IEEE Computer},
+  month     = JUL,
+  year      = {2004},
+  volume    = {37},
+  number    = {7},
+  pages     = {44--55},
+}
+
+@article{sankaralingam-trips-isca2003,
+  title     = {Exploiting ILP, TLP, and DLP with the Polymorphous TRIPS
+                Architecture},
+  author    = {Karthikeyan Sankaralingam and Ramadass Nagarajan and
+                Haiming Liu and Changkyu Kim and Jaehyuk Huh and Doug
+                Burger and Stephen W. Keckler and Charles R. Moore},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2003},
+}
+
+@article{sankaralingam-tripsdlp-micro2003,
+  title     = {Universal Mechanisms for Data-Parallel Architectures},
+  author    = {Karthikeyan Sankaralingam and Stephen W. Keckler and
+                William R. Mark and Doug Burger},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2003},
+}
+
+%-------------------------------------------------------------------------
+% SEC: DLP Mechanisms
+%-------------------------------------------------------------------------
+
+@article{vajapeyam-dynamic-vec-isca1999,
+  title     = {Dynamic Vectorization: A Mechanism for Exploiting
+                Far-Flung ILP in Ordinary Programs},
+  author    = {Sriram Vajapeyam and P.J. Joseph and Tulika Mitra},
+  journal   = ISCA,
+  month     = MAY,
+  year      = {1999},
+}
+
+@article{jouppi-unified-vecscalar-asplos1989,
+  title     = {A Unified Vector/Scalar Floating-Point Architecture},
+  author    = {Norman P. Jouppi and Jonathan Bertoni and David W. Wall},
+  journal   = ASPLOS,
+  month     = APR,
+  year      = {1989},
+}
+
+@article{jesshope-mtpipes-acsac2001,
+  title     = {Implementing an Efficient Vector Instruction Set in a
+                Chip Multiprocessor Using Micro-Threaded Pipelines},
+  author    = {Chris Jesshope},
+  journal   = {Australia Computer Science Communications},
+  year      = {2001},
+  volume    = {23},
+  number    = {4},
+  pages     = {80--88},
+}
+
+@article{mahesri-simd-mimd-micro2008,
+  title     = {Tradeoffs in Designing Accelerator Architectures for
+                Visual Computing},
+  author    = {Aqeel Mahesri and Daniel Johnson and Neal Crago and
+                Sanjay J. Patel},
+  journal   = MICRO,
+  month     = NOV,
+  year      = {2008},
+}
+
+@article{woo-heteromcore-computer2008,
+  title     = {Extending Amdahl's Law for Energy-Efficient Computing in
+                the Many-Core Era},
+  author    = {Dong Hyuk Woo and Hsien-Hsin S. Lee},
+  journal   = {IEEE Computer},
+  month     = DEC,
+  year      = {2008},
+  volume    = {41},
+  number    = {12},
+  pages     = {24--31},
+}
+
+@article{espasa-mt-vec-ics1997,
+  title     = {Multithreaded Vector Architectures},
+  author    = {Roger Espasa and Mateo Valero},
+  journal   = ICS,
+  month     = JUL,
+  year      = {1997},
+}
+
+@article{espasa-ooo-vec-micro1997,
+  title     = {Out-of-Order Vector Architectures},
+  author    = {Roger Espasa and Mateo Valero and James E. Smith},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {1997},
+}
+
+@article{espasa-superscalar-vec-ics1999,
+  title     = {Adding a Vector Unit to a Superscalar Processor},
+  author    = {Francisca Quintana and Jesus Corbal and Roger Espasa and
+                Mateo Valero},
+  journal   = ICS,
+  month     = JUN,
+  year      = {1999},
+}
+
+@article{rivoire-vlane-threading-icpp2006,
+  title     = {Vector Lane Threading},
+  author    = {Suzanne Rivoire and Rebecca Schultz and Tomofumi Okuda
+                and Christos Kozyrakis},
+  journal   = ICPP,
+  month     = AUG,
+  year      = {2006},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Subword SIMD
+%-------------------------------------------------------------------------
+
+@article{frankovich-tx2-wjcc1957,
+  title     = {A Functional Description of the {Lincoln} {TX-2} Computer},
+  author    = {J.M. Frankovich and H.P. Peterson},
+  journal   = WJCC,
+  month     = FEB,
+  year      = {1957},
+}
+
+@techreport{slingerland-simd-survey-ucbtr2000,
+  title     = {Multimedia Instruction Sets for General Purpose
+                Microprocessors: A Survey},
+  author    = {Nathan Slingerland and Alan Jay Smith},
+  institution = {EECS Department, University of California, Berkeley},
+  month     = DEC,
+  year      = {2000},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Japanese Vector Machines
+%-------------------------------------------------------------------------
+
+@article{oyanagi-japanese-vector-pc1999,
+  title     = {Development of Supercomputers in Japan: Hardware and
+                Software},
+  author    = {Yoshio Oyanagi},
+  journal   = {Parallel Computing},
+  month     = DEC,
+  year      = {1999},
+  volume    = {25},
+  number    = {13--14},
+  pages     = {1545-1567},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Fine-Grain Parallelism
+%-------------------------------------------------------------------------
+
+@article{kumar-carbon-isca2007,
+  title     = {Carbon: Architectural Support for Fine-Grained Parallelism
+                on Chip Multiprocessors},
+  author    = {Sanjeev Kumar and Christopher J. Hughes and Anothony
+                Nguyen},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2007},
+}
+
+@article{sanchez-adm-asplos2010,
+  title     = {Flexible Architectural Support for Fine-Grain Scheduling},
+  author    = {Daniel Sanchez and Richard M. Yoo and Christos Kozyrakis},
+  journal   = ASPLOS,
+  month     = MAR,
+  year      = {2010},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Asymmetric Scheduling
+%-------------------------------------------------------------------------
+
+@article{sawalha-phase-thread-migration-pact2012,
+  title     = {Phase-Based Scheduling and Thread Migration for
+                Heterogneous Multicore Processors},
+  author    = {Lina Sawalha and Ronald D. Barnes},
+  journal   = PACT,
+  month     = SEP,
+  year      = {2012},
+}
+
+@article{craeynest-pie-isca2012,
+  title     = {Scheduling Heterogeneous Multi-Cores Through Performance
+                Impact Estimation (PIE)},
+  author    = {Kenzo Van Craeynest and Aamer Jaleel and Lieven Eeckhout
+                and Paolo Narvaez and Joel Emer},
+  journal   = CAL,
+  month     = JUN,
+  year      = {2012},
+  volume    = {40},
+  number    = {3},
+}
+
+@article{morad-asym-scheduling-cal2006,
+  title     = {Performance, Power Efficiency and Scalability of
+                Asymmetric Cluster Chip Multiprocessors},
+  author    = {Tomer Y. Morad and Uri C. Weiser and Avinoam Kolodny and
+                Mateo Valero and Eduard Ayguade},
+  journal   = CAL,
+  month     = JAN,
+  year      = {2006},
+  volume    = {5},
+  number    = {1},
+}
+
+@article{morad-asym-scheduling-paap2010,
+  title     = {Scheduling Multiple Multithreaded Applications on
+                Asymmetric and Symmetric Chip Multiprocessors},
+  author    = {T.Y Morad and A. Kolodny and U.C. Weiser},
+  journal   = PAAP,
+  month     = DEC,
+  year      = {2010},
+}
+
+@article{joao-bis-pact2008,
+  title     = {Bottleneck Identification and Scheduling in Multi-Threaded
+                Applications},
+  author    = {Jos\'{e} A. Joao and M. Aater Suleman and Onur Mutlu and
+                Yale N. Patt},
+  journal   = ASPLOS,
+  month     = MAR,
+  year      = {2012},
+}
+
+@article{lakshminarayana-agets-sc2009,
+  title     = {Age-Based Scheduling for Asymmetric Multiprocessors},
+  author    = {Nagesh B. Lakshminarayana and Jaekyu Lee and Hyesoon Kim},
+  journal   = SC,
+  month     = NOV,
+  year      = {2009},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Vector Stuff
+%-------------------------------------------------------------------------
+
+@article{corbal-command-vector-mem-pact1998,
+  title     = {Command Vector Memory Systems: High Performance at Low
+                Cost},
+  author    = {Jesus Corbal and Roger Espasa and Mateo Valero},
+  journal   = PACT,
+  month     = OCT,
+  year      = {1998},
+}
+
+@article{espasa-vector-survey-ics1998,
+  title     = {Vector Architectures: Past, Present, and Future},
+  author    = {Roger Espasa and Mateo Valero and James E. Smith},
+  journal   = ICS,
+  month     = JUL,
+  year      = 1998,
+}
+
+@article{espasa-decoupled-vector-hpca1996,
+  title     = {Decoupled Vector Architectures},
+  author    = {Roger Espasa and Mateo Valero},
+  journal   = HPCA,
+  month     = FEB,
+  year      = {1996},
+}
+
+@article{zaha-vector-rsort-sc1991,
+  title     = {Radix Sort for Vector Multiprocessors},
+  author    = {Marco Zagha and Guy E. Blelloch},
+  journal   = SC,
+  year      = {1991},
+}
+
+@article{smith-cond-vector-isca2000,
+  title     = {Vector Instruction Set Support for Conditional
+                Operations},
+  author    = {James E. Smith and Greg Faanes and Rabin Sugumar},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2000},
+}
+
+@article{lemuet-vector-energy-sc2006,
+  title     = {The Potential Energy Efficiency of Vector Acceleration},
+  author    = {Christophe Lemuet and Jack Sampson and Jean Francios and
+                Norm Jouppi},
+  journal   = SC,
+  month     = NOV,
+  year      = {2006},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Parallel Programming
+%-------------------------------------------------------------------------
+
+@book{mattson-ppp-book2005,
+  title     = {Patterns for Parallel Programming},
+  author    = {Timothy Mattson and Beverly Sanders and Berna
+                Massingill},
+  publisher = {Addison-Wesley},
+  year      = {2005},
+}
+
+@article{valiant-bsp-cacm1990,
+  title     = {A Bridging Model for Parallel Computation},
+  author    = {Leslie G. Valiant},
+  journal   = CACM,
+  month     = AUG,
+  year      = {1990},
+  volume    = {33},
+  number    = {8},
+  pages     = {103--111},
+}
+
+@article{klemm-intel-abb-sctutorial2010,
+  title     = {Intel Array Building Blocks, Tutorial},
+  author    = {Michael Klemm and Michael McCool},
+  journal   = SC,
+  month     = NOV,
+  year      = {2010},
+  note      = {\\\url{http://software.intel.com/en-us/articles/sc10-tutorial-intel-arbb}},
+}
+
+@book{reinders-tbb-book2007,
+  title     = {Intel Threading Building Blocks: Outfitting C++ for
+                Multi-core Processor Parallelism},
+  author    = {James Reinders},
+  publisher = {O'Reilly},
+  year      = {2007},
+}
+
+@misc{cilk-spec2010,
+  title     = {Intel Cilk Plus Language Specification},
+  key       = {intel},
+  howpublished = {Intel Reference Manual},
+  note      = {\\\url{http://software.intel.com/sites/products/cilk-plus/cilk_plus_language_specification.pdf}},
+  year      = {2010},
+}
+
+@misc{microsoft-amp-blog2011,
+  title     = {Targeting Heterogeneity with C++ AMP and PPL},
+  author    = {S. Somasegar},
+  howpublished = {MSDN Blog},
+  month     = JUN,
+  year      = {2011},
+  note      = {\\\url{http://blogs.msdn.com/b/somasegar/archive/2011/06/15/targeting-heterogeneity-with-}
+               \url{c-amp-and-ppl.aspx}},
+}
+
+@misc{openmp3-spec2008,
+  title     = {OpenMP Application Program Interface},
+  key       = {openmp},
+  howpublished = {OpenMP Architecture Review Board},
+  note      = {\\\url{http://www.openmp.org/mp-documents/spec30.pdf}},
+  year      = {2008},
+}
+
+@misc{opencl1-spec2011,
+  title     = {OpenCL Specification, v1.2},
+  key       = {opencl},
+  howpublished = {Khronos Working Group},
+  note      = {\\\url{http://www.khronos.org/registry/cl/specs/opencl-1.2.pdf}},
+  year      = {2011},
+}
+
+@article{diamos-ocelot-pact2010,
+  title     = {Ocelot: {A} Dynamic Compiler for Bulk-Synchronous
+                Applications in Heterogenous Systems},
+  author    = {Gregory Diamos and Andrew Kerr and Sudhakar Yalamanchili
+                and Nathan Clark},
+  journal   = PACT,
+  month     = SEP,
+  year      = {2010},
+}
+
+@article{kerr-cuda2ssimd-cgo2012,
+  title     = {Dynamic Compilation of Data-Parallel Kernels for Vector
+                Processors},
+  author    = {Andrew Kerr and Gregory Diamos and Sudhakar Yalamanchili},
+  journal   = CGO,
+  month     = APR,
+  year      = {2012},
+}
+
+@misc{intel-opencl-sdk-manual2012,
+  title     = {Intel SDK for OpenCL Applications: Optimization Guide},
+  key       = {intel},
+  howpublished = {Intel Reference Manual},
+  year      = {2012},
+  note      = {\\\url{http://software.intel.com/sites/landingpage/opencl/optimization-guide}},
+}
+
+@article{stratton-cuda2mcore-cgo2010,
+  title     = {Efficient Compilation of Fine-Grained {SPMD}-Threaded
+                Programs for Multicore {CPUs}},
+  author    = {John A. Stratton and Vinod Grover and Jaydeep Marathe and
+                Bastiaan Aarts and Mike Murphy and Ziang Hu and Zhiang Hu
+                and Wen-Mei W. Hwu},
+  journal   = CGO,
+  month     = APR,
+  year      = {2010},
+}
+
+@article{nickolls-cuda-queue2008,
+  title     = {Scalable Parallel Programming with CUDA},
+  author    = {John Nickolls and Ian Buck and Michael Garland and Kevin
+                Skadron},
+  journal   = {ACM Queue},
+  month     = MAR/APR,
+  year      = {2008},
+  volume    = {6},
+  number    = {2},
+  pages     = {40--53},
+}
+
+@misc{msoft-directcompute-wpaper2009,
+  title     = {Graphics Guide for Windows 7: A Guide for Hardware and
+                System Manufacturers},
+  key       = {Microsoft},
+  howpublished = {Microsoft White Paper},
+  note      = {\\\url{http://www.microsoft.com/whdc/device/display/graphicsguidewin7.mspx}},
+  year      = {2009},
+}
+
+@article{buck-brook-tog2004,
+  title     = {Brook for GPUs: Stream Computing on Graphics Hardware},
+  author    = {Ian Buck and Tim Foley and Daniel Horn and Jeremy
+                Sugerman and Kayvon Fatahalian and Mike Houston and Pat
+                Hanrahan},
+  journal   = TOG,
+  month     = AUG,
+  year      = {2004},
+  volume    = {23},
+  number    = {3},
+  pages     = {777-786},
+}
+
+@article{rhu-capri-isca2012,
+  title     = {CAPRI: Prediction of Compaction-Adequacy for
+               Handling Control-Divergence in GPGPU Architectures},
+  author    = {Minsoo Rhu and Mattan Erez},
+  journal   = ISCA,
+  month     = JUNE,
+  year      = {2012},
+}
+
+@article{gebhart-efficient-thread-simt-isca2011,
+  title     = {Energy-Efficient Mechanisms for Managing Thread Context in
+                Throughput Processors},
+  author    = {M. Gebhart and D. Johnson and D. Tarjan and
+               S. Keckler and W. Dally and E. Lindholm and K. Skadron},
+  journal   = ISCA,
+  month     = JUNE,
+  year      = {2011},
+}
+
+@article{targan-miss-tolerance-simd-sc2009,
+  title     = {Increasing memory miss tolerance for SIMD cores},
+  author    = {D. Tarjan and J. Meng and and K. Skadron},
+  journal   = SC,
+  month     = AUG,
+  year      = {2009},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Autotuning
+%-------------------------------------------------------------------------
+
+@phdthesis{williams-autotuning-ucbphd2008,
+  title     = {Auto-tuning Performance on Multicore Computers},
+  author    = {Samuel Williams},
+  school    = {EECS Department, University of California, Berkeley},
+  year      = {2008},
+}
+
+@article{whaley-atlas-sc1998,
+  title     = {Automatically Tuned Linear Algebra Software},
+  author    = {C. Whaley and J. Dongarra},
+  journal   = SC,
+  month     = NOV,
+  year      = {1998},
+}
+
+@article{frigo-fftw-ieee2005,
+  title     = {The Design and Implementation of FFTW3},
+  author    = {Matteo Frigo and Steven G. Johnson},
+  journal   = PROCIEEE,
+  month     = FEB,
+  year      = {2005},
+  volume    = {93},
+  number    = {2},
+  pages     = {216--231},
+}
+
+@article{datta-autotune-stencils-SC2008,
+  title     = {Stencil Computation Pptimization and Auto-Tuning on
+                State-of-the-Art Multicore Architectures},
+  author    = {K. Datta and M. Murphy and V. Volkov and S. Williams and
+                J. Carter and L. Oliker and D. Patterson and J. Shalf and
+                K. Yelick},
+  journal   = SC,
+  month     = NOV,
+  year      = {2008},
+}
+
+%-------------------------------------------------------------------------
+% SEC: SIMT Mechanisms
+%-------------------------------------------------------------------------
+
+@article{fung-warp-compaction-hpca2011,
+  title     = {Thread Block Compaction for Efficient SIMT Control Flow},
+  author    = {Wilson W.L. Fung and Tor M. Aamodt},
+  journal   = HPCA,
+  month     = FEB,
+  year      = {2011},
+}
+
+@article{diamos-simt-thread-frontiers-micro2011,
+  title     = {{SIMD} Re-Convergence at Thread Frontiers},
+  author    = {Gregory Diamos and Benjamin Ashbaugh and Subramaniam
+                Maiyuran and Andrew Keer and Haicheng Wu and Sudhakar
+                Yalamanchili},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2011},
+}
+
+@article{fung-dynamic-warp-taco2009,
+  title     = {Dynamic Warp Formation: Efficient MIMD Control Flow on
+                SIMD Graphics Hardware},
+  author    = {Wilson W.L. Fung and Ivan Sham and George Yuan and Tor M.
+                Aamodt},
+  journal   = TACO,
+  month     = JUN,
+  year      = {2009},
+  volume    = {6},
+  number    = {2},
+  pages     = {1--35},
+}
+
+@article{steffen-simt-ukernels-micro2010,
+  title     = {Improving SIMT Efficiency of Global Rendering Algorithms
+                with Architectural Support for Dynamic Micro-Kernels},
+  author    = {Michael Steffen and Joseph Zambreno},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2010},
+}
+
+@article{lee-gpgpu-prefetching-micro2010,
+  title     = {Many-Thread Aware Prefetching Mechanisms for GPGPU
+                Applications},
+  author    = {Jaekyu Lee and Nagesh B. Lakshminarayana and Hyesoon Kim
+                and Richard Vuduc},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2010},
+}
+
+@article{meng-warp-subdivision-isca2010,
+  title     = {Dynamic Warp Subdivision for Integrated Branch and Memory
+                Divergence Tolerance},
+  author    = {Jiayuan Meng and David Tarjan and Kevin Skadron},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2010},
+}
+
+@article{gilani-pwr-efficient-simt-pact2012,
+  title     = {Power-Efficient Computing for Compute-Intensive GPGPU
+                Applications},
+  author    = {S.~Z. Gilani and N.~S. Kim and M. Schulte},
+  journal   = PACT,
+  month     = SEP,
+  year      = {2012},
+}
+
+@article{collange-uniform-affine-gpu-hppc2009,
+  title     = {Dynamic Detection of Uniform and Affine Vectors in GPGPU
+                Computations},
+  author    = {Sylvain Collange and David Defour and Yao Zhang},
+  journal   = HPPC,
+  month     = AUG,
+  year      = {2009},
+}
+
+@techreport{collange-simt-stackless-reconvergence-haltr2011,
+  title     = {Stack-less SIMT Reconvergence at Low Cost},
+  author    = {Sylvian Collange},
+  institution = {ARENAIRE},
+  number    = {HAL-00622654},
+  month     = SEPT,
+  year      = {2011},
+}
+
+@techreport{collange-affine-vector-cache-haltr2011,
+  title     = {Affine Vector Cache for Memory Bandwidth Savings},
+  author    = {Sylvian Collange and Alexandre Kouyoumdjian},
+  institution = {ENSL},
+  number    = {ENSL-00622654},
+  month     = DEC,
+  year      = {2011},
+}
+
+@techreport{collange-scalarizing-compiler-haltr2011,
+  title     = {Identifying Scalar Behavior in CUDA Kernels},
+  author    = {Sylvian Collange},
+  institution = {ARENAIRE},
+  number    = {HAL-00622654},
+  month     = JAN,
+  year      = {2011},
+}
+
+@techreport{sampaio-divergence-analysis-haltr2011,
+  title     = {Divergence Analysis with Affine Constraints},
+  author    = {D. Sampaio and R. Martins and F. Pereira and S. Collange},
+  institution = {ARENAIRE},
+  number    = {HAL-00650235},
+  month     = DEC,
+  year      = {2011},
+}
+
+@article{coutinho-divergence-analysis-pact2011,
+  title     = {Divergence Analysis and Optimizations},
+  author    = {B. Coutinho and D. Sampaio and F. Pereira and W. Meira Jr.},
+  journal   = PACT,
+  month     = OCT,
+  year      = {2011},
+}
+
+@article{long-minimal-multithreading-micro2010,
+  title     = {Minimal Multi-Threading: Finding and Removing
+               Redundant Instructions in Multi-Threaded Processors},
+  author    = {G. Long and D. Franklin and S. Biswas and P. Ortiz
+               and J. Oberg and D. Fan and F. T. Chong},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2010},
+}
+
+@misc{coon-nvidia-reconvergence-patent2008,
+  title     = {System and Method for Managing Divergent Threads in a SIMD
+                Architecture},
+  author    = {Brett W. Coon and John Erik Lindholm},
+  howpublished = {US Patent 7353369},
+  month     = APR,
+  year      = {2008},
+}
+
+%-------------------------------------------------------------------------
+% SEC: GPGPU
+%-------------------------------------------------------------------------
+
+@article{che-rodina-iiswc2009,
+  title     = {Rodinia: A Benchmark Suite for Heterogeneous Computing},
+  author    = {S. Che and M. Boyer and J. Meng and D. Tarjan and J. W.
+                Sheaffer and S.-H. Lee and and K. Skadron},
+  journal   = IISWC,
+  month     = OCT,
+  year      = {2009},
+}
+
+@article{bakhoda-gpgpusim-ispass2009,
+  title     = {Analyzing CUDA Workloads Using a Detailed GPU Simulator},
+  author    = {Ali Bakhoda and George L. Yuan and Wilson W.~L. Func and
+                Henry Wond and Tor M. Aamodt},
+  journal   = ISPASS,
+  month     = APR,
+  year      = {2009},
+}
+
+@article{bakhoda-dpa-ocn-pact2010,
+  title     = {On-Chip Network Design Considerations for Compute
+                Accelerators},
+  author    = {Ali Bakhoda and John Kim and Tor M. Aamodt},
+  journal   = PACT,
+  month     = SEP,
+  year      = {2010},
+}
+
+@article{bakhoda-dpa-ocn-micro2010,
+  title     = {Througput-Effective On-Chip Networks for Manycore
+                Accelerators},
+  author    = {Ali Bakhoda and John Kim and Tor M. Aamodt},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2010},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Thermal Modeling
+%-------------------------------------------------------------------------
+
+@article{skadron-hotspot-isca2003,
+  title     = {Temperature-Aware Microarchitecture},
+  author    = {K. Skandron and M.~R. Stan and W. Huang and S. Velusamy and
+                K. Sankarananarayanan and D. Tarjan},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2003},
+}
+
+@article{mesamartinez-thermal-measurement-isca2007,
+  title     = {Power Model Validation Through Thermal Measurements},
+  author    = {F.~J. Mesa-Martinez and J. Nayfach-Battilana and J. Renau},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2007},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Specialization
+%-------------------------------------------------------------------------
+
+@misc{arc-web,
+  key       = {arc},
+  title     = {DesignWare ARC Processor Cores},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.synopsys.com/IP/ProcessorIP/ARCProcessors}},
+  year      = {2012 (accessed Jan, 2012)},
+}
+
+@article{yehia-specialization-hpca2009,
+  author    = {S. Yehia and S. Girbal and H. Berry and O. Teman},
+  title     = {Reconciling Specialization and Flexibility Through
+                Compound Circuits},
+  journal   = HPCA,
+  month     = FEB,
+  year      = {2009},
+}
+
+@article{fan-custom-loop-accel-hpca2009,
+  author    = {K. Fan and M. Kudlur and G. Dasika and S. Mahlke},
+  title     = {Bridge the Computation Gap Between Programmable Processors
+                and Hardware Accelerators},
+  journal   = HPCA,
+  month     = FEB,
+  year      = {2009},
+}
+
+@article{wang-tensilica-dac2001,
+  title     = {Hardware/Software Instruction Set Configurability for
+                System-on-Chip Processors},
+  author    = {A. Wang and E. Killian and D. Maydan and C. Rowen},
+  journal   = DAC,
+  month     = JUN,
+  year      = {2001},
+}
+
+@article{venkatesh-c-cores-asplos2010,
+  title     = {Conservation Cores: Reducing the Energy of Mature
+                Computations},
+  author    = {Ganesh Venkatesh and Jack Sampson and Nathan Goulding and
+                Saturnino Garcia and Vladyslav Bryksin and Jose
+                Lugo-Martinez and Steven Swanson and Michael Bedford
+                Taylor},
+  journal   = ASPLOS,
+  month     = MAR,
+  year      = {2010},
+}
+
+@article{venkatesh-qs-cores-micro2011,
+  title     = {QsCores: Trading Dark Silicon for Scalable Energy
+                Efficiency with Quasi-Specific Cores},
+  author    = {Ganesh Venkatesh and John Sampson and Nathan Goulding and
+                Sravanthi Kota Venkata and Michael Bedford Taylor and
+                Steven Swanson},
+  journal   = MICRO,
+  year      = {2011},
+}
+
+@article{govindaraju-dyser-hpca2011,
+  title     = {Dynamically Specialized Datapaths for Energy-Efficient
+                Computing},
+  author    = {Venkatraman Govindaraju and Chen-Han Ho and Karthikeyan
+                Sankaralingam},
+  journal   = HPCA,
+  month     = FEB,
+  year      = {2011},
+}
+
+@article{govindaraju-dyser-ieeemicro2012,
+  title     = {DySER: Unifying Functionality and Parallelism
+                Specialization for Energy Efficient Computing},
+  author    = {Venkatraman Govindaraju and Chen-Han Ho and Tony Nowatzki
+                and Jatin Chhugani and Nadathur Satish and Karthikeyan
+                Sankaralingam and Changkyu Kim},
+  journal  = IEEEMICRO,
+  month    = SEP/OCT,
+  year     = {2012},
+  volume   = {33},
+  number   = {5},
+}
+
+@article{park-cgra-scheduling-cases2006,
+  title    = {Modulo Graph Embedding: Mapping Applications onto
+                Coarse-Grained Reconfigurable Architectures},
+  author   = {Hyunchul Park and Kevin Fan and Manjunath Kudlur and Scott
+                Mahlke},
+  journal  = CASES,
+  month    = OCT,
+  year     = {2006},
+}
+
+@article{taylor-dark-silicon-dac2012,
+  title     = {Is Dark Silicon Useful?},
+  author    = {Harnessing the Four Horsemen of the Coming Dark Silicon
+                Apocalypse},
+  journal   = DAC,
+  month     = JUN,
+  year      = {2012},
+}
+
+@article{esmaelizadeh-dark-silicon-isca2011,
+  title     = {Dark Silicon and the End of Multicore Scaling},
+  author    = {Hadi Esmaeilzadeh and Emily Blem and Renee St. Amant
+                and Karthikeyan Sankaralingam and Doug Burger},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2011},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Misc computer architecture
+%-------------------------------------------------------------------------
+
+@article{hameed-inefficiency-gpp-isca2010,
+  title     = {Understanding Sources of Inefficiency in General-Purpose
+                Chips},
+  author    = {Rehan Hameed and Wajahat Qadeer and Megan Wachs and Omid
+                Azizi and Alex Solomatnikov and Benjamin C. Lee and
+                Stephen Richardson and Christos Kozyrakis and Mark
+                Horowitz},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2010},
+}
+
+@article{sohi-multiscalar-isca1995,
+  title     = {Multiscalar Processors},
+  author    = {G.S. Sohi and S. Breach and T.N. Vijaykumar},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {1995},
+}
+
+@article{ipek-core-fusion-isca2007,
+  title     = {Core Fusion: Accommodating Software Diversity in Chip
+                Multiprocessors},
+  author    = {E. Ipek and M. Kirman and N. Kirman and J.F. Martinez},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2007},
+}
+
+@book{hennessy-comparch-book2007,
+  title     = {Computer Architecture: A Quantitative Approach},
+  author    = {John Hennessy and David Patterson},
+  publisher = {Morgan Kaufmann},
+  year      = {2007},
+  edition   = {4th},
+}
+
+@article{ungerer-mt-acmsurvey2003,
+  title     = {A Survey of Processors with Explicit Multithreading},
+  author    = {Theo Ungerer and Borut Robi\v{c} and Jurij \v{S}ilc},
+  journal   = {ACM Computing Surveys},
+  month     = MAR,
+  year      = {2003},
+  volume    = {35},
+  number    = {1},
+  pages     = {29--63},
+}
+
+@article{mahlke-predication-isca1995,
+  title     = {A Comparison of Full and Partial Predicated Execution
+                Support for ILP Processors},
+  author    = {Scott A. Mahlke and Richard E. Hank and James E.
+                McCormick and David I. August and Wen-Mei W. Hwu},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {1995},
+}
+
+@article{lim-mem-disaggregation-isca2009,
+  title     = {Disaggregated Memory for Expansion and Sharing in Blade
+                Servers},
+  author    = {K.~T. Lim and J. Chang and T.~N. Mudge and P.~Ranganathan
+                and S.~K. Reinhardt and T.~F. Wensich},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2009},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Voltage Scaling
+%-------------------------------------------------------------------------
+
+@article{gutnik-dvs-tvlsi1997,
+  title     = {Embedded Power Supply for Low-Power DSP},
+  author    = {Vadim Gutnik and Anantha P. Chandrakasan},
+  journal   = TVLSI,
+  month     = DEC,
+  year      = {1997},
+  volume    = {5},
+  number    = {4},
+  pages     = {425--435},
+}
+
+@article{donald-mcore-dvfs-isca2006,
+  title     = {Techniques for Multicore Thermal Management:
+                Classification and New Exploration},
+  author    = {James Donald and Margaret Martonosi},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2006},
+}
+
+@article{langen-leakage-dvfs-ipdps2006,
+  title     = {Leakage-Aware Multiprocessor Scheduling for Low Power},
+  author    = {Pepijn de Langen and Ben Juurlink},
+  journal   = IPDPS,
+  month     = APR,
+  year      = {2006},
+}
+
+@article{lee-mcore-dvfs-dac2009,
+  title     = {Optimizing Throughput of Power- and Thermal-Constrained
+                Multicore Processors using DVFS and Per-Core
+                Power-Gating},
+  author    = {Jungseob Lee and Nam Sung Kim},
+  journal   = DAC,
+  month     = JUL,
+  year      = {2009},
+}
+
+@article{zhai-udvfs-tvlsi2005,
+  title     = {The Limit of Dynamic Voltage Scaling and Insomniac
+                Dynamic Voltage Scaling},
+  author    = {Bo Zhai and David Blaauw and Dennis Sylvester and
+                Krisztian Flautner},
+  journal   = TVLSI,
+  month     = NOV,
+  year      = {2005},
+}
+
+@article{calhoun-udvfs-jssc2006,
+  title     = {Ultra-Dynamic Voltage Scaling Using Sub-Threshold
+                Operation and Local Voltage Dithering},
+  author    = {Benton H. Calhoun and Anantha Chandrakasan},
+  journal   = JSSC,
+  month     = JAN,
+  year      = {2006},
+  volume    = {41},
+  number    = {1},
+  pages     = {238--245},
+}
+
+@article{forestier-vdd-limits-icsd2000,
+  title     = {Limits to Voltage Scaling from the Low-Power
+                Perspective},
+  author    = {Arnaud Forestier and Mircea R. Stan},
+  journal   = ICSD,
+  month     = SEP,
+  year      = {2000},
+}
+
+@article{gonzalez-vdd-limits-jssc1997,
+  title     = {Supply and Threshold Voltage Scaling for Low-Power CMOS},
+  author    = {Ricardo Gonzalez and Benjamin M. Gordon and Mark A.
+                Horowitz},
+  journal   = JSSC,
+  month     = AUG,
+  year      = {1997},
+  volume    = {32},
+  number    = {8},
+  pages     = {1210--1216},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Specialization
+%-------------------------------------------------------------------------
+
+@article{leary-holistic-ocn-synthesis-codesisss2010,
+  title     = {A Holistic Approach to Network-on-Chip Synthesis},
+  author    = {Glenn Leary and Karam S. Chatha},
+  journal   = CODESISSS,
+  month     = OCT,
+  year      = {2010},
+}
+
+@article{chouliaras-systmc-custom-simd-icecs2006,
+  title     = {SystemC-Defined {SIMD} Instructions for High-Performance
+                {SoC} Architectures},
+  author    = {V.~A. Chouliaras and K. Koutsomyti and T. Jacobs and S.
+                Parr and D. Mulvaney and R. Thomson},
+  journal   = ICECS,
+  month     = DEC,
+  year      = {2006},
+}
+
+@article{cheema-customized-simd-icm2005,
+  title     = {Customized {SIMD}-Unit Synthesis for
+                System-on-Programmable Chip},
+  author    = {O. Cheema and O. Hammami},
+  journal   = ICM,
+  month     = DEC,
+  year      = {2005},
+}
+
+@article{cong-custom-vec-isa-aspdac2012,
+  title     = {Compilation and Architecture Support for Customized Vecotr
+                Instruction Extension},
+  author    = {Jason Cong and Mohammad Ali Ghodrat and Michael Gill and
+                Hui Huang and Bin Liu and Raghu Prabhakar and Glenn
+                Reinman and Marco Vitanza},
+  journal   = ASPDAC,
+  month     = FEB,
+  year      = {2012},
+}
+
+@article{pinto-ocn-synthesis-iccd2003,
+  title     = {Efficient Synthesis of Networks-on-Chip},
+  author    = {Alessandro Pinto and Luca P. Carloni and Alberto L.
+                Sangiovanni-Vincentelli},
+  journal   = ICCD,
+  month     = OCT,
+  year      = {2003},
+}
+
+@article{ogras-ocn-synthesis-date2005,
+  title     = {Energy- and Performance-Driven {NoC} Communication
+                Architecture Synthesis Using a Decomposition Approach},
+  author    = {Umit Y. Ogras and Radu Marculescu},
+  journal   = DATE,
+  month     = MAR,
+  year      = {2005},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Data-Parallel Languages
+%-------------------------------------------------------------------------
+
+@article{blelloch-dplang-ieee1991,
+  title     = {Collection-Oriented Languages},
+  author    = {Jay M. Sipelstein and Guy E. Blelloch},
+  journal   = {Proc. of the IEEE},
+  year      = {1991},
+  month     = APR,
+  volume    = {79},
+  number    = {4},
+  pages     = {504--523},
+}
+
+@article{blelloch-nesl-cacm1996,
+  title     = {Programming Parallel Algorithms},
+  author    = {Guy E. Blelloch},
+  journal   = CACM,
+  month     = MAR,
+  year      = {1996},
+  volume    = {39},
+  number    = {3},
+  pages     = {85--97},
+}
+
+@article{chamberlain-zpl-ieeecse1998,
+  title     = {The Case for High-Level Parallel Programming in ZPL},
+  author    = {Bradford L. Chamberlain and Sung-Eun Choi and E
+                Christopher Lewis and Calvin Lin and Lawrence Snyder and
+                and W. Derrick Weathersby},
+  journal   = {IEEE Computational Science and Engineering},
+  month     = JUL,
+  year      = {1998},
+  volume    = {5},
+  number    = {3},
+  pages     = {76--86},
+}
+
+@article{mccormick-scout-pc2007,
+  title     = {Scout: A Data-Parallel Programming Language for Graphics
+                Processors},
+  author    = {Patrick McCormicka and Jeff Inmana and James Ahrensa and
+                Jamaludin Mohd-Yusofa and Greg Rothb and Sharen
+                Cumminsa},
+  journal   = {Parallel Computing},
+  month     = MAR,
+  year      = {2007},
+  volume    = {33},
+  number    = {10--11},
+  pages     = {648--662},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Vectorizing Compilers
+%-------------------------------------------------------------------------
+
+@article{devries-t0-compiler-scw1995,
+  title     = {A Vectorizing SUIF Compiler},
+  author    = {Derek DeVries and Corinna G. Lee},
+  journal   = {SUIF Compiler Workshop},
+  month     = JAN,
+  year      = {1995},
+}
+
+@article{bacon-hpc-compiler-acmsurvey1994,
+  title     = {Compiler Transformations for High-Performance Computing},
+  author    = {David F. Bacon and Susan L. Graham and Oliver J. Sharp},
+  journal   = {ACM Computing Surveys},
+  month     = DEC,
+  year      = {1994},
+  volume    = {26},
+  number    = {4},
+  pages     = {345--420},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Restart Markers
+%-------------------------------------------------------------------------
+
+@article{hampton-restart-markers-ics2006,
+  title     = {Implementing Virtual Memory in a Vector Processor with
+                Software Restart Markers},
+  author    = {Mark Hampton and Krste Asanovi\'{c}},
+  journal   = ICS,
+  month     = JUN,
+  year      = {2006},
+}
+
+@phdthesis{hampton-restart-markers-mitphd2008,
+  title     = {Reducing Exception Management Overhead with Software
+                Restart Markers},
+  author    = {Mark Hampton},
+  school    = {EECS Department, Massachusetts Institute of Technology},
+  year      = {2008},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Power Modeling
+%-------------------------------------------------------------------------
+
+@article{li-mcpat-micro2009,
+  title     = {{McPAT}: {An} Integrated Power, Area, and Timing Modeling
+                Framework for Multicore and Manycore Architectures},
+  author    = {Sheng Li and Jung Ho Ahn and Richard D. Strong and Jay B.
+                Brockman and Dean M. Tullsen and Norman P. Jouppi},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2009},
+}
+
+@article{brooks-wattch-isca2000,
+  title     = {Wattch: {A} Framework for Architectural-Level Power
+                Analysis and Optimizations},
+  author    = {D. Brooks and V. Tiwari and M. Martonosi},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2000},
+}
+
+@article{thoziyoor-cacti-isca2008,
+  title     = {A Comprehensive Memory Modeling Tool and its Application to
+                the Design and Analysis of Future Memory Hierarchies},
+  author    = {S. Thoziyoor and J. Ahn and M. Monchiero and J. Brockman
+                and N. Jouppi},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2008},
+}
+
+@misc{muralimanohar-cacti-hptr2009,
+  title     = {{CACTI} 6.0: {A} Tool to Model Large Caches},
+  author    = {Naveen Muralimanohar and Rajeev Balasubramonian and Norman
+                P. Jouppi},
+  journal   = {HP Technical Report HPL-2009-85},
+  year      = {2009}
+}
+
+@article{wang-orion1-micro2002,
+  title     = {Orion: {A} Power-Performance Simulator for Interconnection
+                Networks},
+  author    = {Hangsheng Wang and Li-Shiuan Peh and Sharad Malik},
+  journal   = MICRO,
+  month     = NOV,
+  year      = {2002},
+}
+
+@article{nitta-ocn-pdg-nocs2011,
+  title     = {Inferring Packet Dependencies to Improve Trace-Based
+                Simulation of On-Chip Networks},
+  author    = {C. Nitta and K. MacDonald and M. Farrens and V. Akella},
+  journal   = NOCS,
+  month     = MAY,
+  year      = {2011},
+}
+
+@article{kahng-orion2-tvlsi2010,
+  title     = {ORION 2.0: A Power-Area Simulator for Interconnection
+                Networks},
+  author    = {Andrew B. Khang and Bin Li and Li-Shiuan Peh and Kambiz
+                Samadi},
+  journal   = TVLSI,
+  month     = MAR,
+  year      = {2011},
+  volume    = {PP},
+  number    = {99},
+  pages     = {1--5},
+}
+
+@article{ghiasi-pwr-model-comparison-pacs2000,
+  title     = {A Comparison of Two Architectural Power Models},
+  author    = {Soraya Ghiasi and Dirk Grunwald},
+  journal   = PACS,
+  month     = NOV,
+  year      = {2000},
+}
+
+@article{govindan-trips-pwr-models-islped2009,
+  title     = {End-to-End Validation of Architectural Power Models},
+  author    = {Madhu Govindan and Stephen W. Keckler and Doug Burger},
+  journal   = ISLPED,
+  month     = AUG,
+  year      = {2009},
+}
+
+@article{khang-improved-ocn-model-aspdac2010,
+  title     = {Improved On-Chip Router Analytical Power and Area
+                Modeling},
+  author    = {Andrew B. Kahng and Bill Lin and Kambiz Samadi},
+  journal   = ASPDAC,
+  month     = JAN,
+  year      = {2010},
+}
+
+%-------------------------------------------------------------------------
+% SEC: MapReduce
+%-------------------------------------------------------------------------
+
+@article{dean-mapreduce-osdi2004,
+  title     = {MapReduce: Simplified Data Processing on Large Clusters},
+  author    = {Jeffrey Dean and Sanjay Ghemawat},
+  journal   = OSDI,
+  month     = DEC,
+  year      = {2004},
+}
+
+@article{talbot-phoenixpp-mapreduce2011,
+  title     = {Phoenix++: Modular MapReduce for Shared-Memory Systems},
+  author    = {Justin Talbot and Richard M. Yoo and Christos Kozyrakis},
+  journal   = MAPREDUCE,
+  month     = JUN,
+  year      = {2011},
+}
+
+@article{ranger-phoenix-hpca2007,
+  title     = {Evaluating MapReduce for Multi-Core and Multiprocessor
+                Systems},
+  author    = {Colby Ranger and Ramanan Raghuraman and Arun Penmestsa and
+                Gary Bradski and Christos Kozyrakis},
+  journal   = HPCA,
+  month     = FEB,
+  year      = {2007},
+}
+
+@article{he-mars-pact2008,
+  title     = {Mars: A MapReduce Framework on Graphics Processors},
+  author    = {Bingsheng He and Wenbin Fang and Qiong Luo},
+  journal   = PACT,
+  month     = OCT,
+  year      = {2008},
+}
+
+@article{catanzaro-copperhead-stmcs2008,
+  title     = {A Map Reduce Framework for Programming Graphics
+                Processors},
+  author    = {Bryan Catanzaro and Narayanan Sundaram and Kurt Keutzer},
+  journal   = STMCS,
+  month     = APR,
+  year      = {2008},
+}
+
+@article{farivar-mithra-cluster2009,
+  title     = {MITHRA: Multiple Data-Independent Tasks on a Heterogeneous
+                Resource Architecture},
+  author    = {Reza Farivar and Abhishek Verma and Ellick M. Chan and Roy
+                H. Campbell},
+  journal   = CLUSTER,
+  month     = SEP,
+  year      = {2009},
+}
+
+@article{stuart-gpmr-ipdps2011,
+  title     = {Multi-GPU MapReduce on GPU Clusters},
+  author    = {Jeff A. Stuart and John D. Owens},
+  journal   = IPDPS,
+  month     = AUG,
+  year      = {2011},
+}
+
+@article{shirahata-cpugpu-mapreduce-cloudcom2011,
+  title     = {Hybrid Map Task Scheduling for GPU-based Heterogeneous
+                Clusters},
+  author    = {Koichi Shirahata and Hitoshi Sato and Satoshi Matsuoka},
+  journal   = CLOUDCOM,
+  month     = NOV,
+  year      = {2011},
+}
+
+@article{linderman-merge-asplos2008,
+  title     = {Merge: A Programming Model for Heterogenous Multi-Core
+                Systems},
+  author    = {Michael D. Linderman and Jamison D. Collins and Hong Wang
+                and Teresa H. Meng},
+  journal   = ASPLOS,
+  month     = MAR,
+  year      = {2008},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Misc
+%-------------------------------------------------------------------------
+
+@misc{top500-web,
+  title     = {TOP500 Supercomputing Sites},
+  key       = {top500},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.top500.org}},
+  year      = {2012 (accessed March, 2012)},
+}
+
+@misc{green500-web,
+  title     = {The Green500 List: Environmentally Responsible Supercomputing},
+  key       = {top500},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.green500.org}},
+  year      = {2012 (accessed March, 2012)},
+}
+
+@misc{gnu-gcc-web,
+  title     = {GCC, The GNU Compiler Collection},
+  key       = {gnu},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://gcc.gnu.org}},
+  year      = {2011 (accessed February, 2013)},
+}
+
+@misc{llvm-web,
+  title     = {The LLVM Compiler Infrastructure Project},
+  key       = {llvm},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.llvm.org}},
+  year      = {2011 (accessed February, 2011)},
+}
+
+@misc{itrs2011-web,
+  title     = {Internatioanal Technology Roadmap for Semiconductors},
+  key       = {itrs},
+  howpublished = {ITRS},
+  year      = {2011},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Applications
+%-------------------------------------------------------------------------
+
+@article{sugerman-gramps-tog2009,
+  title     = {GRAMPS: A Programming Model for Graphics Pipelines},
+  author    = {Jeremy Sugerman and Kayvon Fatahalian and Solomon Boulos
+                and Kury Akeley and Pat Hanrahan},
+  journal   = TOG,
+  month     = JAN,
+  year      = {2009},
+  volume    = {28},
+  issue     = {1},
+  pages     = {1--11},
+}
+
+@article{molnar-rendering-taxonomy-ieeecga1994,
+  title     = {A Sorting Classification of Parallel Rendering},
+  author    = {Steven Molnar and Michael Cox and David Ellsworth and
+                  Henry Fuchs},
+  journal   = {IEEE Computer Graphics and Applications},
+  month     = JUL,
+  year      = {1994},
+  volume    = {14},
+  number    = {4},
+  pages     = {23--32},
+}
+
+@article{cormen-algorithms-book2001,
+  title     = {Introduction to Algorithms},
+  author    = {Thomas H. Cormen and Charles E. Leiserson and Ronald L.
+                Rivest and Clifford Stein},
+  publisher = {MIT press},
+  year      = {2001},
+}
+
+@incollection{burkhardt-suffix-array-lncs2003,
+  title     = {Fast Lightweight Suffix Array Construction and Checking},
+  author    = {Stefan Burkhardt and Juha K\"{a}rkk\"{a}inen},
+  booktitle = {Combinatorial Pattern Matching},
+  editor    = {Ricardo Baeza-Yates and Edgar Ch\'{a}vez and Maxime
+                Crochemore},
+  series    = {Lecture Notes in Computer Science},
+  year      = {2003},
+  volume    = {2676},
+  publisher = {Springer Berlin Heidelberg},
+  pages     = {55--69},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Error correction papers
+%-------------------------------------------------------------------------
+
+@article{leon-cmt-reliability-cicc2006,
+  title     = {The {UltraSPARC} {T1} Processor: {CMT} Reliability},
+  author    = {A.~S. Leon and B. Langley and J.~L. Shin},
+  journal   = CICC,
+  month     = SEP,
+  year      = {2007},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Circuit Papers from Apsel
+%-------------------------------------------------------------------------
+
+@article{zhang-variation-osc-esscirc2009,
+  title     = {A Low Variation {GHz} Ring Oscillator with Addition-based
+                Current Source},
+  author    = {X. Zhang and A. Apsel},
+  journal   = ESSCC,
+  month     = SEP,
+  year      = {2009},
+}
+
+@article{mukadam-variation-compensation-iscas2010,
+  title     = {Process Variation Compensation of a 4.6 {GHz} {LNA} in
+                65nm {CMOS}},
+  author    = {M. Mukadam and O. Filho and X. Zhang and A. Apsel},
+  journal   = ISCAS,
+  year      = {2010},
+}
+
+@article{pappu-variation-current-src-jssc2007,
+  title     = {Process Invariant Current Source Design: Methodology and
+                Examples},
+  author    = {A. Pappu and X. Zhang and A. Harrison and A. Apsel},
+  journal   = JSSC,
+  volume    = {42},
+  number    = {10},
+  pages     = {2293--2302},
+  month     = OCT,
+  year      = {2007},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Photonic Technology
+%-------------------------------------------------------------------------
+
+@article{biberman-photo-multilayer-jetc2011,
+  title     = {Photonic Network-on-Chip Architectures Using Multilayer
+                Deposited Silicon Materials for High-Performance Chip
+                Multiprocessors},
+  author    = {Aleksandr Biberman and Kyle Preston and Gibert Hendry and
+                Nicholas Sherwood-Droz and Jonnie Chan and Jacob S. Levy
+                and Michal Lipson and Keren Bergman},
+  journal   = JETC,
+  volume    = {7},
+  number    = {2},
+  pages     = {7},
+  month     = JUN,
+  year      = {2011},
+}
+
+@book{reed-photo-book2008,
+  title     = {Silicon Photonics: {The} State of the Art},
+  author    = {G.~T. Reed},
+  publisher = {Wiley-Interscience},
+  year      = {2008},
+}
+
+@article{beausoleil-photo-survey-jetc2011,
+  title     = {Large-Scale Integrated Photonics for High-Performance
+                Interconnects},
+  author    = {Raymond G. Beausoleil},
+  journal   = JETC,
+  volume    = {7},
+  number    = {2},
+  pages     = {6},
+  month     = JUN,
+  year      = {2011},
+}
+
+@article{dumon-photo-epixfab-elet2009,
+  title     = {Towards Foundry Approach for Silicon Photonics: Silicon
+                Photonics Platform {ePIXfab}},
+  author    = {P. Dumon and W. Bogaerts and R. Baets and J.-M. Fedeli and
+                L. Fulbert},
+  journal   = ELET,
+  volume    = {45},
+  number    = {12},
+  pages     = {581--582},
+  month     = JUN,
+  year      = {2009},
+}
+
+@article{liow-photo-feol-jstqe2010,
+  title     = {Silicon Modulators and Germanium Photodetectors on {SOI}:
+                Monolithic Integration, Compatibility, and Performance
+                Optimization},
+  author    = {Tsung-Yang Liow and Kah-Wee Ang and Qing Fang and Jun-Feng
+                Song and Yong-Zhong Xiong and Ming-Bin Yu and Guo-Qiang Lo
+                and Dim-Lee Kwong},
+  journal   = JSTQE,
+  volume    = {16},
+  number    = {1},
+  pages     = {307--315},
+  month     = JAN/FEB,
+  year      = {2010},
+}
+
+@article{zortman-photo-manufacturing-optexp2010,
+  title     = {Silicon photonics manufacturing},
+  author    = {W.~A. Zortman and D.~C. Trotter and M.~R. Watts},
+  journal   = OPTEXP,
+  volume    = {18},
+  number    = {23},
+  pages     = {23598--23607},
+  month     = NOV,
+  year      = {2010},
+}
+
+@article{liu-photo-modulator-optexp2007,
+  title     = {High-speed optical modulation based on carrier depletion
+                in a silicon waveguide},
+  author    = {A. Liu and L. Liao and D. Rubin and H. Nguyen and B.
+                Ciftcioglu and Y. Chetrit and N. Izhaky and M. Paniccia},
+  journal   = OPTEXP,
+  volume    = {15},
+  number    = {2},
+  pages     = {660--668},
+  month     = JAN,
+  year      = {2007},
+}
+
+@article{thacker-photo-hybrid-ectc2010,
+  title     = {Flip-chip integrated silicon photonic bridge chips for
+                sub-picojoule per bit optical links},
+  author    = {H.~D. Thacker and Y. Luo and J. Shi and I. Shubin and J.
+                Lexau and X. Zheng and G. Li and J. Yao and J. Costa and
+                T. Pinguet and A. Mekis and P. Dong and S. Liao and D.
+                Feng and M. Asghari and R. Ho and K. Raj and J.~G.
+                Mitchell and A.~V. Krishnamoorthy and J.~E. Cunningham},
+  journal   = ECTC,
+  month     = JUN,
+  year      = {2010},
+}
+
+@article{zheng-photo-hybrid-optexp2010,
+  title     = {Ultra-Low-Energy All-{CMOS} Modulator Integrated with
+                Driver},
+  author    = {X. Zheng and J. Lexau and Y. Luo and H. Thacker and T.
+                Pinguet and A. Mekis and G. Li and J. Shi and P. Amberg
+                and N. Pinckney and K. Raj and R. Ho and J.~E. Cunningham
+                and A.~V. Krishamoorthy},
+  journal   = OPTEXP,
+  volume    = {18},
+  number    = {3},
+  pages     = {3059--3070},
+  month     = FEB,
+  year      = {2010},
+}
+
+@article{kash-photo-ibm-hoti2008,
+  title     = {Leveraging Optical Interconnects in Future Supercomputers
+                and Servers},
+  author    = {Jeffrey A. Kash},
+  journal   = HOTI,
+  month     = AUG,
+  year      = {2008},
+}
+
+@article{young-photo-intel-jssc2010,
+  title     = {Optical {I/O} Technology for Tera-Scale Computing},
+  author    = {I.~A. Young and E. Mohammed and J.~T.~S. Liao and A.~M.
+                Kern and S. Palermo and B.~A. Block and M.~R. Reshotko and
+                P.~L.~D. Chang},
+  journal   = JSSC,
+  volume    = {45},
+  number    = {1},
+  pages     = {235--248},
+  month     = JAN,
+  year      = {2010},
+}
+
+@article{thourhout-photo-hybrid-ecoc2007,
+  title     = {A Photonic Interconnect Layer on {CMOS}},
+  author    = {D. Van Thourhout and J. Van Campenhout and P. Rojo-Romeo
+                and P. Regreny and C. Seassal and P. Binetti and X.~J.~M.
+                Leijtens and R. Notzel and M.~K. Smit and L. Di Cioccio
+                and C. Lagahe and J.-M. Fedeli and R. Baets},
+  journal   = ECOC,
+  month     = SEP,
+  year      = {2007},
+}
+
+@article{alduino-photo-intel-4wdm-iprsn2010,
+  title     = {Demonstration of a High-Speed 4-Channel Integrated Silicon
+                Photonics {WDM} Link with Silicon Lasers},
+  author    = {A. Alduino and L. Liao and R. Jones and M. Morse and B. Kim
+                and W. Lo and J. Basak and B. Koch and H. Liu and H. Rong
+                and M. Sysak and C. Krause and R. Saba and D. Lazar and L.
+                Horwitz and R. Bar and S. Litski and A. Liu and K.
+                Sullivan and O. Dosunmu and N. Na and T. Yin and F.
+                Haubensack and I. Hsieh and J. Heck and R. Beatty and H.
+                Park and J. Bovington and S. Lee and H. Nguyen and H. Au
+                and K. Nguyen and P. Merani and M. Hakami and M. J.
+                Paniccia},
+  journal   = IPRSN,
+  month     = JUL,
+  year      = {2010},
+}
+
+@article{beals-photo-integration-spie2008,
+  title     = {Process flow innovations for photonic device integration
+                in {CMOS}},
+  author    = {M. Beals and J. Michel and J.~F. Liu and D.~H. Ahn and D.
+                Sparacin and R. Sun and C.~Y. Hong and L.~C. Kimerling
+                and A. Pomerene and D. Carothers and J. Beattie and A.
+                Kopa and A. Apsel and M.~S. Rasras and D.~M. Gill and
+                S.~S. Patel and K.-Y. Tu and Y.-K. Chen and A.~E. White},
+  journal   = SPIE,
+  volume    = {6898},
+  number    = {1},
+  month     = JAN,
+  year      = {2008},
+}
+
+@article{gunn-photo-cmos-ieeemicro2006,
+  title     = {{CMOS} Photonics for High-Speed Interconnects},
+  author    = {C. Gunn},
+  journal   = {IEEE Micro},
+  volume    = {26},
+  number    = {2},
+  pages     = {58--66},
+  month     = MAR/APR,
+  year      = {2006},
+}
+
+@article{barwicz-photo-si-jon2007,
+  title     = {Silicon photonics for compact, energy-efficient
+                interconnects},
+  author    = {T. Barwicz and H. Byun and F. Gan and C.~W. Holzwarth and
+                M.~A. Popovi\'{c} and P.~T. Rakich and M.~R. Watts and
+                E.~P. Ippen and F.X. K\"{a}rtner and H.~I. Smith and
+                J.~S. Orcutt and R.~J. Ram and V. Stojanovic and O.~O.
+                Olubuyide and J.~L. Hoyt and S. Spector and M. Geis and
+                M. Grein and T. Lyszcarz and J.~U. Yoon},
+  journal   = JON,
+  volume    = {6},
+  number    = {1},
+  pages     = {63--73},
+  month     = JAN,
+  year      = {2007},
+}
+
+@article{kalluri-photo-polymer-waveguide-ptlet1996,
+  title     = {Monolithic Integratin of Waveguide Polymer Electro-optic
+                Modulators on {VLSI} Circuitry},
+  author    = {S. Kalluri and M. Ziari and A. Chen and V. Chuyanov and
+                W.~H. Steier and D. Chen and B. Jalali and H. Fetterman
+                and L.~R. Dalton},
+  journal   = PTLET,
+  volume    = {8},
+  number    = {5},
+  pages     = {644--646},
+  month     = MAY,
+  year      = {1996},
+}
+
+@article{block-photo-polymer-ring-optexp2008,
+  title     = {Electro-Optic Polymer Cladding Ring Resonator Modulators},
+  author    = {B.~A. Block and T.~R. Younkin and P.~S. Davids and M.~R.
+                Reshotko and P. Chang, B.~M. Polishak and S. Huang and J.
+                Luo and A.~K.~Y. Jen},
+  journal   = OPTEXP,
+  volume    = {16},
+  number    = {22},
+  pages     = {18326--18333},
+  month     = OCT,
+  year      = {2008},
+}
+
+@article{taillaert-photo-grating-optlet2004,
+  title     = {Compact efficient broadband grating coupler for
+                silicon-on-insulator waveguides},
+  author    = {D. Taillaert and P. Bienstman and R. Baets},
+  journal   = {Optics Letters},
+  volume    = {29},
+  number    = {23},
+  pages     = {2749--2751},
+  month     = DEC,
+  year      = {2004},
+}
+
+@article{masini-photo-ge-on-si-detector-appphys2003,
+  title     = {\wu{2.5}{Gbit/s} Polycrystalline Germanium-on-Silicon
+                Photodetector Operating from 1.3 to \wu{1.55}{\um}},
+  author    = {Gianlorenzo Masini and Lorenzo Colace and Gaetano Assanto},
+  journal   = APLET,
+  volume    = {82},
+  number    = {15},
+  pages     = {5118--5124},
+  month     = FEB,
+  year      = {2003},
+}
+
+@article{dokania-photo-challenges-glsvlsi2009,
+  title     = {Analysis of Challenges for On-Chip Optical Interconnects},
+  author    = {R.~K. Dokania and A. Apsel},
+  journal   = {Great Lakes Symposium on VLSI},
+  month     = MAY,
+  year      = {2009},
+}
+
+@article{kimerling-photo-beol-spie2006,
+  title     = {Electronic-photonic integrated circuits on the {CMOS}
+                platform},
+  author    = {L.~C. Kimerling and D. Ahn and A.~B. Apsel and M. Beals
+                and D. Carothers and Y.-K. Chen and T. Conway and D.~M.
+                Gill and M. Grove and C.-Y. Hong and M. Lipson and J. Liu
+                and J. Michel and D. Pan and S.~S. Patel and A.~T.
+                Pomerene and M. Rasras and D.~K. Sparacin and and K.-Y.
+                Tu and A.~E. White and C.~W. Wong},
+  journal   = SPIE,
+  month     = MAR,
+  year      = {2006},
+}
+
+@article{watts-photo-hpec2009,
+  title     = {Low-Power Silicon Microphotonic Communications for
+                Embedded Systems},
+  author    = {M. Watts and A. Lentine and D. Trotter and W. Zortman and
+                R. Young and D. Campbell and S. Shinde},
+  journal   = HPEC,
+  month     = SEP,
+  year      = {2009},
+}
+
+@article{hwang-photo-soi-optexp2010,
+  title     = {Nanophotonic Devices on Thin Buriod Oxide
+                Silicon-on-Insulator Substrates},
+  author    = {E. Hwang and S.~A. Bhave},
+  journal   = OPTEXP,
+  volume    = {18},
+  number    = {4},
+  pages     = {3850--3857},
+  month     = FEB,
+  year      = {2010},
+}
+
+@article{orcutt-photo-bulk-ps2009,
+  title     = {Photonic Integration in a Commercial Scaled Bulk-{CMOS}
+                Process},
+  author    = {J.~S. Orcutt and A. Khilo and M.~A. Popovic and C.~W.
+                Holzwarth and H. Li and J. Sun and B. Moss and M.~S.
+                Dahlem and E.~P. Ippen and J.~L. Hoyt and V.
+                Stojanovi\'{c} and F.~X. Ka\"{a}rtner and H.~I. Smith and
+                R.~J. Ram},
+  journal   = PS,
+  month     = SEP,
+  year      = {2009},
+}
+
+@article{miller-photo-survey-procieee2000,
+  title     = {Rationale and Challenges for Optical Interconnects to
+                Electronic Chips},
+  author    = {D.~A. Miller},
+  journal   = PROCIEEE,
+  volume    = {88},
+  number    = {6},
+  pages     = {728--749},
+  month     = JUN,
+  year      = {2000},
+}
+
+@article{miller-photo-survey-procieee2009,
+  title     = {Device Requirements for Optical Interconnects to Silicon
+                Chips},
+  author    = {D.~A. Miller},
+  journal   = PROCIEEE,
+  volume    = {97},
+  number    = {7},
+  pages     = {1166--1185},
+  month     = JUL,
+  year      = {2009},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Cornell Photonic Technology
+%-------------------------------------------------------------------------
+
+@article{sherwood-photo-guidelines-winds2010,
+  title     = {Device Guidelines for {WDM} Interconnects Using Silicon
+                Microring Resonators},
+  author    = {N. Sherwood-Droz and K. Preston and J.~S. Levy and M.
+                Lipson},
+  journal   = WINDS,
+  month     = DEC,
+  year      = {2010},
+}
+
+@article{cianchetti-nsip-winds2010,
+  title     = {Implementing System-in-Package with Nanophotonic Interconnect},
+  author    = {M. Cianchetti and N. Sherwood-Droz and Christopher Batten},
+  journal   = WINDS,
+  month     = DEC,
+  year      = {2010},
+}
+
+@article{biberman-photo-ber-ofc2010,
+  title     = {First Experimental Bit-Error-Rate Validation of 12.5-Gb/s
+                Silicon Modulator Enabling Photonic Networks-on-Chip},
+  author    = {A. Biberman and N. Ophir and K. Bergman and S. Manipatruni
+                and L. Chen and M. Lipson},
+  journal   = OFC,
+  month     = MAR,
+  year      = {2010},
+}
+
+@article{preston-photo-poly-ring-optexp2007,
+  title     = {Polysilicon photonic resonators for large-scale {3D}
+                integration of optical networks},
+  author    = {K. Preston and B. Schmidt and M. Lipson},
+  journal   = OPTEXP,
+  volume    = {15},
+  number    = {25},
+  pages     = {17283--17290},
+  month     = DEC,
+  year      = {2007},
+}
+
+@article{preston-photo-poly-modulator-optexp2009,
+  title     = {Deposited silicon high-speed integrated electro-optic
+                modulator},
+  author    = {K. Preston and S. Manipatruni and A. Gondarenko and C.~B.
+                Poitras and M. Lipson},
+  journal   = OPTEXP,
+  volume    = {17},
+  number    = {7},
+  pages     = {5118--5124},
+  month     = MAR,
+  year      = {2009},
+}
+
+@article{preston-photo-poly-receiver-optexp2011,
+  title     = {Waveguide-Integrated Telecom-Wavelength Photodiode in
+                Deposited Silicon},
+  author    = {K. Preson and Y.~H.~D. Lee and M. Zhang and M. Lipson},
+  journal   = OPTEXP,
+  volume    = {36},
+  number    = {1},
+  pages     = {52--54},
+  month     = JAN,
+  year      = {2011},
+}
+
+@article{lipson-photo-ring-jstqe2006,
+  title     = {Compact Electro-Optic Modulators on a Silicon Chip},
+  author    = {M. Lipson},
+  journal   = JSTQE,
+  volume    = {12},
+  number    = {6},
+  pages     = {1520--1526},
+  month     = NOV/DEC,
+  year      = {2006},
+}
+
+@article{manipatruni-photo-charge-tuning-optlet2008,
+  title     = {Wide Temperature Range Operation of Micrometer-Scale
+                Silicon Electro-Optic modulators},
+  author    = {S. Manipatruni and R.~K. Dokania and B. Schmidt and
+                N.~Sherwood-Droz and C.~B. Poitras and A.~B. Apsel and M.
+                Lipson},
+  journal   = OPTLET,
+  volume    = {33},
+  number    = {19},
+  pages     = {2185--2187},
+  month     = OCT,
+  year      = {2008},
+}
+
+@article{guha-photo-athermal-optexp2010,
+  title     = {{CMOS}-Compatible Athermal Silicon Microring Resonators},
+  author    = {Biswajeet Guha and Bernardo B.~C. Kyotoku and Michal
+                Lipson},
+  journal   = OPTEXP,
+  volume    = {18},
+  number    = {4},
+  pages     = {3487--3493},
+  month     = FEB,
+  year      = {2010},
+}
+
+@article{guha-photo-athermal-cleo2011,
+  title     = {{CMOS}-Compatible Temperature Insensitive Silicon Microring
+                Modulator},
+  author    = {Biswajeet Guha and Kyle Preston and Michal Lipson},
+  journal   = CLEO,
+  month     = MAY,
+  year      = {2011},
+}
+
+%-------------------------------------------------------------------------
+% SEC: MIT Photonic Technology
+%-------------------------------------------------------------------------
+
+@article{orcutt-photo-bulk-cleo2008,
+  title     = {Demonstration of an Electronic Photonic Integrated Circuit
+                in a Commercial Scaled Bulk-{CMOS} Process},
+  author    = {J.~S. Orcutt and A. Khilo and M.~A. Popovic and C.~W.
+                Holzwarth and B. Moss and H. Li and M.~S. Dahlem and
+                T.~D. Bonifield and F.~X. Ka\"{a}rtner and E.~P. Ippen
+                and J.~L. Hoyt and R.~J. Ram and V. Stojanovi\'{c}},
+  journal   = CLEO,
+  month     = MAY,
+  year      = {2008},
+}
+
+@article{orcutt-photo-bulk-optexp2011,
+  title     = {Nanophotonic Integration in State-of-the-Art {CMOS}
+                Foundaries},
+  author    = {Jason S. Orcutt and Anatol Khilo and Charles W. Holzwarth
+                and Milos A. Popovi\'{c} and Hanqing Li and Jie Sun and
+                Thomas Bonifield and Randy Hollingsworth and Franz X.
+                Ka\"{a}rtner and Henry I. Smith and Vladimir
+                Stojanovi\'{c} and Rajeev J. Ram},
+  journal   = OPTEXP,
+  volume    = {19},
+  number    = {3},
+  pages     = {2335--2346},
+  month     = JAN,
+  year      = {2011},
+}
+
+@article{holzwarth-photo-airgap-cleo2008,
+  title     = {Localized substrate removal technique enabling
+                strong-confinement microphotonics in bulk-{Si}-{CMOS}
+                processes},
+  author    = {C.~W. Holzwarth and J.~S. Orcutt and H. Li and M.~A.
+                Popovi\'{c} and V. Stojanovi\'{c} and J.~L. Hoyt and R.~J.
+                Ram and H.~I. Smith},
+  journal   = CLEO,
+  month     = MAY,
+  year      = {2008},
+}
+
+@article{orcutt-photo-poly-waveguide-cleo2011,
+  title     = {Low-Loss Polysilicon Waveguides Suitable for Integration
+                witin a High-Volume Polysilicon Process},
+  author    = {J.~S. Orcutt and S.~D. Tang and S. Kramer and H. Li and V.
+                Stojanovi\'{c} and R.~J. Ram},
+  journal   = CLEO,
+  month     = MAY,
+  year      = {2011},
+}
+
+@article{georgas-photo-receiver-esscc2011,
+  title     = {A Monolithically-Integrated Optical Receiver in Standard
+                \wu{45}{nm} {SOI}},
+  author    = {M. Georgas and J. Orcutt and R. J. Ram and V.
+                Stojanovi\'{c}},
+  journal   = ESSCC,
+  month     = SEP,
+  year      = {2011},
+}
+
+@article{leu-photo-clock-asscc2011,
+  title     = {Injection-Locked Clock Receiver for Monolithic Optical Link
+                in \wu{45}{nm}},
+  author    = {J.~C. Leu and V. Stojanovi\'{c}},
+  journal   = ASSCC,
+  month     = NOV,
+  year      = {2011},
+}
+
+@article{georgas-photo-link-tuning-cicc2011,
+  title     = {Addressing Link-Level Design Tradeoffs for Integrated
+                Photonic Interconnects},
+  author    = {M. Georgas and J.~C. Leu and B. Moss and C. Sun and V.
+                Stojanovi\'{c}},
+  journal   = CICC,
+  month     = SEP,
+  year      = {2011},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Device-Level Tuning
+%-------------------------------------------------------------------------
+
+@article{christiaens-photo-thermal-tuning-elet2004,
+  title     = {Low-Power Thermo-Optic Tuning of Vertically Coupled
+                Microring Resonators},
+  author    = {I. Christiaens and D. Van Thourhout and R. Baets},
+  journal   = ELET,
+  volume    = {40},
+  number    = {9},
+  pages     = {560--561},
+  month     = APR,
+  year      = {2004},
+}
+
+@article{zhou-photo-slotted-ring-ptlet2009,
+  title     = {Athermalizing and Trimming of Slotted Silicon Microring
+                Resonators with {UV}-Sensitive {PMMA} Upper-Cladding},
+  author    = {L. Zhou and K. Okamoto and S.~J.~B. Yoo},
+  journal   = PTLET,
+  volume    = {21},
+  number    = {17},
+  pages     = {1175--1177},
+  month     = JUN,
+  year      = {2009},
+}
+
+@article{amatya-photo-thermal-tuning-cleo2007,
+  title     = {Low-Power Thermal Tuning of Second-Order Microring
+                Resonators},
+  author    = {R. Amatya and C.~W. Holzwarth and M.~A. Popovi\'{c} and F.
+                Gan and H.~I. Smith and F. K\"{a}rtner and R.~J. Ram},
+  journal   = CLEO,
+  month     = MAY,
+  year      = {2007},
+}
+
+@article{derose-photo-thermal-tuning-cleo2010,
+  title     = {Silicon Microring Modulator with Integrated Heater and
+                Temperature Sensor for Thermal Control},
+  author    = {C.~T. DeRose and M.~R. Watts and D.~C. Trotter and D.~L.
+                Luck and G.~N. Nielson and R.~W. Young},
+  journal   = CLEO,
+  month     = MAY,
+  year      = {2010},
+}
+
+@article{watts-photo-thermal-tuning-cleo2009,
+  title     = {Adiabatic Resonant Microrings with Directly Integrated
+                Thermal Microphotonics},
+  author    = {M.~R. Watts and W.~A. Zortman and D.~C. Trotter and G.~N.
+                Nielson and D.~L. Luck and R.~W. Young},
+  journal   = CLEO,
+  month     = MAY,
+  year      = {2009},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Nanophotonic Network Architectures
+%-------------------------------------------------------------------------
+
+@article{miller-photo-hybrid-seed-mppoi1995,
+  title     = {Hybrid SEED -- Massively Parallel Optical Interconnectsion
+                for Silicon ICs},
+  author    = {D.~A.~B. Miller},
+  journal   = MPPOI,
+  month     = OCT,
+  year      = {1995},
+}
+
+@article{batten-dcnin-jetcas2012,
+  title     = {Designing Chip-Level Nanophotonic Interconnection
+                Networks},
+  author    = {C. Batten and A. Joshi and V. Stojanovi\'{c} and K.
+                Asnaovi\'{c}},
+  journal   = JETCAS,
+  volume    = {2},
+  number    = {2},
+  pages     = {137--153},
+  month     = JUN,
+  year      = {2012},
+}
+
+@incollection{batten-dcnin-bookch2012,
+  title     = {Designing Chip-Level Nanophotonic Interconnection
+                Networks},
+  author    = {C. Batten and A. Joshi and V. Stojanovi\'{c} and K.
+                Asnaovi\'{c}},
+  booktitle = {Integrated Optical Interconnect Architectures and
+                  Applications in Embedded Systems},
+  editor    = {Gabriela Nicolescu and Ian O'Connor},
+  publisher = {Springer},
+  year      = {2012 (in press)},
+}
+
+@article{yuan-photo-hypercube-mppoi1998,
+  title     = {Optimal Routing and Channel Assignments for Hypercube
+                Communication on Optical Mesh-like Processor Arrays},
+  author    = {X. Yuan and R. Melhem},
+  journal   = MPPOI,
+  month     = JUN,
+  year      = {1998},
+}
+
+@article{baker-photo-hpc-circuit-switch-sc2005,
+  title     = {On the Feasibility of Circuit Switching for High
+                Performance Computing Systems},
+  author    = {K. Baker and A. Benner and R. Hoare and A. Hoisie and A.
+                Jones and D. Kerbyson and D. Li and R. Melhem and R.
+                Rajamony and E. Schenfeld and S. Shao and C. Stunkel and
+                and P. Walker},
+  journal   = SC,
+  month     = NOV,
+  year      = {2005},
+}
+
+@article{yuan-photo-mhop-comm-jpdc2001,
+  title     = {Performance of Multi-Hop Communications Using Logical
+                Topologies on Optical Torus Networks},
+  author    = {X. Yuan and R. Melhem and R. Gupta},
+  journal   = JPDC,
+  volume    = {61},
+  number    = {6},
+  pages     = {748--766},
+  month     = OCT,
+  year      = {1998},
+}
+
+@article{binkert-photo-high-radix-switch-isca2011,
+  title     = {The Role of Optics in Future High Radix Switch Design},
+  author    = {Nathan Binkert and Al Davis and Norm Jouppi and Moray
+                McLaren and Naveen Muralimanohar and Jung Ho Ahn},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2011},
+}
+
+@article{udipi-photo-dram-isca2011,
+  title     = {Combining Memory and a Controller with Photonics through
+                {3D}-Stacking to Enable Scalable and Energy-Efficient
+                Systems},
+  author    = {Aniruddha N. Udipi and Naveen Muralimanohar and Rajeev
+                Balasubramonian and Al Davis and Norm Jouppi},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2011},
+}
+
+@article{beux-photo-ornoc-date2011,
+  title     = {Optical Ring Network-on-Chip ({ORNoC}): {Architecture} and
+                Design Methodology},
+  author    = {S\'{e}bastien Le Beux and Jelena Trajkovic and Ian O'Connor
+                and Gabriela Nicolescu and Guy Bois and Pierre Paulin},
+  journal   = DATE,
+  month     = MAR,
+  year      = {2011},
+}
+
+@article{abousamra-photo-2hop-freespace-nocs2011,
+  title     = {Two-Hop Free-Space Based Optical Interconnects for Chip
+                Multiprocessors},
+  author    = {Ahmed Abousamra and Rami Melhem and Alex Jones},
+  journal   = NOCS,
+  month     = MAY,
+  year      = {2011},
+}
+
+@article{kao-photo-blocon-nocs2011,
+  title     = {{BLOCON}: {A} Bufferless Photonic {Clos} Network-on-Chip
+                Architecture},
+  author    = {Yu-Hsiang Kao and J. Jonathan Chao},
+  journal   = NOCS,
+  month     = MAY,
+  year      = {2011},
+}
+
+@article{koohi-photo-ocn-nocs2011,
+  title     = {All-Optical Wavelength-Routed {NoC} Based on a Novel
+                Hierarchical Topology},
+  author    = {Somayyeh Koohi and Meisam Abdollahi and Shaahin Hessabi},
+  journal   = NOCS,
+  month     = MAY,
+  year      = {2011},
+}
+
+@article{joshi-photo-clos-nocs2009,
+  title     = {Silicon-Photonic {Clos} Networks for Global On-Chip
+                  Communication},
+  author    = {A. Joshi and C. Batten and Y.-J. Kwon and S. Beamer and I.
+                Shamim and K. Asanovi\'{c} and V. Stojanovi\'{c}},
+  journal   = NOCS,
+  month     = MAY,
+  year      = {2009},
+}
+
+@article{pan-photo-firefly-isca2009,
+  title     = {Firefly: {Illuminating} On-Chip Networks with
+                Nanophotonics},
+  author    = {Y. Pan and P. Kumar and J. Kim and G. Memik and Y. Zhang
+                and A. Choudhary},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2009},
+}
+
+@article{kirman-photo-ocn-micro2006,
+  title     = {Leveraging Optical Technology in Future Bus-based Chip
+                Multiprocessors},
+  author    = {N. K{\i}rman and M. K{\i}rman and R.~K. Dokania and J.~F.
+                Mart\'{i}nez and A.~B. Apsel and M.~A. Watkins and D.~H.
+                Albonesi},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2006},
+}
+
+@article{hadke-photo-dram-hoti2008,
+  title     = {{OCDIMM}: {Scaling} the {DRAM} memory wall using
+                {WDM-based} optical interconnects},
+  author    = {A. Hadke and T. Benavides and S.~J.~B. Yoo and R.
+                Amirtharajah and V. Akella},
+  journal   = HOTI,
+  month     = AUG,
+  year      = {2008},
+}
+
+@article{batten-photo-proc2mem-hoti2008,
+  title     = {Building Manycore Processor-to-{DRAM} Networks with
+                Monolithic Silicon Photonics},
+  author    = {C. Batten and A. Joshi and J.~S. Orcutt and A. Khilo and
+                B. Moss and C.~W. Holzwarth and M.~A. Popovi\'{c} and H.
+                Li and H.~I. Smith and J.~L. Hoyt and F.~X. K\"{a}rtner
+                and R.~J. Ram and V. Stojanovi\'{c} and K. Asanovi\'{c}},
+  journal   = HOTI,
+  month     = AUG,
+  year      = {2008},
+}
+
+@article{batten-photo-proc2mem-ieeemicro2009,
+  title     = {Building Manycore Processor-to-{DRAM} Networks with
+                Monolithic {CMOS} Silicon Photonics},
+  author    = {C. Batten and A. Joshi and J.~S. Orcutt and A. Khilo and
+                B. Moss and C.~W. Holzwarth and M.~A. Popovi\'{c} and H.
+                Li and H.~I. Smith and J.~L. Hoyt and F.~X. K\"{a}rtner
+                and R.~J. Ram and V. Stojanovi\'{c} and K. Asanovi\'{c}},
+  journal   = {IEEE Micro},
+  volume    = {29},
+  number    = {4},
+  pages     = {8--21},
+  month     = JUL/AUG,
+  year      = {2009},
+}
+
+@article{beamer-photo-dram-isca2010,
+  title     = {Re-Architecting {DRAM} Memory Systems with Monolithically
+                Integrated Silicon Photonics},
+  author    = {S. Beamer and C. Sun and Y.-J. Kwon and A. Joshi and C.
+                Batten and V. Stojanovi\'{c} and K. Asanovi\'{c}},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2010},
+}
+
+@article{beamer-photo-msocket-ics2009,
+  title     = {Designing Multi-Socket Systems Using Silicon Photonics},
+  author    = {S. Beamer and K. Asanovi\'{c} and Christopher Batten and A.
+                Joshi and V. Stojanovi\'{c}},
+  journal   = ICS,
+  month     = JUN,
+  year      = {2009},
+}
+
+@article{mejia-photo-dram-nocs2010,
+  title     = {Performance Evaluation of a Multicore System with Optically
+                Connected Memory Modules},
+  author    = {Paul Vincent Mejia and Rajeevan Amirtharajah and Matthew K.
+                Farrens and Venkatesh Akella},
+  journal   = NOCS,
+  month     = MAY,
+  year      = {2011},
+}
+
+@article{binkert-photo-switch-isca2011,
+  title     = {The Role of Optics in Future High-Radix Switch Design},
+  author    = {N. Binkert and A. Davis and N.~P. Jouppi and M. McLaren and
+                N. Mulralimanohar and R. Schreiber and J.~H. Ahn},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2011},
+}
+
+@article{vantrease-photo-corona-isca2008,
+  title     = {Corona: {System} implications of emerging nanophotonic
+                technology},
+  author    = {D. Vantrease and R. Schreiber and M. Monchiero and M.
+                McLaren and N.~P. Jouppi and M. Fiorentino and A. Davis
+                and N. Binkert and R.~G. Beausoleil and J.~H. Ahn},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2008}
+}
+
+@techreport{miller-photo-atac-csailtr2009,
+  title     = {{ATAC:} {A} Manycore Processor with On-Chip Optical
+                Network},
+  author    = {J. Miller and J. Psota and G. Kurian and N. Beckmann and
+                J. Eastep and J. Liu and M. Beals and J. Michel and L.
+                Kimerling and A. Agarwal},
+  institution = {Computer Science and Artificial Intelligence Laboratory,
+                Massachusetts Institute of Technology},
+  number    = {MIT-CSAIL-TR-2009-018},
+  month     = MAY,
+  year      = 2009,
+}
+
+@article{kurian-photo-atac-pact2010,
+  title     = {{ATAC}: {A} 1000-Core Cache-Coherent Processor with On-Chip
+                Optical Network},
+  author    = {G. Kurian and J. Miller and J. Psota and J. Eastep and J.
+                Liu and J. Michel and L. Kimerling and A. Agarwal},
+  journal   = PACT,
+  month     = SEP,
+  year      = {2010},
+}
+
+@article{petracca-photo-torus-ieeemicro2009,
+  title     = {Photonic {NoCs}: {System}-level Design Exploration},
+  author    = {M. Petracca and B.~G. Lee and K. Bergman and L.~P.
+                Carloni},
+  journal   = {IEEE Micro},
+  volume    = {29},
+  number    = {4},
+  pages     = {74--77},
+  month     = JUL/AUG,
+  year      = {2009},
+}
+
+@article{shacham-photo-torus-tc2008,
+  title     = {Photonic Networks-on-Chip for Future Generations of Chip
+                Multiprocessors},
+  author    = {A. Shacham and K. Bergman and L.~P. Carloni},
+  journal   = TC,
+  volume    = {57},
+  number    = {9},
+  pages     = {1246--1260},
+  month     = SEP,
+  year      = {2008},
+}
+
+@article{pan-photo-flexishare-hpca2010,
+  title     = {{FlexiShare}: {Energy}-Efficient Nanophotonic Crossbar
+                Architecture through Channel Sharing},
+  author    = {Y. Pan and J. Kim and G. Memik},
+  journal   = HPCA,
+  month     = JAN,
+  year      = {2010},
+}
+
+@article{cianchetti-photo-phastlane-isca2009,
+  title     = {Phastlane: {A} rapid transit optical routing network},
+  author    = {M.~J. Cianchetti and J.~C. Kerekes and D.~H. Albonesi},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2009},
+}
+
+@article{cianchetti-photo-phastlane2-jetc2011,
+  title     = {A Low-Latency, High-Throughput On-Chip Optical Router
+                Architecture for Future Chip Multiprocessors},
+  author    = {Mark J. Cianchetti and David H. Albonesi},
+  journal   = JETC,
+  volume    = {7},
+  number    = {2},
+  pages     = {9},
+  month     = JUN,
+  year      = {2011},
+}
+
+@article{binkert-photo-barrier-pica2009,
+  title     = {Nanophotonic Barriers},
+  author    = {N. Binkert and A. Davis and M. Lipasti and R. Schreiber
+                and D. Vantrease},
+  journal   = PICA,
+  month     = DEC,
+  year      = 2009,
+}
+
+@article{koka-photo-macrochip-isca2010,
+  title     = {Silicon-Photonic Network Architectures for Scalable,
+                Power-Efficient Multi-Chip Systems},
+  author    = {P. Koka and M.~O. McCracken and H. Schwetman and X. Zheng
+                and R. Ho and A.~V. Krishnamoorthy},
+  journal   = ISCA,
+  month     = JUN,
+  year      = 2010,
+}
+
+@article{gu-photo-fattree-date2009,
+  title     = {A Low-Power Fat-Tree-Based Optical Network-on-Chip for
+                Multiprocessor System-on-Chip},
+  author    = {H. Gu and J. Xu and W. Zhang},
+  journal   = DATE,
+  month     = MAY,
+  year      = {2009},
+}
+
+@article{pasricha-photo-orb-aspdac2008,
+  title     = {{ORB}: An On-Chip Optical Ring Bus Communication
+                Architecture for Multi-Processor Systems-on-Chip},
+  author    = {Sudeep Pasricha and Nikil Dutt},
+  journal   = ASPDAC,
+  month     = JAN,
+  year      = {2008},
+}
+
+@article{vantrease-photo-arb-micro2009,
+  title     = {Light Speed Arbitration and Flow Control for Nanophotonic
+                Interconnects},
+  author    = {D. Vantrease and N. Binkert and R. Schreiber and M.~H.
+                Lipasti},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2009},
+}
+
+@article{zhou-photo-xbar-applphys2009,
+  title     = {Design and evaluation of an arbitration-free passive
+                optical crossbar for on-chip interconnection networks},
+  author    = {L. Zhou and S.~S. Djordjevic and R. Proietti and D. Ding
+                and S.~J.~B. Yoo and R. Amirtharajah and V. Akella},
+  journal   = APPPHYS,
+  volume    = {95},
+  number    = {4},
+  pages     = {1111--1118},
+  month     = JUN,
+  year      = {2009},
+}
+
+@article{kirman-photo-ocn-asplos2010,
+  title     = {A Power-Efficient All-Optical On-Chip Interconnect Using
+                Wavelength-Based Oblivious Routing},
+  author    = {N. K{\i}rman and J.~F. Mart\'{i}nez},
+  journal   = ASPLOS,
+  month     = MAR,
+  year      = {2010},
+}
+
+@article{li-photo-ocn-islped2009,
+  title     = {A High-Performance Low-Power Nanophotonic On-Chip
+                Network},
+  author    = {Z. Li and J. Wu and L. Shang and A. Mickelson and M.
+                Vachharajani and D. Filipovic and W. Park and Y. Sun},
+  journal   = ISLPED,
+  month     = AUG,
+  year      = {2009},
+}
+
+@article{li-photo-iris-jetc2011,
+  title     = {Iris: {A} Hybrid Nanophotonic Network Design for
+                High-Performance and Low-Power on-Chip Communication},
+  author    = {Zheng Li and Moustafa Mohamed and Xi Chen and Hongyu Zhou
+                and Alan Michelson and Li Shang and Manish Vachharajani},
+  journal   = JETC,
+  volume    = {7},
+  number    = {2},
+  pages     = {8},
+  month     = JUN,
+  year      = {2011},
+}
+
+@article{xue-photo-freespace-isca2010,
+  title     = {An Intra-Chip Free-Space Optical Interconnect},
+  author    = {J. Xue and A. Garg and B. \c{C}ift\c{c}io\v{g}lu and J. Hu
+                and S. Wang and I. Savidis and M. Jain and R. Berman and
+                P. Liu and M. Huang and H. Wu and E. Friedman and G.
+                Wicks and D. Moore},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2010},
+}
+
+@article{morris-photo-propel-jstqe2010,
+  title     = {Exploring the Design of 64 \& 256 Core Power Efficient
+                Nanophotonic Interconnect},
+  author    = {R. Morris and A. Kodi},
+  journal   = JSTQE,
+  volume    = {16},
+  number    = {5},
+  pages     = {1386--1393},
+  month     = SEP/OCT,
+  year      = {2010},
+}
+
+@article{li-photo-spectrum-dac2009,
+  title     = {Spectrum: {A} Hybrid Nanophotonic-Electric On-Chip
+                Network},
+  author    = {Z. Li and D. Fay and A. Mickelson and L. Shang and M.
+                Vachharajani and D. Filipovic and W. Park and Y. Sun},
+  journal   = DAC,
+  month     = JUL,
+  year      = 2009,
+}
+
+@article{nitta-photo-trimming-hpca2011,
+  title     = {Addressing System-Level Trimming Issues in On-Chip
+                Nanophotonic Networks},
+  author    = {C. Nitta and M. Farrens and V. Akella},
+  journal   = HPCA,
+  month     = FEB,
+  year      = {2011},
+}
+
+@article{li-photo-variability-tvlsi2010,
+  title     = {Reliability Modeling and Management of Nanophotonic On-Chip
+                Networks},
+  author    = {Z. Li and M. Mohamed and X. Chen and E. Dudley and K. Meng
+                and L. Shang and A.~R. Mickelson and R. Joseph and M.
+                Vachharajani and B. Schwartz and Y. Sun},
+  journal   = TVLSI,
+  volume    = {PP},
+  number    = {99},
+  month     = DEC,
+  year      = {2010},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Optical Routers
+%-------------------------------------------------------------------------
+
+@article{sherwood-photo-4x4-switch-optexp2008,
+  title     = {Optical 4x4 Hitless Silicon Router for Optical
+                Networks-on-Chip},
+  author    = {N. Sherwood-Droz and H. Wang and L. Chen and B.~G. Lee and
+                A. Biberman and K. Bergman and M. Lipson},
+  journal   = OPTEXP,
+  volume    = {16},
+  number    = {20},
+  pages     =  {15915--15922},
+  month     = SEP,
+  year      = {2008},
+}
+
+@article{gu-photo-switch-isvlsi2009,
+  title     = {A Low-Power Low-Cost Optical Router for Optical
+                Networks-on-Chip in Multiprocessor Systems-on-Chip},
+  author    = {H. Gu and K.~H. Mo and J. Xu and W. Zhang},
+  journal   = ISVLSI,
+  month     = JAN,
+  year      = {2009},
+}
+
+@article{poon-photo-switch-survey-ieee2009,
+  title     = {Cascaded Microresonator-Based Matrix Switch for Silicon
+                On-Chip Optical Interconnection},
+  author    = {A.~W. Poon and X. Luo and F. Xu and H. Chen},
+  journal   = {Proc. of the IEEE},
+  volume    = {97},
+  number    = {7},
+  pages     = {1216--1238},
+  month     = JUL,
+  year      = {2009},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Electrical Technology
+%-------------------------------------------------------------------------
+
+@article{kim-equalization-ocn-dt2008,
+  title     = {Characterization of Equalized and Repeated Interconnects
+                for {NoC} Applications},
+  author    = {B. Kim and V. Stojanovi\'{c}},
+  journal   = DT,
+  volume    = {25},
+  number    = {5},
+  pages     = {430--439},
+  month     = SEP,
+  year      = {2008},
+}
+
+@article{zhao-45nm-model-ted2006,
+  title     = {New Generation of Predictive Technology Model for
+                \wu{sub-45}{nm} Early Design Exploration},
+  author    = {W. Zhao and Y. Cao},
+  journal   = TED,
+  volume    = {53},
+  number    = {11},
+  pages     = {2816--2823},
+  month     = NOV,
+  year      = {2006},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Networks
+%-------------------------------------------------------------------------
+
+@article{scott-blackwidow-clos-isca2006,
+  title     = {The BlackWidow High-Radix Clos Network},
+  author    = {S. Scott and D. Abts and J. Kim and W.~J. Dally},
+  journal   = ISCA,
+  year      = {2006},
+}
+
+@article{xie-tianhe-network-ieeemicro2012,
+  title     = {Tianhe-1A Interconnect and Message-Passing Services},
+  author    = {Min Xie and Yutong Lu and Kefei Wang and Lu Liu and
+                Hongjia Cao and Xuejun Yang},
+  journal   = IEEEMICRO,
+  volume    = {32},
+  number    = {1},
+  pages     = {8--20},
+  month     = JAN/FEB,
+  year      = {2012},
+}
+
+@article{chen-ibm-bluegene-q-network-ieeemicro2012,
+  title     = {The IBM Blue Gene/Q Interconnection Fabric},
+  author    = {Dong Chen and N.~A. Eisley and P. Heidelberger and R.~M.
+                Senger and Y. Sugawara and S. Kumar and V. Salapura and
+                D. Satterfield and B. Steinmacher-Burow and J. Parker},
+  journal   = IEEEMICRO,
+  volume    = {32},
+  number    = {1},
+  pages     = {32--43},
+  month     = JAN/FEB,
+  year      = {2012},
+}
+
+@article{agarwal-garnet-ispass2009,
+  title     = {GARNET: A Detailed On-Chip Network Model inside a
+                Full-System Simulator},
+  author    = {Niket Agarwal and Tushar Krishna and Li-Shiuan Peh and
+                Niraj K. Jha},
+  journal   = ISPASS,
+  month     = APR,
+  year      = {2009},
+}
+
+@misc{booksim-web,
+  title     = {BookSim Interconnection Network Simulator},
+  key       = {booksim},
+  howpublished = {Online Webpage},
+  note      = {\\\url{https://nocs.stanford.edu/cgi-bin/trac.cgi/wiki/Resources/BookSim}},
+  year      = {2011 (accessed Dec 19, 2011)},
+}
+
+@article{lis-darsim-mobs2010,
+  title     = {DARSIM: A Parallel Cycle-Level NoC Simulator},
+  author    = {M. Lis and K.~S. Shim and M.~H. Cho and P.~Ren and O.~Khan
+                and S.~Devadas},
+  journal   = MOBS,
+  month     = JUN,
+  year      = {2010},
+}
+
+@article{michelogiannakis-elastic-fc-hpca2009,
+  title     = {Elastic-Buffer Flow Control for On-Chip Networks},
+  author    = {George Michelogiannakis and James Balfour and William J.
+                Dally},
+  journal   = HPCA,
+  month     = FEB,
+  year      = {2009},
+}
+
+@article{carrion-bubble-fc-hipc1997,
+  title     = {A Flow Control Mechanism to Avoid Message Deadlock in k-ary
+                n-cube Networks},
+  author    = {C. Carrion and R. Beivide and J.~A. Gregorio and F.
+                Vallejo},
+  journal   = HIPC,
+  month     = DEC,
+  year      = {1997},
+}
+
+@article{joshi-ocn-wave-pipeline-tvlsi2005,
+  title     = {Design and Optimization of On-Chip Interconnects Using
+                Wave-Pipelined Multiplexed (WPM) Routing},
+  author    = {A. Joshi and J. Davis},
+  journal   = TVLSI,
+  month     = SEP,
+  year      = {2007},
+  volume    = {15},
+  number    = {9},
+  pages     = {990--1002},
+}
+
+@article{duato-adaptive-deadlock-free-tpds1993,
+  title     = {A New Theory of Deadlock-Free Adaptive Routing in Wormhole
+                Networks},
+  author    = {J. Duato},
+  journal   = TPDS,
+  month     = DEC,
+  year      = {1993},
+  volume    = {4},
+  number    = {12},
+  pages     = {1320--1331},
+}
+
+@article{dally-vc-deadlock-free-tc1987,
+  title     = {Deadlock-Free Message Routing in Multiprocessor
+                Interconnection Networks},
+  author    = {William J. Dally},
+  journal   = TC,
+  month     = MAY,
+  year      = {1987},
+  volume    = {C-36},
+  number    = {5},
+  pages     = {547--553},
+}
+
+@misc{cray-t3d-manual1993,
+  title     = {CRAY T3D System Architecture Overview},
+  key       = {cray},
+  howpublished = {Cray Research Inc.~Referece Manual},
+  year      = {1993},
+}
+
+@article{gottlieb-ultracomputer-isca1982,
+  title     = {The NYU Ultracomputer -- Designing a MIMD, Shared-Memory
+                Parallel Machine},
+  author    = {A. Gottlie and R. Grishman and C.~P. Kruskal and K.~P.
+                McAuliffe and L. Rudolp and M. Snir},
+  journal   = ISCA,
+  month     = APR,
+  year      = {1982},
+}
+
+@article{leiserson-cm5-network-spaa1992,
+  title     = {The Network Architecture of the Connection Machine CM-5},
+  author    = {C.~E. Leiserson and Z.~S. Abuhamdeh and D.~C. Douglas and
+                C.~R. Feynman and M.~N. Ganmukhi and J.~V. Hill and D.
+                Hillis and B.~C. Kuszmaul and M.~A. St.~Pierre and D.~S.
+                Wells and M.~C. Wong and S.-W. Yang and R. Zak},
+  journal   = SPAA,
+  month     = JUN,
+  year      = {1992},
+}
+
+@article{sampson-hw-barrier-micro2006,
+  title     = {Exploiting Fine-Grained Data Parallelism with Chip
+                Multiprocessors and Fast Barriers},
+  author    = {J. Sampson and R. Gonzalez and J.-F. Collard and N.~P.
+                Jouppi and M. Schlansker and B. Calder},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2006},
+}
+
+@article{seo-o1turn-isca2005,
+  title     = {Near-Optimal Worst-Case Throughput Routing for
+                Two-Dimensional Mesh Networks},
+  author    = {D. Seo and A. Ali and W.-T. Lim and N. Rafique and M.
+                Thottethodi},
+  journal   = ISCA,
+  month     = JUL,
+  year      = {2005},
+}
+
+@article{singh-goal-isca2003,
+  title     = {GOAL: A Load-Balanced Adaptive Routing Algorithm for Torus
+                Networks},
+  author    = {A. Singh and W.~J. Dally and A.~K. Gupta and B. Towles},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2003},
+}
+
+@article{michael-appaware-routing-nocs2011,
+  title     = {Analysis of Application-Aware On-Chip Routing under Traffic
+                Uncertainty},
+  author    = {Nithin Michael and Milen Nikolov and Ao Tang and Edward Suh
+                and Christopher Batten},
+  journal   = NOCS,
+  month     = MAY,
+  year      = {2011},
+}
+
+@article{kinsy-appaware-routing-isca2009,
+  title     = {Application-Aware Deadlock-Free Oblivious Routing},
+  author    = {Michel A. Kinsy and Myong Hyon Cho and Tina Wen and Edward
+                Suh and Marten van Dijk and Srinivas Devadas},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2009},
+}
+
+@article{owens-ieeemicro2007,
+  title     = {Research Challenges for On-Chip Interconnection Networks},
+  author    = {J.~D. Owens and W.~J. Dally and R. Ho and D.~N. Jayasimha
+                and S.~W. Keckler and L.-S. Peh},
+  journal   = IEEEMICRO,
+  volume    = {27},
+  number    = {5},
+  pages     = {96--108},
+  month     = SEP/OCT,
+  year      = {2007},
+}
+
+@article{passas-xbar-nocs2010,
+  title     = {A 128$\times$128$\times$\wu{24}{Gb/s} Crossbar
+                Interconnecting 128 Tiles in a Single Hop and Occupying
+                6\% of Their Area},
+  author    = {G. Passas and M. Katevenis and D. Pnevmatikatos},
+  journal   = NOCS,
+  month     = MAY,
+  year      = {2010},
+}
+
+@article{kim-fbfly-micro2007,
+  title     = {Flattened Butterfly Topology for On-Chip Networks},
+  author    = {J. Kim and J. Balfour and W.~J. Dally},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2007},
+}
+
+@article{kumar-concentration-nocs2009,
+  title     = {Exploring Concentration and Channel Slicing in On-Chip
+                Network Router},
+  author    = {Prabhat Kumar and Yan Pan and John Kim and Gokhan Memik and
+                Alok Choudhary},
+  journal   = NOCS,
+  month     = MAY,
+  year      = {2009},
+}
+
+@article{balfour-ocn-ics2006,
+  title     = {Design Tradeoffs for Tiled {CMP} On-Chip Networks},
+  author    = {J. Balfour and W.J. Dally},
+  journal   = ICS,
+  month     = JUN,
+  year      = {2006},
+}
+
+@article{grot-express-cube-ocn-hpca2009,
+  title     = {Express Cube Topologies for On-Chip Interconnects},
+  author    = {B. Grot and J. Hestness and Stephen Keckler and O. Mutlu},
+  journal   = HPCA,
+  month     = FEB,
+  year      = {2009},
+}
+
+@article{kumar-evc-isca2007,
+  title     = {Express Virtual Channels: Towards the Ideal Interconnection
+                Fabric},
+  author    = {A. Kumar and L.-S. Peh and P. Kundu and N.K. Jha},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2007},
+}
+
+@article{kumar-token-fc-micro2008,
+  title     = {Express Virtual Channels: Towards the Ideal Interconnection
+                Fabric},
+  author    = {A. Kumar and L.-S. Peh and and N.K. Jha},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2008},
+}
+
+@article{mullins-lowlat-router-isca2004,
+  title     = {Low-Latency Router Microarchitecture for Intra-Chip
+                Networks},
+  author    = {R. Mullins and A. West and S. Moore},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2004},
+}
+
+@article{peh-spec-router-hpca2001,
+  title     = {A Delay Model and Speculative Architecture for Pipelined
+                Routers},
+  author    = {Li-Shiuan Peh and William J. Dally},
+  journal   = HPCA,
+  month     = JAN,
+  year      = {2001},
+}
+
+@article{kim-lowcost-router-micro2009,
+  title     = {Low-Cost Router Microarchitecture},
+  author    = {John Kim},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2009},
+}
+
+@article{hayenga-scarab-micro2009,
+  title     = {SCARAB: A Single-Cycle Adaptive Routing and Bufferless
+                Network},
+  author    = {M. Hayenga and N.E. Jerger and M. Lipasti},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2009},
+}
+
+@article{moscibroda-bufferless-ocn-isca2009,
+  title     = {A Case for Bufferless Routing in On-Chip Networks},
+  author    = {Thomas Moscibroda and Onur Mutlu},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2009},
+}
+
+@article{das-hybrid-ocn-hpca2009,
+  title     = {Design and Evaluation of a Hierarchical On-Chip
+                Interconnect for Next-Generation {CMPs}},
+  author    = {Reetuparna Das and Soumya Eachempati and Asit K. Mishra
+                and Vijaykrishnan Narayanan and Chita R. Das},
+  journal   = HPCA,
+  month     = FEB,
+  year      = 2009,
+}
+
+%-------------------------------------------------------------------------
+% SEC: On-Chip Network Prototypes
+%-------------------------------------------------------------------------
+
+@article{gratz-trips-ocn-nocs2007,
+  title     = {Implementation and Evaluation of a Dynamically Routed
+                Processor Operand Network},
+  author    = {Paul Gratz and Karthikeyan Sankaralingam and Heather
+                Hanson and Premkishore Shivakumar and Robert
+                McDonald and Stephen W. Keckler and Doug Burger},
+  journal   = NOCS,
+  month     = MAY,
+  year      = {2007},
+}
+
+@article{mullins-router-asic-aspdac2006,
+  title     = {The Design and Implementation of a Low-Latency On-Chip
+                Network},
+  author    = {R. Mullins and A. West and S. Moore},
+  journal   = ASPDAC,
+  month     = JAN,
+  year      = {2006},
+}
+
+@article{kumar-router-asic-iccd2007,
+  title     = {A \wu{4.6}{Tbits/s} \wu{3.6}{GHz} Single-Cycle NoC Router
+                with a Novel Switch Allocator in \wu{65}{nm} CMOS},
+  author    = {A. Kumar and P. Kundu and A.~P. Singh and L.-S. Peh and
+                N.~K. Jhay},
+  journal   = ICCD,
+  month     = OCT,
+  year      = {2007},
+}
+
+@article{lee-noc-prototype-tvlsi2006,
+  title     = {Low-Power Network-on-Chip for High-Performance SoC Design},
+  author    = {Kangmin Lee and Se-Joong Lee and Hoi-Jun Yoo},
+  journal   = TVLSI,
+  month     = FEB,
+  year      = {2006},
+  volume    = {14},
+  number    = {2},
+  pages     = {148--160},
+}
+
+@article{satpathy-swift-switch-vlsi2011,
+  title     = {SWIFT: A \wu{2.1}{Tb/s} 32$\times$32 Self-Arbitrating
+                Manycore Interconnect Fabric},
+  author    = {Sudhir Satpathy and Ronald Dreslinski and Tai-Chuan Ou and
+                Dennis Sylvester and Trevor Mudge and David Blaauw},
+  journal   = VLSI,
+  month     = JUN,
+  year      = {2011},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Generic network architecture
+%-------------------------------------------------------------------------
+
+@book{dally-ppin-book2004,
+  title     = {Principles and Practices of Interconnection Networks},
+  author    = {W.~J. Dally and B. Towles},
+  publisher = {Morgan Kaufmann},
+  year      = {2004},
+}
+
+@article{clos-bstj1953,
+  title     = {A Study of Non-Blocking Switching Networks},
+  author    = {C. Clos},
+  journal   = {Bell System Technical Journal},
+  volume    = {32},
+  pages     = {406--424},
+  year      = {1953},
+}
+
+@article{leiserson-fattree-tc1985,
+  title     = {{Fat-Trees}: {Universal} Networks for Hardware-Efficient
+                Supercomputing},
+  author    = {C.~E. Leiserson},
+  journal   = TC,
+  volume    = {C-34},
+  number    = {10},
+  pages     = {892--901},
+  month     = OCT,
+  year      = {1985},
+}
+
+@article{bhuyan-gen-hypercube-tc1984,
+  title     = {Generalized Hypercube and Hyperbus Structures for a
+                Computer Network},
+  author    = {L.~.N. Bhuyan and D.~P. Agrawal},
+  journal   = TC,
+  volume    = {33},
+  number    = {4},
+  pages     = {323--333},
+  month     = APR,
+  year      = {2007},
+}
+
+%-------------------------------------------------------------------------
+% SEC: High-Speed I/O
+%-------------------------------------------------------------------------
+
+@article{balamurugan-io-transceiver-jssc2008,
+  title     = {A Scalable \wu{5--15}{Gbps}, \wu{14-75}{mW} Low-Power I/O
+                Transceiver in \wu{65}{nm} CMOS},
+  author    = {G. Balamurugan and J. Kennedy and G. Banerjee and J.~E.
+                Jaussi and M. Mansuri and F. O'Mahony and B. Casper and
+                R. Mooney},
+  journal   = JSSC,
+  volume    = {43},
+  number    = {4},
+  pages     = {1010--1019},
+  month     = APR,
+  year      = {2008},
+}
+
+@article{palmer-io-transceiver-isscc2007,
+  title     = {A \wu{14}{mW} \wu{6.25}{Gb/s} Transceiver in \wu{90}{nm}
+                CMOS for Serieal Chip-to-Chip Communications},
+  author    = {R. Palmer and J. Poulton and W.~J. Dally and J. Eyles and
+                A.~M. Fuller and T. Greer and M. Horowitz and M. Kellam
+                and F. Quan and F. Zarkeshvari},
+  journal   = ISSCC,
+  month     = FEB,
+  year      = {2007},
+}
+
+@article{palermo-io-transceiver-jssc2008,
+  title     = {A \wu{90}{nm} CMOS \wu{16}{Gb/s} Transceiver for Optical
+                Interconnects},
+  author    = {S. Palermo and A. Emami-Neyestanak and M. Horowitz},
+  journal   = JSSC,
+  volume    = {43},
+  issue     = {4},
+  pages     = {1235--1246},
+  month     = APR,
+  year      = {2008},
+}
+
+@article{hatamkhani-low-power-io-dac2006,
+  title     = {Power-Centric Design of High-Speed I/Os},
+  author    = {H. Hatamkhani and F. Lambrecht and V. Stojanovic and C.-K.
+                K. Yang},
+  journal   = DAC,
+  month     = JUL,
+  year      = {2006},
+}
+
+%-------------------------------------------------------------------------
+% SEC: DRAM
+%-------------------------------------------------------------------------
+
+@article{pawlowski-micron-hmc-hotchps2011,
+  title     = {Hybrid Memory Cube},
+  author    = {J. Thomas Pawloski},
+  journal   = HOTCHIPS,
+  month     = AUG,
+  year      = {2011},
+}
+
+%-------------------------------------------------------------------------
+% SEC: FPGAs
+%-------------------------------------------------------------------------
+
+@misc{xilinx-web,
+  title     = {Xilinx},
+  key       = {xilinx},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.xilinx.com}},
+  year      = {2013 (accessed Feb 18, 2013)},
+}
+
+@misc{altera-web,
+  title     = {Altera},
+  key       = {altera},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.altera.com}},
+  year      = {2013 (accessed Feb 18, 2013)},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Benchmarks
+%-------------------------------------------------------------------------
+
+@article{shun-pbbs-spaa2012,
+  title     = {Brief Announcement: The Problem Based Benchmark Suite},
+  author    = {Julian Shun and Guy E. Blelloch and Jeremy T. Fineman and
+                Phillip B. Gibbons and Aapo Kyrola and Harsha Vardhan
+                Simhadri},
+  journal   = SPAA,
+  month     = JUN,
+  year      = {2012},
+}
+
+@article{venkata-ucsd-vision-suite-iiswc2009,
+  title     = {{SD-VBS}: {The San Diego} Vision Benchmark Suite},
+  author    = {Sravanthi Kota Venkata and Ikkjin Ahn and Donghwan Jeon
+                and Anshuman Gupta and Christopher Louie and Saturnino
+                Garcia and Serge Belongie and Michael Bedford Taylor},
+  journal   = IISWC,
+  month     = OCT,
+  year      = {2009},
+}
+
+%-------------------------------------------------------------------------
+% SEC: C++ Libraries
+%-------------------------------------------------------------------------
+
+@misc{stl-web,
+  title    = {Standard Template Library Programmer's Guide},
+  key      = {stl},
+  howpublished = {Online Webpage},
+  note     = {\\\url{http://www.sgi.com/tech/stl}},
+  year     = {1994 (access Feb 19, 2013)},
+}
+
+@misc{bgl-web,
+  title    = {The Boost Graph Library},
+  key      = {bgl},
+  howpublished = {Online Webpage},
+  note     = {\\\url{http://www.boost.org/doc/libs/1_53_0/libs/graph/doc}},
+  year     = {2001 (access Feb 19, 2013)},
+}
+
+@misc{bsal-web,
+  title    = {Boost String Algorithms Library},
+  key      = {bsal},
+  howpublished = {Online Webpage},
+  note     = {\\\url{http://www.boost.org/doc/libs/1_53_0/doc/html/string_algo.html}},
+  year     = {2010 (access Feb 19, 2013)},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Synthbio
+%-------------------------------------------------------------------------
+
+@article{densmore-dna-asm-algo-nar2010,
+  title     = {Algorithms for Automated {DNA} Assembly},
+  author    = {Douglas Densmore and Timothy Hsiau and Joshua Kittleson
+                and Will Deloache and Christopher Batten and
+                J.~Christopher Anderson},
+  journal   = NAR,
+  volume    = {38},
+  issue     = {8},
+  pages     = {137--153},
+  month     = JUN,
+  year      = {2010},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Python
+%-------------------------------------------------------------------------
+
+@misc{pypy-web,
+  title     = {PyPy},
+  key       = {pypy},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.pypy.org}},
+  year      = {2011 (accessed Dec 7, 2011)},
+}
+
+% howpublished = {Online Webpage},
+% year      = {2011 (accessed Dec 7, 2011)},
+
+@misc{pytest-web,
+  title     = {PyTest},
+  key       = {pytest},
+  note      = {\url{http://www.pytest.org}},
+}
+
+@misc{cython-web,
+  title     = {Cython},
+  key       = {cython},
+  note      = {\url{http://www.cython.org}},
+}
+
+@misc{verilator-web,
+  title     = {Verilator},
+  key       = {verilator},
+  note      = {\url{http://www.veripool.org/wiki/verilator}},
+}
+
+@misc{myhdl-web,
+  title     = {MyHDL: From Python to Silicon},
+  key       = {myhdl},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.myhdl.org}},
+  year      = {2011 (accessed Jul 7, 2013)},
+}
+
+@article{behndel-cython-cise2011,
+  title     = {Cython: The Best of Both Worlds},
+  author    = {S. Behnel and R. Bradshaw and C. Citro and L. Dalcin and
+                D.~S. Seljebotn and K. Smith},
+  journal   = CISE,
+  month     = MAR/APR,
+  year      = {2011},
+  volume    = {13},
+  number    = {2},
+  pages     = {31--39},
+}
+
+@article{catanzaro-copperhead-ppopp2011,
+  title     = {Copperhead: Compiling an Embedded Data-Parallel Language},
+  author    = {Bryan Catanzaro and Michael Garland and Kurt Keutzer},
+  journal   = PPOPP,
+  month     = FEB,
+  year      = {2011},
+}
+
+%-------------------------------------------------------------------------
+% SEC: Outreach
+%-------------------------------------------------------------------------
+
+@misc{arduino-web,
+  title     = {Arduino},
+  key       = {arduino},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.arduino.cc}},
+  year      = {2011 (acessed July 2011)},
+}
+
+@article{biggers-cs-leavers-sigcse2008,
+  title     = {Student Perceptions of Computer Science: A Retention Study
+                Comparing Graduating Seniors vs.~CS Leavers},
+  author    = {Maureen Biggers and Anne Brauer and Tuba Yilmaz},
+  journal   = SIGCSE,
+  month     = MAR,
+  year      = {2008},
+}
+
+@book{hill-women-aauw2010,
+  title     = {Why So Few? Women in Science, Technology, Engineering, and
+                Mathematics},
+  author    = {Catherine Hill and Christianne Corbett and Andresse St.
+                Rose},
+  publisher = {American Association of University Women},
+  year      = {2010},
+}
+
+@article{klawe-women-cacm2009,
+  title     = {Women in Computing--Take 2},
+  author    = {Maria Klawe and Telle Whitney and Caroline Simard},
+  journal   = CACM,
+  month     = FEB,
+  year      = {2009},
+  volume    = {52},
+  number    = {2},
+  pages     = {68--72},
+}
+
+@article{prince-active-learning-jee2004,
+  title     = {Does Active Learning Work? A Review of the Research},
+  author    = {Michael Prince},
+  journal   = JEE,
+  month     = JUL,
+  year      = {2004},
+  volume    = {93},
+  number    = {3},
+  pages     = {223--231},
+}
+
+@book{kuh-high-impact-aacu2008,
+  title     = {High-Impact Educational Practices: What They Are, Who Has
+                Access to Them, and Why They Matter},
+  author    = {George D. Kuh},
+  publisher = {Association of American Colleges and Universities},
+  year      = {2008},
+}
+
+@article{ohland-jee2008,
+  title     = {Persistence, Engagement, and Migration in Engineering
+                Programs},
+  author    = {M. W. Ohland and S. D. Sheppard and G. Lichtenstein and O.
+                Eris and D. Chachra and R. A. Layton},
+  journal   = JEE,
+  month     = JUL,
+  year      = {2008},
+  volume    = {97},
+  number    = {3},
+  pages     = {259--278},
+}
+
+@article{barth-women-asee2010,
+  title     = {An Integrated Approach to Choosing Technical Careers:
+                Gender Differences in Life Goals for College Students},
+  author    = {Joan Barth and Beth Todd and Dee Goldston and Rosanna E.
+                Guadagno},
+  journal   = ASEE,
+  month     = JUN,
+  year      = {2010},
+}
+
+@book{cuny-women-cra2001,
+  title     = {Recruitment and Retention of Women Graduate Students in
+                Computer Science and Engineering},
+  author    = {Janice Cuny and William Aspray},
+  publisher = {Computing Research Association},
+  year      = {2001},
+}
+
+@techreport{stratton-parboil-uiuctr2012,
+  author    = {John A. Stratton and Christopher Rodrigues and I-Jui Sung
+                and Nady Obeid and Li-Wen Chang and Nasser Anssari and
+                Geng Daniel Liu and Wen-mei W. Hwu},
+  title     = {Parboil: A Revised Benchmark Suite for Scientific and Commercial
+                Throughput Computing},
+  institution = {UIUC, IMPACT-12-01},
+  month     = MAR,
+  year      = {2012},
+}
+
+@techreport{asanovic-bview-ucbtr2006,
+  title     = {The Landscape of Parallel Computing Research: A View from
+                Berkeley},
+  author    = {Krste Asanovic and Ras Bodik and Bryan Catanzaro and
+                Joseph Gebis and Parry Husbands and Kurt Keutzer and
+                David Patterson and William Plishker and John Shalf and
+                Samuel Williams and Katherine Yelick},
+  institution = {EECS Department, University of California, Berkeley},
+  month     = DEC,
+  year      = {2006},
+}
+
+%-------------------------------------------------------------------------
+% PyMTL cites
+%-------------------------------------------------------------------------
+
+@article{bachrach-chisel-dac2012,
+  title     = {Chisel: Constructing Hardware in a Scala Embedded
+                Language},
+  author    = {Jonathan Bachrach and Huy Vo and Brian Richards and Yunsup
+                Lee and Andrew Waterman and Rimas Avizienis and John
+                Wawrzynek and Krste Asanovi\'{c}},
+  journal   = DAC,
+  month     = JUN,
+  year      = {2012},
+}
+
+@article{schacham-genesis2-dac2012,
+  title     = {Avoiding Game Over: Bringing Design to the Next Level},
+  author    = {O. Shacham and M. Wachs and A. Danowitz and S. Galal and
+                J. Brunhaver and W. Qadeer and S. Sankaranarayanan and A.
+                Vassilev and S. Richardson and M. Horowitz},
+  journal   = DAC,
+  month     = JUN,
+  year      = {2012},
+}
+
+@article{schacham-chip-generators-ieeemicro2012,
+  title     = {Rethinking Digital Design: Why Design Must Change},
+  author    = {O. Shacham and O. Azizi and M. Wachs and W. Qadeer and Z.
+                Asgar and K. Kelley and J.P. Stevenson and A.
+                Solomatnikov and A. Firoozshahian and B.C. Lee and S.
+                Richardson and M. Horowitz},
+  journal   = IEEEMICRO,
+  month     = NOV/DEC,
+  year      = {2010},
+}
+
+@article{auerbach-lime-synth-dac2011,
+  title     = {Virtualization of Hetergoeneous Machines: Hardware
+                Description in a Synthesizable Object-Oriented Language},
+  author    = {Joshia Auerbach and David F. Bacon and Perry Cheng and
+                Rodric Rabbah and Sunil Shukla},
+  journal   = DAC,
+  month     = JUN,
+  year      = {2011},
+}
+
+@article{nikhil-bluespec-memocode2004,
+  title     = {Bluespec System Verilog: Efficient, Correct RTL from
+                High-Level Specifications},
+  author    = {N. Nikhil},
+  journal   = MEMOCODE,
+  month     = JUN,
+  year      = {2004},
+}
+
+@article{pellauer-hasim-hpca2011,
+  title     = {HAsim: FPGA-Based High-Detail Multicore Simulation Using
+                Time-Division Multiplexing},
+  author    = {Michael Pellauer and Michael Adler and Michel A. Kinsy,
+                Angshuman Parashar and Joel S. Emer},
+  journal   = HPCA,
+  month     = FEB,
+  year      = {2011},
+}
+
+@book{coussy-hls-survey-book2008,
+  title     = {High-Level Synthesis: From Algorithm to Digital Circuit},
+  editor    = {P. Coussy and A. Morawiec},
+  year      = {2008},
+  publisher = {Springer}
+}
+
+@misc{vivado-web,
+  title     = {Xilinx Vivado Design Suite},
+  key       = {xilinx},
+  howpublished = {Online Webpage},
+  note      = {\\\url{http://www.xilinx.com/products/design-tools/vivado}},
+  year      = {2013 (accessed Feb 19, 2013)},
+}
+
+@article{gajski-y-chart-computer1983,
+  title     = {New VLSI Tools},
+  author    = {D.~D. Gajski and R.~H. Kuhn},
+  journal   = COMPUTER,
+  month     = DEC,
+  year      = 1983,
+  volumne   = {16},
+  number    = {12},
+  pages     = {11--14},
+}
+
+@article{hoe-gaa-synth-iccad2003,
+  title     = {Operation-Centric Hardare Description and Synthesis},
+  author    = {James C. Hoe and Arvind},
+  journal   = ICCAD,
+  month     = NOV,
+  year      = {2003},
+}
+
+@article{berry-esterel-scp1992,
+  title     = {The Esterel Synchronous Programming Language: Design,
+                Semantics, Implementation},
+  author    = {G. Berry and G. Gonthier},
+  journal   = SCP,
+  month     = NOV,
+  year      = {1992},
+  volume    = {19},
+  number    = {2},
+  pages     = {87--152},
+}
+
+@article{singh-lava-vlsid2004,
+  title     = {Designing Reconfigurable Systems in LAVA},
+  author    = {Satnam Singh},
+  journal   = VLSID,
+  month     = JAN,
+  year      = {2004},
+}
+
+@article{dally-tiled-design-dac2000,
+  title     = {The Role of Custom Design in ASIC Chips},
+  author    = {William J. Dally and Andrew Chang},
+  journal   = DAC,
+  month     = JUN,
+  year      = {2000},
+}
+
+@article{page-occam-hw-smhsd1994,
+  title     = {Constructing Hardware-Software Systems Reliabily from a
+                Single Description},
+  author    = {Ian Page},
+  journal   = {Coll. on Struct. Methods for Hardware Sys. Design},
+  year      = {1994},
+}
+
+@misc{handelc-web,
+  title    = {Handel-C},
+  key      = {handelc},
+  note     = {\url{http://www.mentor.com/products/fpga/handel-c}},
+}
+
+
+@book{bailey-taxonomies-2005,
+  title     = {Taxonomies for the Development and Verification of Digital
+                Systems},
+  author    = {Bailey, B. and Martin, G. and Grant, M. and Anderson, T.},
+  isbn      = {9780387240190},
+  lccn      = {2006275155},
+  url       = {http://books.google.com/books?id=i04n\_I4EOMAC},
+  year      = {2005},
+  publisher = {Springer}
+}
+
+%-------------------------------------------------------------------------
+% Derek cites
+%-------------------------------------------------------------------------
+
+@article{vachharajani-liberty-tocs2006,
+  title     = {The Liberty Simulation Environment: A Deliberate Approach
+                to High-Level System Modeling},
+  author    = {Vachharajani, Manish and Vachharajani, Neil and Penry,
+                 David A. and Blome, Jason A. and Malik, Sharad and
+                 August, David I.},
+  journal   = TOCS,
+  month     = AUG,
+  year      = {2006},
+  volume    = {24},
+  issue     = {3},
+  pages     = {211--249},
+}
+
+@article{penry-liberty-dac2003,
+  title     = {Optimizations for a Simulator Construction System
+                Supporting Reusable Components},
+  author    = {Penry, David A. and August, David I.},
+  journal   = DAC,
+  month     = AUG,
+  year      = {2003},
+}
+
+
+@article{vachharajani-liberty-pldi2004,
+  title     = {The Liberty Structural Specification Language: a High-Level
+                Modeling Language for Component Reuse},
+  author    = {Vachharajani, Manish and Vachharajani, Neil and
+                August, David I.},
+  journal   = PLDI,
+  month     = JUN,
+  year      = {2004},
+}
+
+@article{ho-ahn-mcsima-ispass2013,
+  title     = {McSimA+: A Manycore Simulator with Application-Level
+                Simulation and Detailed Microarchitecture Modeling},
+  author    = {Jung Ho Ahn and Sheng Li and Seongil, O. and Jouppi, N.P.},
+  journal   = ISPASS,
+  month     = APR,
+  year      = {2013},
+}
+
+@article{sanchez-zsim-isca2013,
+  title     = {ZSim: Fast and Accurate Microarchitectural Simulation of
+                Thousand-Core Systems},
+  author    = {Sanchez, Daniel and Kozyrakis, Christos},
+  journal   = ISCA,
+  month     = JUN,
+  year      = {2013},
+}
+
+@article{gibson-flash-vs-flash-asplos2000,
+  title     = {FLASH vs. (Simulated) FLASH: Closing the Simulation Loop},
+  author    = {Gibson, Jeff and Kunz, Robert and Ofelt, David and Horowitz,
+                Mark and Hennessy, John and Heinrich, Mark},
+  journal   = ASPLOS,
+  month     = NOV,
+  year      = {2000},
+}
+
+@techreport{burger-simplescalar-uwtr1997,
+  title     = {The SimpleScalar Tool Set, Version 2.0},
+  author    = {D. Burger and T.M. Austin},
+  institution = {Computer Sciences Department, University of Wisconsin},
+  number    = {1342},
+  month     = JUN,
+  year      = {1997},
+}
+
+@article{binkert-gem5-can2011,
+  title     = {The gem5 Simulator},
+  author    = {Nathan Binkert and Bradford Beckmann and Gabriel Black and
+                Steven K. Reinhardt and Ali Saidi and Arkaprava Basu and
+                Joel Hestness and Derek R. Hower and Tushar Krishna and
+                Somayeh Sardashti and Rathijit Sen and Korey Sewell and
+                Muhammad Shoaib and Nilay Vaish and Mark D. Hill and
+                David A. Wood},
+  journal   = CAN,
+  volume    = {39},
+  number    = {2},
+  pages     = {1--7},
+  month     = MAY,
+  year      = {2011},
+}
+
+@article{ardestani-esesc-hpca2013,
+  title     = {ESESC: A Fast Multicore Simulator Using Time-Based
+                Sampling},
+  author    = {E.K. Ardestani and Jose Renau},
+  journal   = HPCA,
+  month     = FEB,
+  year      = {2013},
+}
+
+%-------------------------------------------------------------------------
+% For XPC AFOSR YIP proposal
+%-------------------------------------------------------------------------
+
+@article{pingali-tao-pldi2011,
+  author    = {K. Pingali and D. Nguyen and M. Kulkarni and M. Burtscher
+                and M. Hassaan and R. Kaleem and T. Lee and A. Lenharth
+                and R. Manevich and M. Mendez-Lojo and D. Prountzos and
+                X. Sui},
+  journal   = PLDI,
+  month     = JUN,
+  title     = {The Tao of Parallelism in Algorithms},
+  year      = {2011}
+}
+
+@article{frigo-hyperobjects-spaa2009,
+  author    = {M. Frigo, P. Halpern, C. Leiserson, S. Lewin-Berlin},
+  journal   = SPAA,
+  month     = JUN,
+  title     = {Reducers and Other Cilk++ Hyperobjects},
+  year      = {2009}
+}
+
+@misc{frigo-cilk5-pldi1998,
+  author    = {M. Frigo. C. Leiserson, K. Randall},
+  journal   = PLDI,
+  month     = JUN,
+  title     = {The Implementation of the Cilk-5 Multithreaded Language},
+  year      = {1998},
+}
+
+@misc{amd-hsa-wpaper2012,
+  author    = {AMD},
+  howpublished = {AMD White Paper},
+  month     = AUG,
+  title     = {Heterogeneous System Architecture: A Technical Review},
+  note      = {\\\url{http://amd-dev.wpengine.netdna-cdn.com/wordpress/media/2012/10/hsa10.pdf}},
+  year      = {2012}
+}
+
+@misc{nvidia-dynamic-parallelism-wpaper2012,
+  author    = {NVIDIA},
+  howpublished = {NVIDIA White Paper},
+  month     = AUG,
+  title     = {Dynamic Parallelism in CUDA},
+  note      = {\\\url{http://developer.download.nvidia.com/assets/cuda/files/CUDADownloads/TechBrief_Dynamic_Parallelism_in_CUDA.pdf}},
+  year      = {2012}}
+
+@article{luo-gpu-bfs-dac2010,
+  title     = {An Effective GPU Implementation of Breadth-First Search},
+  author    = {L. Luo and M. Wong and W. Hwu},
+  journal   = DAC,
+  month     = JUN,
+  year      = {2010}}
+
+@article{harish-large-graph-gpu-hipc2007,
+  title     = {Accelerating Large Graph Algorithms on the GPU Using CUDA},
+  author    = {P. Harish and P.J. Narayanan},
+  journal   = HIPC,
+  month     = DEC,
+  year      = {2007}
+}
+
+@article{hong-cuda-max-warp-ppopp2011,
+  title     = {Accelerating CUDA Graph Algorithms at Maximum Warp},
+  author    = {S. Hong and S. K. Kim and T. Oguntebi and K. Olukotun},
+  journal   = PPOPP,
+  month     = FEB,
+  year      = {2011}
+}
+
+@article{nasre-data-vs-topo-ipdps2013,
+  title     = {Data-driven versus Topology-driven Irregular
+                Computations on GPUs},
+  author    = {R. Nasre and M. Burtscher and K. Pingali},
+  journal   = IPDPS,
+  month     = APR,
+  year      = {2013}
+}
+
+@article{burtscher-irregular-gpu-iiswc2012,
+  title     = {A Quantitative Study of Irregular Programs on GPUs},
+  author    = {M. Burtscher and R. Nasre and K. Pingali},
+  journal   = IISWC,
+  month     = OCT,
+  year      = {2012},
+}
+
+@article{nasre-morph-ppopp2013,
+  title     = {Morph Algorithms on GPUs},
+  author    = {R. Nasre and M. Burtscher and K. Pingali},
+  journal   = PPOPP,
+  month     = FEB,
+  year      = {2013}
+}
+
+@article{mendez-optimizations-amorphous-ppopp2010,
+  title     = {Structure-Driven Optimizations for Amorphous Data-Parallel
+                Programs},
+  author    = {M. Mendez-Loj and D. Nguyen and D Prountzos and X. Sui and
+                M. A. Hassaan and M. Kulkarni and M. Burtscher and K.
+                Pingali},
+  journal   = PPOPP,
+  month     = FEB,
+  year      = {2010}
+}
+
+@article{mendez-gpu-pta-ppopp2012,
+  title     = {A GPU Implementation of Inclusion-Based Points-to
+                Analysis},
+  author    = {M. Mendez-Lojo and M. Burtscher and K. Pingali},
+  journal   = PPOPP,
+  month     = FEB,
+  year      = {2012}
+}
+
+@misc{nvidia-kepler-wpaper2012,
+  author    = {NVIDIA},
+  title     = {NVIDIA's Next Generation CUDA Compute Architecture: Kepler
+                GK110},
+  note      = {\\\url{http://www.nvidia.com/content/PDF/kepler/NVIDIA-Kepler-GK110-Architecture-Whitepaper.pdf}},
+  year      = {2012}
+}
+
+@article{kim-hwwl-micro2014,
+  author    = {Ji Kim and Christopher Batten},
+  title     = {Accelerating Irregular Algorithms on GPGPUs Using
+                Fine-Grain Hardware Worlists},
+  journal   = MICRO,
+  month     = DEC,
+  year      = {2014},
+}
+
+@article{srinath-xloops-micro2014,
+  author = {Shreesha Srinath and Berkin Ilbeyi and Mingxing Tan and Gai
+                Liu and Zhiru Zhang and Christopher Batten},
+  title = {Architectural Specialization for Inter-Iteration Loop
+                Dependence Patterns},
+  journal = MICRO,
+  month = DEC,
+  year = {2014},
+}
+
+@article{lockhart-pymtl-micro2014,
+  author = {Derek Lockhart and Gary Zibrat and Christopher Batten},
+  title = {PyMTL: A Unified Framework for Vertically Integrated Computer
+                Architecture Research},
+  journal = MICRO,
+  month = DEC,
+  year = {2014},
+}
+
+@article{hammarlund-intel-haswell-ieeemicro2014,
+  author    = {Martinez, A.J. and Bajwa, A.A. and Hill, D.L. and Hallnor,
+                E. and Hong Jiang and Dixon, M. and Derr, M. and
+                Hunsaker, M. and Kumar, R. and Osborne, R.B. and Rajwar,
+                R. and Singhal, R. and D'Sa, R. and Chappell, R. and
+                Kaushik, S. and Chennupaty, S. and Jourdan, S. and
+                Gunther, S. and Piazza, T. and Burton, T.},
+  title     = {Haswell: The Fourth-Generation Intel Core Processor},
+  journal   = IEEEMICRO,
+  volume    = {34},
+  number    = {2},
+  pages     = {6--20},
+  month     = MAR/APR,
+  year      = {2014},
+}
+
+@article{bouvier-amd-kabini-ieeemicro2014,
+  author    = {Bouvier, D. and Cohen, B. and Fry, W. and Godey, S. and
+                Mantor, M.},
+  title     = {Kabini: An AMD Accelerated Processing Unit System on A
+                Chip},
+  journal   = IEEEMICRO,
+  volume    = {34},
+  number    = {2},
+  pages     = {22--33},
+  month     = MAR/APR,
+  year      = {2014},
+}
+
+@article{krewell-nvidia-tegra4-mpr2013,
+  author    = {Kevin Krewell},
+  title     = {Tegra 4 Outperforms Snapdragon},
+  journal   = MPR,
+  month     = MAR,
+  year      = {2013},
+}
+
+@article{bolaria-intel-xeon-phi-mpr2012,
+  author    = {Jag Bolaria},
+  title     = {Xeon Phi Targets Supercomputers},
+  journal   = MPR,
+  month     = SEP,
+  year      = {2012},
+}
+
+@article{gwennap-ti-davinci-mpr2011,
+  author    = {Linley Gwennap},
+  title     = {In Brief: TI Accelerates Video Processors},
+  journal   = MPR,
+  month     = MAR,
+  year      = {2011},
+}
+

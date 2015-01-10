@@ -1,0 +1,32 @@
+%=========================================================================
+% sec-background
+%=========================================================================
+
+\section{Summary of Research on GPGPU Microarchitecture}
+\label{sec-background}
+
+In my paper published at ISCA 2013, I focused on further improving the
+performance and energy efficiency of conventional data-parallel
+applications by exploiting \emph{value structure}, a new form of
+structure where values can be encoded as a compact function of the thread
+index~\cite{kim-simt-vstruct-isca2013}. Three techniques were developed
+to allow certain arithmetic, memory, and branch instructions with
+operands exhibiting value structure to perform the computation once
+instead of having each thread perform a separate computation. Using these
+techniques achieved speedups of up to 1.7$\times$ and an increase in
+energy efficiency of up to 1.3$\times$ on conventional data parallel
+applications. Unfortunately, the benefit of this technique was less
+apparent for applications with amorphous data parallelism.
+
+In my paper published at MICRO 2014, I attempted to address the
+difficulty of efficiently mapping amorphous data-parallel applications to
+GPGPUs by utilizing \emph{hardware worklists} to mitigate the classic
+challenges involved with double-buffered software worklists: high memory
+contention and suboptimal load balancing~\cite{kim-hwwl-micro2014}. Our
+technique uses per-lane worklist banks and adds new instructions for
+enqueuing/dequeuing tasks to/from the hardware worklist. A hardware work
+redistribution unit enables dynamic load balancing of fine-grain tasks
+across the worklist banks, and a virtualization scheme enables spilling
+tasks to memory. Using these techniques resulted in speedups of up to
+2.4$\times$ in amorphous data parallel applications, some of which only
+had marginal speedups in previous studies.
