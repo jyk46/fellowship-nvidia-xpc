@@ -5,16 +5,27 @@
 \section{Thesis Proposal: Explicit-Parallel-Call Architectures}
 \label{sec-xpc}
 
-In order to \emph{expose} fine-grain parallel tasks, we propose a
-parallel programming library coupled with a unified XPC instruction set
-architecture (ISA). To \emph{execute} parallel tasks, we propose a
-heterogeneous mix of microarchitectural tiles specialized for
-conventional and amorphous data parallelism. Finally, to \emph{schedule}
-parallel tasks, we propose a software runtime with hardware support for
-adaptive migration of tasks.
+\begin{figure}[t]
+  \begin{minipage}[b]{0.42\tw}
+    \input{fig-intro-overview}
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}[b]{0.56\tw}
+    \input{fig-intro-vision}
+  \end{minipage}
+\end{figure}
+
+%In order to \emph{expose} fine-grain parallel tasks, we propose a
+%parallel programming library coupled with a unified XPC instruction set
+%architecture (ISA). To \emph{execute} parallel tasks, we propose a
+%heterogeneous mix of microarchitectural tiles specialized for
+%conventional and amorphous data parallelism. Finally, to \emph{schedule}
+%parallel tasks, we propose a software runtime with hardware support for
+%adaptive migration of tasks.
 
 \subsection{Exposing Fine-Grain Parallel Tasks}
 
+%\textbf{Exposing Parallel Tasks --}
 The XPC programming framework exposes parallelism at a fine granularity
 and provides support for nested parallelism. The framework enables
 application developers to focus on exploring different algorithms for
@@ -23,9 +34,9 @@ evaluating the tradeoffs of mapping different algorithms to different XPC
 tiles. Several parallel primitives in the spirit of the Intel
 TBB~\cite{reinders-tbb-book2007} library including \TT{parallel\_invoke}
 for recursively generating tasks as well as \TT{parallel\_for} for
-parallelizing loop iterations are provided.  We take advantage of modern
-C++11 lambda functions to achieve a clean and convenient method for
-defining tasks.
+parallelizing loop iterations are provided.
+%We take advantage of modern C++11 lambda functions to achieve a clean and
+%convenient method for defining tasks.
 
 The XPC ISA extends a traditional RISC ISA with three new instructions: a
 parallel function call instruction (\TT{pcall}), a parallel function
@@ -34,12 +45,11 @@ instruction (\TT{psync}). A parallel function call enables the software
 to inform the hardware that it is acceptable to execute the callee in
 parallel with the caller, but critically, parallel execution is \emph{not
   required}. \TT{pcall}s can be nested to arbitrary depths, and recursive
-\TT{pcall}s are also allowed.
-A \TT{pret} returns from a \TT{pcall} and also acts as an implicit
-synchronization point. A particularly novel feature of the XPC ISA is the
-ability to encode a parallel multi-call which informs the hardware that
-the given function should be executed $n$ times where $n$ can be either
-specified at compile time or run time.
+\TT{pcall}s are also allowed.  A \TT{pret} returns from a \TT{pcall} and
+also acts as an implicit synchronization point. A particularly novel
+feature of the XPC ISA is the ability to encode a parallel multi-call
+which informs the hardware that the given function should be executed $n$
+times where $n$ can be either specified at compile time or run time.
 
 %While it is certainly possible to achieve the same effect by using a
 %basic \TT{pcall} within a loop, a parallel multi-call enables very
@@ -51,10 +61,11 @@ specified at compile time or run time.
 %that are specialized for exploiting a broad range of amorphous data
 %parallelism.
 
+%\textbf{Executing Parallel Tasks --}
 \textbf{XPC TCL Tile --} An XPC tile with tightly coupled lanes (TCL) is
-a data-parallel accelerator specialized for conventional data
-parallelism. A simple in-order, single-issue control processor manages an
-array of lanes. Instruction fetch and decode are amortized by the control
+a data-parallel accelerator specialized for regular data-parallelism. A
+simple in-order, single-issue control processor manages an array of
+lanes. Instruction fetch and decode are amortized by the control
 processor and an issue unit schedules a group of threads to execute in
 lock-step on the tightly coupled lanes.
 %Control irregularity can cause divergence between threads, serializing
@@ -64,10 +75,10 @@ lock-step on the tightly coupled lanes.
 %Unlike GPGPUs, the TCL tile focuses on exploiting intra-warp parallelism
 %instead of relying on extreme temporal multithreading to exploit
 %inter-warp parallelism.
-The TCL tile is inspired by our previous work in accelerating
-conventional data-parallel applications on GPGPUs by exploiting value
-structure~\cite{kim-simt-vstruct-isca2013}. Similar techniques can be
-used to eliminate redundant computation.
+The TCL tile is inspired by my previous work on accelerating
+regular data-parallel applications on GPGPUs by exploiting value
+structure~\cite{kim-simt-vstruct-isca2013}.
+%Similar techniques can be used to eliminate redundant computation.
 
 %Although the TCL tile will achieve high performance and energy efficiency
 %by amortizing the front-end and memory accesses as well as exploiting
@@ -76,7 +87,7 @@ used to eliminate redundant computation.
 %in amorphous data parallel tasks.
 
 \textbf{XPC LCL Tile --} An XPC tile with loosely coupled lanes (LCL) is
-an accelerator specialized for more irregular amorphous data parallelism.
+an accelerator specialized for more irregular irregular data-parallelism.
 The key difference between a TCL and an LCL tile is that an LCL tile
 allows the control flow between lanes to be decoupled. This is achieved
 by using per-lane instruction buffers that are pre-populated by the
@@ -97,15 +108,15 @@ patterns~\cite{srinath-xloops-micro2014}.
 % LCL tile is still better suited for simpler tasks on the lanes and can
 % suffer from high memory-access irregularity.
 
-\textbf{XPC CMC Tile --} An XPC tile with co-operative multiple cores
-(CMC) can be used for highly irregular amorphous data-parallel
-applications that cannot be efficiently accelerated on other XPC tiles. A
-CMC tile includes an array of discrete cores connected by a crossbar to
-facilitate rapid inter-core communication and includes hardware
-acceleration for scheduling fine-grain parallel tasks. The CMC tile can
-function as a default tile for the profiling phase when statistics are
-collected to determine if the application would be more suitable for a
-TCL or an LCL tile.
+\textbf{XPC CMC Tile --} An XPC tile with co-operative multicores (CMC)
+can be used for highly irregular irregular data-parallel applications
+that cannot be efficiently accelerated on other XPC tiles. A CMC tile
+includes an array of discrete cores connected by a crossbar to facilitate
+rapid inter-core communication and includes hardware acceleration for
+scheduling fine-grain parallel tasks. The CMC tile can function as a
+default tile for the profiling phase when statistics are collected to
+determine if the application would be more suitable for a TCL or an LCL
+tile.
 
 % in addition to being the optimal tile for highly irregular amorphous
 % data parallel tasks which cannot fully utilize the more structured TCL
@@ -136,6 +147,7 @@ TCL or an LCL tile.
 %tasks onto the best suited tiles. This process can be accelerated in
 %hardware with a \emph{task cache} and \emph{task distribution network}.
 
+%\textbf{Scheduling Parallel Tasks --}
 One way for the software runtime to manage parallel tasks is with
 per-thread task queues in memory similar to the Intel TBB runtime
 implementation~\cite{reinders-tbb-book2007}.
@@ -149,8 +161,8 @@ implementation~\cite{reinders-tbb-book2007}.
 %by dequeuing tasks from the top of another thread's task queue, but a
 %thread may always execute any tasks from its own task queue by dequeueing
 %from the bottom.
-We plan to explore techniques to bias our work stealing algorithm such
-that tasks naturally migrate to the most appropriate XPC tile. Our
+I plan to explore techniques to bias the work stealing algorithm such
+that tasks naturally migrate to the most appropriate XPC tile. The
 runtime can collect statistics on control and memory-access irregularity
 as proxies for performance and energy efficiency.
 %Higher irregularity would suggest the task is better suited for more
@@ -159,24 +171,26 @@ as proxies for performance and energy efficiency.
 Although the runtime normally generates and distributes tasks through
 memory, hardware acceleration can be used to streamline these
 processes. For example, a per-tile \emph{task cache} that exploits
-intra-tile task locality can be used to store entries of the task queue
-in a hardware cache to avoid memory accesses. This is based on the
-observation that each thread or tile will almost always need to access
-its own task queue whenever it is ready to execute a new
-task. Furthermore, a \emph{task distribution network} can be used to
+intra-tile task locality can be used to store entries of the task queue.
+%in a hardware cache to avoid memory accesses. This is based on the
+%observation that each thread or tile will almost always need to access
+%its own task queue whenever it is ready to execute a new
+%task.
+Furthermore, a \emph{task distribution network} can be used to
 connect task caches in order to facilitate efficient task stealing
-between tiles. The runtime triggers a broadcast of task steal requests if
-the tile it is running on is idle.
+between tiles.
+%The runtime triggers a broadcast of task steal requests if the tile it is
+%running on is idle.
 %For scalability, the request is only broadcasted to the tile's direct
 %neighbors.
 The network also communicates meta-data with each request describing the
 type of task for which it is best suited, which can considered along with
 collected statistics to determine whether or not a tile should allow task
 stealing. These hardware techniques for storing and distributing tasks is
-inspired by our previous work in task distribution for amorphous data
-parallel applications on GPGPUs~\cite{kim-hwwl-micro2014}.
-Similar approaches to task distribution in traditional multicore systems
-have been proposed~\cite{kumar-carbon-isca2007,sanchez-adm-asplos2010},
-but these techniques do not address heterogeneous architectures where we
-must consider a new dimension of using heuristics to optimally schedule
-tasks across different microarchitectural tiles.
+inspired by my previous work in task distribution for irregular
+data-parallel applications on GPGPUs~\cite{kim-hwwl-micro2014}.  Similar
+approaches to task distribution in traditional multicore systems have
+been proposed~\cite{kumar-carbon-isca2007,sanchez-adm-asplos2010}, but
+these techniques do not address heterogeneous architectures where a new
+dimension of using heuristics to optimally schedule tasks across
+different microarchitectural tiles must be considered.

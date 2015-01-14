@@ -6,27 +6,45 @@
 \label{sec-background}
 
 In my paper published at ISCA 2013, I focused on further improving the
-performance and energy efficiency of conventional data-parallel
-applications by exploiting \emph{value structure}, a new form of
-structure where values can be encoded as a compact function of the thread
-index~\cite{kim-simt-vstruct-isca2013}. Three techniques were developed
-to allow certain arithmetic, memory, and branch instructions with
-operands exhibiting value structure to perform the computation once
-instead of having each thread perform a separate computation. Using these
-techniques achieved speedups of up to 1.7$\times$ and an increase in
-energy efficiency of up to 1.3$\times$ on conventional data parallel
+performance and energy efficiency of regular data-parallel
+applications on GPGPUs by exploiting \emph{value structure}, in which
+values can be encoded as a compact function of the thread
+index~\cite{kim-simt-vstruct-isca2013}.  For example, \emph{affine
+  values} are a class of value structure which can be represented in the
+following form: $V(i) = b + i \times s$ where $i$ is the thread index,
+$b$ is the base, and $s$ is the stride.  Three techniques were developed
+to reduce redundant computation by using compactly encoded affine values.
+\emph{Affine arithmetic} allows a single arithmetic operation on two
+affine values to produce an affine result instead of having every thread
+perform a separate operation. \emph{Affine memory operations} eliminate
+redundant address generation and coalesce scalar loads without dynamic
+address comparisons if the load address is affine. \emph{Affine branches}
+allow a single comparison on two affine values to redirect control flow
+instead of having every thread perform a separate comparison.  Using
+these techniques achieved speedups of up to 1.7$\times$ and an increase
+in energy efficiency of up to 1.3$\times$ on regular data-parallel
 applications. Unfortunately, the benefit of this technique was less
-apparent for applications with amorphous data parallelism.
+apparent for applications with irregular data-parallelism.
 
 In my paper published at MICRO 2014, I attempted to address the
-difficulty of efficiently mapping amorphous data-parallel applications to
+difficulty of efficiently mapping irregular data-parallel applications to
 GPGPUs by utilizing \emph{hardware worklists} to mitigate the classic
 challenges involved with double-buffered software worklists: high memory
-contention and suboptimal load balancing~\cite{kim-hwwl-micro2014}. Our
-technique uses per-lane worklist banks and adds new instructions for
-enqueuing/dequeuing tasks to/from the hardware worklist. A hardware work
-redistribution unit enables dynamic load balancing of fine-grain tasks
-across the worklist banks, and a virtualization scheme enables spilling
-tasks to memory. Using these techniques resulted in speedups of up to
-2.4$\times$ in amorphous data parallel applications, some of which only
-had marginal speedups in previous studies.
+contention, suboptimal load balancing, and software management
+overheads~\cite{kim-hwwl-micro2014}. The hardware worklist is implemented
+as per-lane 1rw SRAM \emph{worklist banks} in order to avoid memory
+accesses when interacting with the worklist as well as reduce the
+software management overhead. The worklist can be accessed with special
+instructions for enqueuing/dequeuing tasks. A \emph{worklist
+  redistribution} mechanism enables dynamic load balancing of fine-grain
+tasks across the worklist banks. At every user-defined sampling interval,
+a per-core work redistribution unit moves tasks from banks with more
+tasks to banks with less tasks based on the selected policy. Several work
+redistribution policies with varying tradeoffs between complexity and
+load balancing were explored. A specialized network is used to facilitate
+task redistribution between cores.  A \emph{worklist virtualization}
+mechanism allowing for seamless spilling/refilling of tasks to/from
+memory is used to accommodate tasks that do not fit in the worklist
+banks. Using these techniques resulted in speedups of up to 2.4$\times$
+in irregular data-parallel applications which only had marginal speedups
+in previous studies.

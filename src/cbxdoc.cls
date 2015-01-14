@@ -90,7 +90,8 @@
 %-------------------------------------------------------------------------
 % We explicitly set the font sizes in points so that we know exactly how
 % big each font. Subsection headers are supposed to be 11pt, but there
-% is no equivalent built-in LaTeX font size which corresponds to 11pt% (normalsize is 10pt and large is 12pt). Notice we always calculate the
+% is no equivalent built-in LaTeX font size which corresponds to 11pt%
+% (normalsize is 10pt and large is 12pt). Notice we always calculate the
 % the line spacing to be 1.2 times the font size.
 
 \newlength{\cbxproposal@Templen}

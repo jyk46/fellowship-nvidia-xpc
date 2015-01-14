@@ -5,21 +5,14 @@
 \section{Introduction and Problem Statement}
 \label{sec-intro}
 
-\begin{figure}[b]
-  \begin{minipage}[b]{0.42\tw}
-    \input{fig-intro-overview}
-  \end{minipage}%
-  \hfill%
-  \begin{minipage}[b]{0.56\tw}
-    \input{fig-intro-vision}
-  \end{minipage}
-\end{figure}
+%Microprocessor design has reached the limits of improving performance and
+%energy efficiency by scaling the number of general-purpose cores on a
+%chip.
 
-Microprocessor design has reached the limits of improving performance and
-energy efficiency by scaling the number of general-purpose cores on a
-chip. Instead, computer architects are increasingly using a heterogeneous
-mix of general-purpose cores and data-parallel accelerators to exploit
-the ubiquitous data parallelism present in modern applications such as
+Computer architects are increasingly using a heterogeneous mix of
+general-purpose cores and data-parallel accelerators to improve
+performance and energy efficiency by exploiting the ubiquitous data
+parallelism present in modern applications. Example applications include
 graphics rendering, computer vision, audio processing, graph processing,
 physical simulation, big data analytics, and machine learning. Recent
 examples include Intel
@@ -34,23 +27,29 @@ GPUs. I am interested in exploring future systems that use a
 \emph{fine-grain intermingling} of many lightweight general-purpose cores
 and data-parallel accelerators unified through a common instruction set
 with support for \emph{seamless adaptive execution} of parallel tasks as
-shown in Figure~\ref{fig-intro-overview}.
-These accelerators would be specialized for a broad range of
-\emph{amorphous data parallelism}, a generalized form of data parallelism
-where tasks are generated dynamically and can modify the underlying data
-structures in unpredictable ways potentially creating inter-task
-conflicts~\cite{pingali-tao-pldi2011}. Mapping such applications to
-current data-parallel accelerators can be difficult and usually requires
-aggressive software
-optimizations~\cite{luo-gpu-bfs-dac2010,harish-large-graph-gpu-hipc2007,
-  hong-cuda-max-warp-ppopp2011,nasre-data-vs-topo-ipdps2013,
-  nasre-morph-ppopp2013,mendez-optimizations-amorphous-ppopp2010,
-  mendez-gpu-pta-ppopp2012}.
-\BF{This proposal outlines the explicit-parallel-call (XPC) architecture,
-  a novel fine-grain heterogeneous architecture based on the concept of
-  explicitly encoding parallel tasks as parallel function calls in the
-  software/hardware interface.} Figure~\ref{fig-intro-vision} highlights
+shown in Figure~\ref{fig-intro-overview}.  \BF{This proposal outlines the
+  explicit-parallel-call (XPC) architecture, a novel fine-grain
+  heterogeneous architecture based on the concept of explicitly encoding
+  parallel tasks as parallel function calls in the software/hardware
+  interface.}  Many facets of the XPC architecture are inspired by my two
+papers published at top-tier conferences that focus on improving the
+performance and efficiency of both regular and irregular applications on
+general-purpose GPUs (GPGPUs). In particular, insights on reducing
+redundant computation and dynamic work redistribution guided the hardware
+design of the XPC architecture.  Figure~\ref{fig-intro-vision} highlights
 the vertically integrated approach that will be used to explore both
 software and hardware techniques for \emph{exposing}, \emph{executing},
 and \emph{scheduling} fine-grain parallel tasks.
+
+%These accelerators would be specialized for a broad range of
+%\emph{amorphous data parallelism}, a generalized form of data parallelism
+%where tasks are generated dynamically and can modify the underlying data
+%structures in unpredictable ways potentially creating inter-task
+%conflicts~\cite{pingali-tao-pldi2011}. Mapping such applications to
+%current data-parallel accelerators can be difficult and usually requires
+%aggressive software
+%optimizations~\cite{luo-gpu-bfs-dac2010,harish-large-graph-gpu-hipc2007,
+%  hong-cuda-max-warp-ppopp2011,nasre-data-vs-topo-ipdps2013,
+%  nasre-morph-ppopp2013,mendez-optimizations-amorphous-ppopp2010,
+%  mendez-gpu-pta-ppopp2012}.
 
