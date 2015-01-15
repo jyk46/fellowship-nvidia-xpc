@@ -235,7 +235,7 @@ FUNCTION {format.names}
   #1 'nameptr :=
   s num.names$ 'numnames :=
   numnames 'namesleft :=
-  numnames #2 >
+  numnames #99 >
 % -cbatten, initials only
 %  { s #1 "{ff~}{vv~}{ll}{, jj}" format.name$ " et~al." * }
    { s #1 "{f.~}{vv~}{ll}{, jj}" format.name$ " et~al." * }
@@ -248,7 +248,7 @@ FUNCTION {format.names}
       nameptr #1 >
 	{ namesleft #1 >
             { ", " * t * }
-            { numnames #2 >
+            { numnames #99 >
                 { "," * }
                 'skip$
               if$

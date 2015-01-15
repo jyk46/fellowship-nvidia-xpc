@@ -21,10 +21,11 @@ redundant address generation and coalesce scalar loads without dynamic
 address comparisons if the load address is affine. \emph{Affine branches}
 allow a single comparison on two affine values to redirect control flow
 instead of having every thread perform a separate comparison.  Using
-these techniques achieved speedups of up to 1.7$\times$ and an increase
-in energy efficiency of up to 1.3$\times$ on regular data-parallel
-applications. Unfortunately, the benefit of this technique was less
-apparent for applications with irregular data-parallelism.
+these techniques achieved speedups between 1.2-1.7$\times$ and an
+increase in energy efficiency of up to 1.3$\times$ on regular
+data-parallel applications on a register-transfer-level model of our
+fine-grain SIMT engine. The benefit of this technique was less apparent
+for applications with irregular data-parallelism.
 
 In my paper published at MICRO 2014, I attempted to address the
 difficulty of efficiently mapping irregular data-parallel applications to
@@ -45,6 +46,6 @@ load balancing were explored. A specialized network is used to facilitate
 task redistribution between cores.  A \emph{worklist virtualization}
 mechanism allowing for seamless spilling/refilling of tasks to/from
 memory is used to accommodate tasks that do not fit in the worklist
-banks. Using these techniques resulted in speedups of up to 2.4$\times$
-in irregular data-parallel applications which only had marginal speedups
-in previous studies.
+banks. Using these techniques resulted in speedups between
+1.2-2.4$\times$ in irregular data-parallel applications on a cycle-level
+model of a modern GPGPU.

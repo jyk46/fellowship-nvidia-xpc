@@ -58,8 +58,7 @@ times where $n$ can be either specified at compile time or run time.
 \subsection{Executing Fine-Grain Parallel Tasks}
 
 %The underlying XPC microarchitecture is a heterogeneous mix of XPC tiles
-%that are specialized for exploiting a broad range of amorphous data
-%parallelism.
+%that are specialized for exploiting a broad range of data-parallelism.
 
 %\textbf{Executing Parallel Tasks --}
 \textbf{XPC TCL Tile --} An XPC tile with tightly coupled lanes (TCL) is
@@ -87,7 +86,7 @@ structure~\cite{kim-simt-vstruct-isca2013}.
 %in amorphous data parallel tasks.
 
 \textbf{XPC LCL Tile --} An XPC tile with loosely coupled lanes (LCL) is
-an accelerator specialized for more irregular irregular data-parallelism.
+an accelerator specialized for more irregular data-parallelism.
 The key difference between a TCL and an LCL tile is that an LCL tile
 allows the control flow between lanes to be decoupled. This is achieved
 by using per-lane instruction buffers that are pre-populated by the
